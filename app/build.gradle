@@ -43,13 +43,14 @@ dependencies {
     compile 'com.jakewharton.timber:timber:4.5.1'
     compile 'com.google.dagger:dagger:2.9'
     kapt 'com.google.dagger:dagger-compiler:2.9'
-    compile 'com.facebook.stetho:stetho-okhttp:1.5.0'
-    compile 'com.facebook.stetho:stetho-okhttp3:1.5.0'
-    compile 'com.uphyca:stetho_realm:2.0.0'
+    //compile 'com.facebook.stetho:stetho-okhttp:1.5.0'
+    //compile 'com.facebook.stetho:stetho-okhttp3:1.5.0'
+    //compile 'com.uphyca:stetho_realm:2.0.0'
 
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.1'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
     testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
+    compile 'com.github.youta1119:either-kotlin:0.3'
 
 }
 repositories {
@@ -57,4 +58,5 @@ repositories {
     maven {
         url 'https://github.com/uPhyca/stetho-realm/raw/master/maven-repo'
     }
+
 }
