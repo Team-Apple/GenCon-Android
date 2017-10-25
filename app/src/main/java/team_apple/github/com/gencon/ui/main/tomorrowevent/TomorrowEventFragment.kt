@@ -1,10 +1,11 @@
-package team_apple.github.com.gencon.ui.main
+package team_apple.github.com.gencon.ui.main.tomorrowevent
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import team_apple.github.com.gencon.R
 
 class TomorrowEventFragment :Fragment() {
     companion object {
@@ -15,6 +16,6 @@ class TomorrowEventFragment :Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+        return inflater?.inflate(R.layout.fragment_tomorrow_event, container, false)
     }
 }

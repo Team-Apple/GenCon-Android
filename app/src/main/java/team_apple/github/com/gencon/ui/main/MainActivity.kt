@@ -8,6 +8,8 @@ import android.support.v4.app.FragmentStatePagerAdapter
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import team_apple.github.com.gencon.R
+import team_apple.github.com.gencon.ui.main.todayevent.TodayEventFragment
+import team_apple.github.com.gencon.ui.main.tomorrowevent.TomorrowEventFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolBar)
         val adapter = FragmentPagerAdapter(this, supportFragmentManager)
         viewPager.adapter = adapter
-        tabLayout.setupWithViewPager(viewPager)
+        //tabLayout.setupWithViewPager(viewPager)
     }
 
     class FragmentPagerAdapter(private val context: Context, fm: FragmentManager) : FragmentStatePagerAdapter(fm) {

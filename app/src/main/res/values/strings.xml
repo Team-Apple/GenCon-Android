@@ -5,4 +5,7 @@
     <string name="today">today</string>
     <string name="tomorrow">tomorrow</string>
 
+    <string name="announce">announce</string>
+    <string name="event">event</string>
+    <string name="task">task</string>
 </resources>
