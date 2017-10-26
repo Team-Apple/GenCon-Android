@@ -9,15 +9,16 @@ import android.view.View
 import android.view.ViewGroup
 import com.github.team_apple.gencon.R
 import com.github.team_apple.gencon.domain.model.EventModel
+import com.github.team_apple.gencon.presentation.util.SpaceItemDecoration
 import kotlinx.android.synthetic.main.fragment_events.*
-import timber.log.Timber
 import javax.inject.Inject
 
 class EventsFragment : Fragment(), EventsContract.View {
     companion object {
         fun newInstance() = EventsFragment()
     }
-    @Inject lateinit var presenter :EventsContract.Presenter
+
+    @Inject lateinit var presenter: EventsContract.Presenter
     @Inject lateinit var navigator: EventsContract.Navigator
     private val adapter = EventsRecyclerAdapter()
 
@@ -25,6 +26,7 @@ class EventsFragment : Fragment(), EventsContract.View {
         super.onCreate(savedInstanceState)
         EventsComponent.Initializer.init(context).inject(this)
     }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         return inflater.inflate(R.layout.fragment_events, container, false)
     }
@@ -32,6 +34,7 @@ class EventsFragment : Fragment(), EventsContract.View {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recyclerView.layoutManager = LinearLayoutManager(context)
+        recyclerView.addItemDecoration(SpaceItemDecoration.createFromResource(context, R.dimen.dimen_4dp))
         recyclerView.setHasFixedSize(true)
         recyclerView.adapter = adapter
     }
@@ -54,7 +57,6 @@ class EventsFragment : Fragment(), EventsContract.View {
 
     override fun updateEvents(events: List<EventModel>) {
         adapter.updateEvents(events)
-        Timber.d("update event")
     }
 
     override fun setLoadingIndicator(active: Boolean) {
@@ -66,7 +68,7 @@ class EventsFragment : Fragment(), EventsContract.View {
     }
 
     override fun showMessage(message: String) {
-       //todo あとで実装
+        //todo あとで実装
     }
 
 }

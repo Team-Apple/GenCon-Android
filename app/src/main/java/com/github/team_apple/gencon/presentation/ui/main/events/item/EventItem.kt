@@ -11,8 +11,8 @@ class EventItem(val event: EventModel) : Item<ViewHolder>() {
     override fun bind(viewHolder: ViewHolder, position: Int) {
         with(viewHolder.itemView) {
             eventName.text = event.name
-            startTime.text = event.startTime
-            endTime.text = event.endTime
+            startTime.text = context.getString(R.string.start_time, event.startTime)
+            endTime.text = context.getString(R.string.end_time, event.endTime)
         }
     }
 

@@ -1,6 +1,5 @@
 package com.github.team_apple.gencon.presentation.ui.main
 
-import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
@@ -18,16 +17,18 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolBar)
         val adapter = FragmentPagerAdapter(supportFragmentManager)
         viewPager.adapter = adapter
+
     }
 
     class FragmentPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
         companion object {
-            const val ITEM_COUNT = 1
+            const val ITEM_COUNT = 3
         }
 
         override fun getItem(position: Int): Fragment {
             return when (position) {
                 0 -> EventsFragment.newInstance()
+                1,2 -> TestFragment()
                 else -> throw IllegalAccessException("illegal　position. position=$position")
             }
         }

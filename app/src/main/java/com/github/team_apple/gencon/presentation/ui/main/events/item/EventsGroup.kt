@@ -6,6 +6,7 @@ import com.xwray.groupie.UpdatingGroup
 class EventsGroup :UpdatingGroup() {
     private val items = ArrayList<EventItem>()
 
+
     fun updateGroup(events: List<EventModel>){
         items.addAll(events.map {eventModel ->  EventItem(eventModel) })
         update(items)

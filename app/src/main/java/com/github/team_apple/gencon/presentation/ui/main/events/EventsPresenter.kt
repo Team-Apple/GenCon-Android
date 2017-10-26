@@ -24,7 +24,6 @@ class EventsPresenter @Inject constructor(val useCase: EventsUseCase) : EventsCo
 
     }
 
-
     override fun loadTodayEvent() {
         compositeDisposable += useCase.getDailyEvents(DateModel(year = 2017,month = 10,day = 12))
                 .observeOn(AndroidSchedulers.mainThread())
