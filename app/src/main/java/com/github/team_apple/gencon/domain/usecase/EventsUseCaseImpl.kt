@@ -4,8 +4,10 @@ import com.github.team_apple.gencon.domain.model.DateModel
 import com.github.team_apple.gencon.domain.model.EventModel
 import com.github.team_apple.gencon.domain.model.PriorityModel
 import io.reactivex.Single
+import javax.inject.Singleton
 
-class EventsUsecaseImpl : EventsUsecase {
+@Singleton
+class EventsUseCaseImpl : EventsUseCase {
 
     override fun getDailyEvents(date: DateModel): Single<List<EventModel>> {
         val event = EventModel(id = 0, name = "ほげ", memo = "", startTime = "2017/10/26", endTime = "2017/10/26", priority = PriorityModel.Normal)

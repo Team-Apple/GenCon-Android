@@ -1,6 +1,7 @@
 package com.github.team_apple.gencon
 
 import android.app.Application
+import android.content.Context
 import com.github.team_apple.gencon.di.AppComponent
 import com.github.team_apple.gencon.di.AppModule
 import com.github.team_apple.gencon.di.DaggerAppComponent
@@ -19,5 +20,9 @@ class GenConApplication : Application() {
         super.onCreate()
         component.inject(this)
         Timber.plant(timberTree)
+    }
+
+    companion object {
+        fun appComponent(context: Context):AppComponent = (context.applicationContext as GenConApplication).component
     }
 }
