@@ -7,9 +7,8 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentStatePagerAdapter
 import android.support.v7.app.AppCompatActivity
 import com.github.team_apple.gencon.R
+import com.github.team_apple.gencon.presentation.ui.main.events.EventsFragment
 import kotlinx.android.synthetic.main.activity_main.*
-
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,32 +16,24 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolBar)
-        val adapter = FragmentPagerAdapter(this, supportFragmentManager)
-        //tabLayout.setupWithViewPager(viewPager)
-        //bottomNavigationView.set
+        val adapter = FragmentPagerAdapter(supportFragmentManager)
+        viewPager.adapter = adapter
     }
 
-    class FragmentPagerAdapter(private val context: Context, fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
+    class FragmentPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
         companion object {
-            const val ITEM_COUNT = 2
+            const val ITEM_COUNT = 1
         }
 
         override fun getItem(position: Int): Fragment {
             return when (position) {
+                0 -> EventsFragment.newInstance()
                 else -> throw IllegalAccessException("illegal　position. position=$position")
             }
         }
 
         override fun getCount(): Int {
             return ITEM_COUNT
-        }
-
-        override fun getPageTitle(position: Int): CharSequence {
-            return when (position) {
-                0 -> context.getString(R.string.today)
-                1 -> context.getString(R.string.tomorrow)
-                else -> throw IllegalAccessException("illegal　position. position=$position")
-            }
         }
     }
 }
