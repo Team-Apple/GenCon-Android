@@ -3,11 +3,14 @@ package com.github.team_apple.gencon.presentation.ui.main.events
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.github.team_apple.gencon.R
 import com.github.team_apple.gencon.domain.model.EventModel
+import kotlinx.android.synthetic.main.fragment_events.*
+import timber.log.Timber
 import javax.inject.Inject
 
 class EventsFragment : Fragment(), EventsContract.View {
@@ -16,7 +19,7 @@ class EventsFragment : Fragment(), EventsContract.View {
     }
     @Inject lateinit var presenter :EventsContract.Presenter
     @Inject lateinit var navigator: EventsContract.Navigator
-    val adapter = EventsRecyclerAdapter()
+    private val adapter = EventsRecyclerAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,9 +29,17 @@ class EventsFragment : Fragment(), EventsContract.View {
         return inflater.inflate(R.layout.fragment_events, container, false)
     }
 
+    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        recyclerView.layoutManager = LinearLayoutManager(context)
+        recyclerView.setHasFixedSize(true)
+        recyclerView.adapter = adapter
+    }
+
     override fun onResume() {
         super.onResume()
         presenter.onResume(this)
+        presenter.loadTodayEvent()
     }
 
     override fun onPause() {
@@ -42,19 +53,20 @@ class EventsFragment : Fragment(), EventsContract.View {
     }
 
     override fun updateEvents(events: List<EventModel>) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        adapter.updateEvents(events)
+        Timber.d("update event")
     }
 
     override fun setLoadingIndicator(active: Boolean) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        //todo あとで実装
     }
 
     override fun showNoEvents() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        //todo あとで実装
     }
 
     override fun showMessage(message: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+       //todo あとで実装
     }
 
 }

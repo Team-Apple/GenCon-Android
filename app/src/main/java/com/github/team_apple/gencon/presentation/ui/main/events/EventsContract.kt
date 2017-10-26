@@ -8,6 +8,8 @@ interface EventsContract {
         fun onResume(view: View)
         fun onPause()
         fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?)
+
+        fun loadTodayEvent()
     }
 
     interface View {
