@@ -1,4 +1,4 @@
-package com.github.team_apple.gencon.presentation.ui.main
+package com.github.team_apple.gencon.presentation.util
 
 import android.content.Context
 import android.support.design.widget.BottomNavigationView

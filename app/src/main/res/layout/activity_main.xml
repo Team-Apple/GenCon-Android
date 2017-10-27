@@ -19,7 +19,7 @@
             android:minHeight="?attr/actionBarSize" />
     </android.support.design.widget.AppBarLayout>
 
-    <com.github.team_apple.gencon.presentation.util.customview.NoShippableViewPager
+    <com.github.team_apple.gencon.presentation.util.customview.FixedViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -34,7 +34,7 @@
         app:itemBackground="@color/colorPrimary"
         app:itemIconTint="@color/bottom_navigation"
         app:itemTextColor="@color/bottom_navigation"
-        app:layout_behavior=".presentation.ui.main.BottomNavigationViewBehavior"
+        app:layout_behavior=".presentation.util.BottomNavigationViewBehavior"
         app:menu="@menu/menu_main" />
 
 </android.support.design.widget.CoordinatorLayout>

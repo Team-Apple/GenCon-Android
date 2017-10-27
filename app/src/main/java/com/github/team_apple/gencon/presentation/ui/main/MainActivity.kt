@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentStatePagerAdapter
 import android.support.v7.app.AppCompatActivity
 import com.github.team_apple.gencon.R
+import com.github.team_apple.gencon.extension.setupWithViewPager
 import com.github.team_apple.gencon.presentation.ui.main.events.EventsFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolBar)
         val adapter = FragmentPagerAdapter(supportFragmentManager)
         viewPager.adapter = adapter
+        bottomNavigationView.setupWithViewPager(viewPager)
 
     }
 
