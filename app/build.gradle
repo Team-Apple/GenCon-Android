@@ -66,6 +66,10 @@ dependencies {
     //json parser
     compile "com.squareup.moshi:moshi:$moshi_verion"
     compile "com.squareup.moshi:moshi-kotlin:$moshi_verion"
+
+    //calender
+    compile 'com.github.sundeepk:compact-calendar-view:2.0.2.2'
+
     testCompile 'junit:junit:4.12'
 
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
