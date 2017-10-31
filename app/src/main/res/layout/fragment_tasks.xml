@@ -5,9 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
         <com.github.sundeepk.compactcalendarview.CompactCalendarView
             android:layout_width="match_parent"
@@ -15,9 +12,8 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             app:compactCalendarBackgroundColor="@color/colorPrimary"
-            app:compactCalendarCurrentDayBackgroundColor="@color/grey_2300"
-            app:compactCalendarCurrentSelectedDayBackgroundColor="@color/grey_800"
-            app:compactCalendarTextColor="@color/white"
+            app:compactCalendarCurrentDayBackgroundColor="@color/colorAccent"
+            app:compactCalendarCurrentSelectedDayBackgroundColor="@color/grey_500"
+            app:compactCalendarTextColor="@color/grey_300"
             app:compactCalendarTextSize="14sp" />
-    </android.support.v7.widget.CardView>
 </RelativeLayout>
