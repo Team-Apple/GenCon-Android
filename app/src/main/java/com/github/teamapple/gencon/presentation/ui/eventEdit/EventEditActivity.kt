@@ -1,0 +1,12 @@
+package com.github.teamapple.gencon.presentation.ui.eventEdit
+
+import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
+
+class EventEditActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+    }
+}
