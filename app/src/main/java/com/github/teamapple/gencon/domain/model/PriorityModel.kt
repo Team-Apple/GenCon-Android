@@ -5,7 +5,13 @@ enum class PriorityModel {
     Normal,
     High;
 
-    fun from(priority: Int): PriorityModel {
-        return values().filter { it.ordinal == priority }.firstOrNull() ?: Normal
+    companion object {
+        fun from(priority: String): PriorityModel {
+            return when (priority) {
+                "low" -> Low
+                "high" -> High
+                else -> Normal
+            }
+        }
     }
 }

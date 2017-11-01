@@ -1,5 +1,6 @@
 package com.github.teamapple.gencon.presentation.ui.main.events
 
+import android.content.Context
 import android.content.Intent
 import com.github.teamapple.gencon.domain.model.EventModel
 
@@ -18,5 +19,7 @@ interface EventsContract {
         fun showMessage(message: String)
     }
 
-    interface Navigator
+    interface Navigator{
+        fun navigateToEventEdit(context: Context)
+    }
 }

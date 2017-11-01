@@ -7,15 +7,15 @@
     android:layout_height="wrap_content"
     android:background="@color/white"
     app:cardUseCompatPadding="true"
-    app:cardCornerRadius="@dimen/dimen_4dp"
+    app:cardCornerRadius="4dp"
     >
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dimen_16dp"
-        android:layout_marginEnd="@dimen/dimen_16dp"
-        android:layout_marginTop="@dimen/dimen_8dp"
-        android:layout_marginBottom="@dimen/dimen_8dp">
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
         <TextView
             android:id="@+id/eventName"
             android:layout_width="wrap_content"
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/eventName"
             android:layout_toEndOf="@id/startTime"
-            android:layout_marginStart="@dimen/dimen_16dp"
+            android:layout_marginStart="16dp"
             android:textColor="@color/grey_500"
             tools:text="start at: 19:10"/>
 

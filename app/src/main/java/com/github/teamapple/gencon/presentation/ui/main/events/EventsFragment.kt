@@ -10,10 +10,11 @@ import android.view.ViewGroup
 import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.domain.model.EventModel
 import com.github.teamapple.gencon.presentation.common.SpaceItemDecoration
+import com.github.teamapple.gencon.presentation.ui.main.ParentEventSubscriber
 import kotlinx.android.synthetic.main.fragment_events.*
 import javax.inject.Inject
 
-class EventsFragment : Fragment(), EventsContract.View {
+class EventsFragment : Fragment(), EventsContract.View ,ParentEventSubscriber {
     companion object {
         fun newInstance() = EventsFragment()
     }
@@ -34,7 +35,7 @@ class EventsFragment : Fragment(), EventsContract.View {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.addItemDecoration(SpaceItemDecoration.createFromResource(context, R.dimen.dimen_4dp))
+        recyclerView.addItemDecoration(SpaceItemDecoration.createByDpSize(context,4))
         recyclerView.setHasFixedSize(true)
         recyclerView.adapter = adapter
     }
@@ -69,6 +70,10 @@ class EventsFragment : Fragment(), EventsContract.View {
 
     override fun showMessage(message: String) {
         //todo あとで実装
+    }
+
+    override fun onClickCreateButton() {
+        navigator.navigateToEventEdit(activity)
     }
 
 }

@@ -11,8 +11,7 @@
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:elevation="@dimen/dimen_16dp">
+        android:layout_height="wrap_content">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolBar"
@@ -28,12 +27,10 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/dimen_16dp"
-        android:layout_marginStart="@dimen/dimen_16dp"
-        android:layout_marginBottom="@dimen/dimen_16dp"
+        android:layout_margin="@dimen/fab_margin_16dp"
         android:src="@drawable/ic_create_black_24dp"
         app:layout_anchor="@+id/bottomNavigationView"
         app:fabSize="normal"

@@ -16,8 +16,14 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
 
-    <string name="priority_low">Low</string>
-    <string name="priority_normal">Normal</string>
-    <string name="priority_high">High</string>
+    <string name="priority_low">Priority Low</string>
+    <string name="priority_normal">Priority Normal</string>
+    <string name="priority_high">Priority High</string>
+
+    <string name="common_priority">Priority</string>
+    <string name="common_ok">OK</string>
+    <string name="common_cancel">Cancel</string>
+    <string name="all_day">All-Day</string>
+
 
 </resources>
