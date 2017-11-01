@@ -24,6 +24,7 @@
     <string name="common_ok">OK</string>
     <string name="common_cancel">Cancel</string>
     <string name="all_day">All-Day</string>
+    <string name="no_events">no events for today</string>
 
 
 </resources>

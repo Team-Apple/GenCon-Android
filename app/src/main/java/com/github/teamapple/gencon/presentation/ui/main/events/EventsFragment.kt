@@ -13,7 +13,7 @@ import com.github.teamapple.gencon.presentation.ui.main.ParentEventSubscriber
 import kotlinx.android.synthetic.main.fragment_events.*
 import javax.inject.Inject
 
-class EventsFragment : Fragment(), EventsContract.View ,ParentEventSubscriber {
+class EventsFragment : Fragment(), EventsContract.View, ParentEventSubscriber {
     companion object {
         fun newInstance() = EventsFragment()
     }
@@ -35,7 +35,7 @@ class EventsFragment : Fragment(), EventsContract.View ,ParentEventSubscriber {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.addItemDecoration(SpaceItemDecoration.createByDpSize(context,4))
+        recyclerView.addItemDecoration(SpaceItemDecoration.createByDpSize(context, 4))
         recyclerView.setHasFixedSize(true)
         recyclerView.adapter = adapter
     }
@@ -43,7 +43,9 @@ class EventsFragment : Fragment(), EventsContract.View ,ParentEventSubscriber {
     override fun onResume() {
         super.onResume()
         presenter.onResume(this)
-        presenter.loadTodayEvent()
+        if (adapter.isEmpty()) {
+            presenter.loadTodayEvent()
+        }
         swipeRefreshLayout.setOnRefreshListener {
             presenter.loadTodayEvent()
         }
@@ -64,8 +66,14 @@ class EventsFragment : Fragment(), EventsContract.View ,ParentEventSubscriber {
         }
     }
 
-    override fun showNoEvents() {
-        //todo あとで実装
+    override fun setNoEventsView(shown: Boolean) {
+        if (shown) {
+            recyclerView.visibility = View.GONE
+            emptyView.visibility = View.VISIBLE
+        } else {
+            recyclerView.visibility = View.VISIBLE
+            emptyView.visibility = View.GONE
+        }
     }
 
     override fun showMessage(message: String) {

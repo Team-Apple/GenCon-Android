@@ -27,7 +27,7 @@ class EventsPresenter @Inject constructor(private val useCase: EventsUseCase) : 
                 .doOnDispose { view.setLoadingIndicator(false) }
                 .subscribe(
                         { events ->
-                            Timber.d(events.toString())
+                            view.setNoEventsView(events.isEmpty())
                             view.updateEvents(events)
                             view.setLoadingIndicator(false)
 

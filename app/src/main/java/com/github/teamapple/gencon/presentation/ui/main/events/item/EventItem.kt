@@ -6,7 +6,7 @@ import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.row_events_event.view.*
 
-class EventItem(val event: EventModel) : Item<ViewHolder>() {
+class EventItem(private val event: EventModel) : Item<ViewHolder>() {
 
     override fun bind(viewHolder: ViewHolder, position: Int) {
         with(viewHolder.itemView) {

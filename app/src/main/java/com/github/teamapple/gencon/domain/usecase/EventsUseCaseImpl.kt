@@ -32,7 +32,7 @@ class EventsUseCaseImpl @Inject constructor(private val repository: EventsReposi
 
     override fun getTodayEvents(): Single<List<EventModel>> {
         val today = LocalDate.now()
-        return repository.fetchDailyEvents(DateModel(year = today.year, month = today.monthValue, day = today.dayOfMonth))
+        return repository.fetchDailyEvents(DateModel(year = today.year, month = today.monthValue, day = 3))
                 .subscribeOn(Schedulers.io())
                 .map { it.map { EventModel.convert(it, formatter) } }
                 .doOnSuccess { Timber.d(it.toString()) }

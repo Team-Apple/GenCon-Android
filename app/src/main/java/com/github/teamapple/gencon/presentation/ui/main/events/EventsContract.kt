@@ -13,11 +13,11 @@ interface EventsContract {
     interface View {
         fun updateEvents(events: List<EventModel>)
         fun setLoadingIndicator(active: Boolean)
-        fun showNoEvents()
+        fun setNoEventsView(shown: Boolean)
         fun showMessage(message: String)
     }
 
-    interface Navigator{
+    interface Navigator {
         fun navigateToEventEdit(context: Context)
     }
 }

@@ -16,7 +16,7 @@ import javax.inject.Singleton
 @Module(includes = arrayOf(RepositoryModule::class))
 class DataModule {
     companion object {
-        private const val BASE_URL = "http://grapebread.net/testevent/"
+        private const val BASE_URL = "https://gencon-web.herokuapp.com/api/"
     }
 
     @Provides
