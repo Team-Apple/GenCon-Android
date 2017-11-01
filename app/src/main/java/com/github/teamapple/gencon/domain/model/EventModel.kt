@@ -10,13 +10,13 @@ data class EventModel(val id: Int,
                       val priority: PriorityModel
 ){
     companion object {
-        fun convert(response: EventResponse):EventModel{
+        fun convert(response: EventResponse,formatter: DateFormatter):EventModel{
             return EventModel(
                     id = response.id,
                     name = response.title,
                     memo = response.memo?:"",
-                    startTime = response.startAt,
-                    endTime = response.endAt,
+                    startTime = formatter.format(response.startAt),
+                    endTime = formatter.format(response.endAt),
                     priority = PriorityModel.from(response.priority)
                     )
         }

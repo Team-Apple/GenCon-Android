@@ -7,6 +7,6 @@ import retrofit2.http.Query
 
 interface ApiClient{
 
-    @GET("events.json")
+    @GET("event")
     fun fetchDailyEvents(@Query("start_at_date") startDate:String): Single<List<EventResponse>>
 }

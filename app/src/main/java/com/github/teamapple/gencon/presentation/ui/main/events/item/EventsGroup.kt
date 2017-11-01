@@ -8,6 +8,7 @@ class EventsGroup :UpdatingGroup() {
 
 
     fun updateGroup(events: List<EventModel>){
+        items.clear()
         items.addAll(events.map {eventModel ->  EventItem(eventModel) })
         update(items)
     }

@@ -20,6 +20,7 @@ class EventsFragment : Fragment(), EventsContract.View ,ParentEventSubscriber {
 
     @Inject lateinit var presenter: EventsContract.Presenter
     @Inject lateinit var navigator: EventsContract.Navigator
+
     private val adapter = EventsRecyclerAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,6 +44,9 @@ class EventsFragment : Fragment(), EventsContract.View ,ParentEventSubscriber {
         super.onResume()
         presenter.onResume(this)
         presenter.loadTodayEvent()
+        swipeRefreshLayout.setOnRefreshListener {
+            presenter.loadTodayEvent()
+        }
     }
 
     override fun onPause() {
