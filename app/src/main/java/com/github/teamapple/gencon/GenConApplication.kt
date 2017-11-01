@@ -5,6 +5,7 @@ import android.content.Context
 import com.github.teamapple.gencon.di.AppComponent
 import com.github.teamapple.gencon.di.AppModule
 import com.github.teamapple.gencon.di.DaggerAppComponent
+import com.jakewharton.threetenabp.AndroidThreeTen
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -20,6 +21,7 @@ class GenConApplication : Application() {
         super.onCreate()
         component.inject(this)
         Timber.plant(timberTree)
+        AndroidThreeTen.init(this);
     }
 
     companion object {

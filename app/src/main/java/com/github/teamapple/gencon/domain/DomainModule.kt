@@ -9,6 +9,7 @@ import javax.inject.Singleton
 @Module
 abstract class DomainModule{
 
+
     @Binds
     @Singleton
     abstract fun bindsEventsUsecase(impl:EventsUseCaseImpl): EventsUseCase

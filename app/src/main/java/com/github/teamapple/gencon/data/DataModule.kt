@@ -1,20 +1,22 @@
 package com.github.teamapple.gencon.data
 
+import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.github.teamapple.gencon.data.network.ApiClient
 import com.squareup.moshi.KotlinJsonAdapterFactory
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
 
-@Module
-class DetaModule {
+@Module(includes = arrayOf(RepositoryModule::class))
+class DataModule {
     companion object {
-        private const val BASE_URL = "https://gencon-web.herokuapp.com/api"
+        private const val BASE_URL = "https://gencon-web.herokuapp.com/api/"
     }
 
     @Provides
@@ -44,8 +46,13 @@ class DetaModule {
 
     @Provides
     @Singleton
-    private fun okhhtp3Client(): OkHttpClient{
-        return OkHttpClient.Builder().build()
+    fun provideOkHttpClient(): OkHttpClient{
+        return OkHttpClient.Builder()
+                .addInterceptor(StethoInterceptor())
+                .addInterceptor(HttpLoggingInterceptor().apply {
+                    level = HttpLoggingInterceptor.Level.HEADERS
+                })
+                .build()
     }
 
 }

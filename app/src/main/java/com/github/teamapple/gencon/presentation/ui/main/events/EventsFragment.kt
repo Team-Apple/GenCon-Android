@@ -1,6 +1,5 @@
 package com.github.teamapple.gencon.presentation.ui.main.events
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -51,17 +50,14 @@ class EventsFragment : Fragment(), EventsContract.View ,ParentEventSubscriber {
         presenter.onPause()
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        presenter.onActivityResult(requestCode, resultCode, data)
-    }
-
     override fun updateEvents(events: List<EventModel>) {
         adapter.updateEvents(events)
     }
 
     override fun setLoadingIndicator(active: Boolean) {
-        //todo あとで実装
+        swipeRefreshLayout.post {
+            swipeRefreshLayout.isRefreshing = active
+        }
     }
 
     override fun showNoEvents() {

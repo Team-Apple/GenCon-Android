@@ -6,4 +6,5 @@ import io.reactivex.Single
 
 interface EventsUseCase {
     fun getDailyEvents(date: DateModel): Single<List<EventModel>>
+    fun getTodayEvents(): Single<List<EventModel>>
 }
