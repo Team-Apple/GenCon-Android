@@ -24,10 +24,11 @@
     <string name="common_ok">OK</string>
     <string name="common_cancel">Cancel</string>
     <string name="all_day">All-Day</string>
-    <string name="no_events">no events for today</string>
+    <string name="no_events">There is no events of today</string>
     <string name="common_date">Date</string>
     <string name="common_memo">Memo</string>
     <string name="event_edit_hint_text">Please input title</string>
+    <string name="no_tasks">There is no tasks of today</string>
 
 
 </resources>
