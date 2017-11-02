@@ -1,7 +1,7 @@
 package com.github.teamapple.gencon.extension
 
 import android.support.design.widget.BottomNavigationView
-import com.github.teamapple.gencon.presentation.common.customviews.FixedViewPager
+import com.github.teamapple.wiget.FixedViewPager
 
 fun BottomNavigationView.setupWithViewPager(viewPager: FixedViewPager) {
     val menuItems = 0.until(this.menu.size()).map { index-> this.menu.getItem(index) }

@@ -3,6 +3,7 @@ package com.github.teamapple.gencon.domain.usecase
 import com.github.teamapple.gencon.domain.model.DateFormatter
 import com.github.teamapple.gencon.domain.model.DateModel
 import com.github.teamapple.gencon.domain.model.EventModel
+import com.github.teamapple.gencon.domain.model.PriorityModel
 import com.github.teamapple.gencon.domain.repository.EventsRepository
 import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
@@ -32,7 +33,9 @@ class EventsUseCaseImpl @Inject constructor(private val repository: EventsReposi
 
     override fun getTodayEvents(): Single<List<EventModel>> {
         val today = LocalDate.now()
-        return repository.fetchDailyEvents(DateModel(year = today.year, month = today.monthValue, day = 3))
+        val event = EventModel(id = 0, name = "hoge", memo = "", startTime = "10:20", endTime = "10:30", priority = PriorityModel.Normal)
+        return Single.just(0.until(20).map { event.copy() }).subscribeOn(Schedulers.io())
+        return repository.fetchDailyEvents(DateModel(year = today.year, month = today.monthValue, day = today.dayOfMonth))
                 .subscribeOn(Schedulers.io())
                 .map { it.map { EventModel.convert(it, formatter) } }
                 .doOnSuccess { Timber.d(it.toString()) }

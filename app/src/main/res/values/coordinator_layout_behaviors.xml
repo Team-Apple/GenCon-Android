@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="bottom_navigation_view_behavior" translatable="false">.presentation.util.customview.behavior.BottomNavigationViewBehavior</string>
+    <string name="bottom_navigation_view_behavior" translatable="false">.presentation.ui.main.BottomNavigationViewBehavior</string>
  </resources>

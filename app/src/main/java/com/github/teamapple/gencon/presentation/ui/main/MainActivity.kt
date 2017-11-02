@@ -10,26 +10,29 @@ import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.extension.setupWithViewPager
 import com.github.teamapple.gencon.presentation.ui.main.events.EventsFragment
 import kotlinx.android.synthetic.main.activity_main.*
+import org.threeten.bp.LocalDate
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolBar)
+        //setSupportActionBar(toolBar)
         supportActionBar?.apply {
             setDisplayShowTitleEnabled(false)
         }
         val adapter = FragmentPagerAdapter(supportFragmentManager)
         viewPager.adapter = adapter
+
+        val today = LocalDate.now()
+
         bottomNavigationView.setupWithViewPager(viewPager)
-        fab.setOnClickListener {
+        /*fab.setOnClickListener {
             val selectedFragment = adapter.getCurrentFragment()
             if (selectedFragment is ParentEventSubscriber){
                 selectedFragment.onClickCreateButton()
             }
-        }
-
+        }*/
     }
 
     class FragmentPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {

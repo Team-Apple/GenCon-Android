@@ -7,7 +7,9 @@ import com.xwray.groupie.ViewHolder
 
 class EventsRecyclerAdapter : GroupAdapter<ViewHolder>(){
     private val eventsGroup = EventsGroup()
-
+    init {
+        add(eventsGroup)
+    }
     fun updateEvents(events: List<EventModel>) {
         eventsGroup.updateGroup(events)
     }

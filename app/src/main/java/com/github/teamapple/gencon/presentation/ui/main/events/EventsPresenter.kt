@@ -30,6 +30,7 @@ class EventsPresenter @Inject constructor(private val useCase: EventsUseCase) : 
                             view.setNoEventsView(events.isEmpty())
                             view.updateEvents(events)
                             view.setLoadingIndicator(false)
+                            Timber.d(events.toString())
 
                         },
                         {
