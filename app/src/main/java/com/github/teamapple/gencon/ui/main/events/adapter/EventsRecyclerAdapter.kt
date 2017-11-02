@@ -1,7 +1,6 @@
-package com.github.teamapple.gencon.ui.main.events
+package com.github.teamapple.gencon.ui.main.events.adapter
 
 import com.github.teamapple.gencon.domain.model.EventModel
-import com.github.teamapple.gencon.ui.main.events.item.EventsGroup
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
 

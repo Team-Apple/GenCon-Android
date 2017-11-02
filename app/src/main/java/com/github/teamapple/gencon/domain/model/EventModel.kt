@@ -1,6 +1,7 @@
 package com.github.teamapple.gencon.domain.model
 
 import com.github.teamapple.gencon.data.entity.response.EventResponse
+import com.github.teamapple.gencon.domain.util.DateFormatter
 
 data class EventModel(val id: Int,
                       val name: String,
@@ -10,7 +11,7 @@ data class EventModel(val id: Int,
                       val priority: PriorityModel
 ){
     companion object {
-        fun convert(response: EventResponse,formatter: DateFormatter):EventModel{
+        internal fun convert(response: EventResponse,formatter: DateFormatter):EventModel{
             return EventModel(
                     id = response.id,
                     name = response.title,

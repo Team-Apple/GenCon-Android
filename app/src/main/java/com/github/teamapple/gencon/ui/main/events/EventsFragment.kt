@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.domain.model.EventModel
 import com.github.teamapple.gencon.ui.main.ParentEventSubscriber
+import com.github.teamapple.gencon.ui.main.events.adapter.EventsRecyclerAdapter
 import com.github.teamapple.widget.SpaceItemDecoration
 import kotlinx.android.synthetic.main.fragment_events.*
 import javax.inject.Inject

@@ -6,7 +6,7 @@ enum class PriorityModel {
     High;
 
     companion object {
-        fun from(priority: String): PriorityModel {
+        internal fun from(priority: String): PriorityModel {
             return when (priority) {
                 "low" -> Low
                 "high" -> High

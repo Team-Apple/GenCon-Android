@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.ui.main.tasks.item
+package com.github.teamapple.gencon.ui.main.events.adapter
 
 import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.domain.model.EventModel
@@ -6,7 +6,7 @@ import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.row_events_event.view.*
 
-class TaskItem(private val event: EventModel) : Item<ViewHolder>() {
+class EventItem(private val event: EventModel) : Item<ViewHolder>() {
 
     override fun bind(viewHolder: ViewHolder, position: Int) {
         with(viewHolder.itemView) {

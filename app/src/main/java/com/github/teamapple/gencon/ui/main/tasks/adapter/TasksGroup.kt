@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.ui.main.tasks.item
+package com.github.teamapple.gencon.ui.main.tasks.adapter
 
 import com.xwray.groupie.UpdatingGroup
 

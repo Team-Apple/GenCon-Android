@@ -1,10 +1,10 @@
 package com.github.teamapple.gencon.domain.usecase
 
-import com.github.teamapple.gencon.domain.model.DateFormatter
 import com.github.teamapple.gencon.domain.model.DateModel
 import com.github.teamapple.gencon.domain.model.EventModel
 import com.github.teamapple.gencon.domain.model.PriorityModel
 import com.github.teamapple.gencon.domain.repository.EventsRepository
+import com.github.teamapple.gencon.domain.util.DateFormatter
 import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
 import org.threeten.bp.LocalDate
