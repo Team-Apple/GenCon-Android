@@ -1,4 +1,4 @@
-package com.github.teamapple.wiget
+package com.github.teamapple.widget
 
 import android.content.Context
 import android.graphics.Rect

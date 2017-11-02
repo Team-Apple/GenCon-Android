@@ -1,4 +1,4 @@
-package com.github.teamapple.wiget
+package com.github.teamapple.widget
 
 import android.annotation.SuppressLint
 import android.content.Context

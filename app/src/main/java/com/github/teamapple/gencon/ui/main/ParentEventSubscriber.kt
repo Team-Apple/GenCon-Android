@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.presentation.ui.main
+package com.github.teamapple.gencon.ui.main
 
 interface ParentEventSubscriber {
     fun onClickCreateButton()

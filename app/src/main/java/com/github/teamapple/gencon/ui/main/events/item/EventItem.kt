@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.presentation.ui.main.events.item
+package com.github.teamapple.gencon.ui.main.events.item
 
 import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.domain.model.EventModel

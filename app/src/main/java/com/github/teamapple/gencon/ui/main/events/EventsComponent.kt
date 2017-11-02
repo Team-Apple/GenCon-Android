@@ -1,10 +1,9 @@
-package com.github.teamapple.gencon.presentation.ui.main.events
+package com.github.teamapple.gencon.ui.main.events
 
 import android.content.Context
 import com.github.teamapple.gencon.GenConApplication
 import com.github.teamapple.gencon.di.AppComponent
 import com.github.teamapple.gencon.di.scopes.FragmentScope
-import com.github.teamapple.gencon.presentation.ui.main.events.DaggerEventsComponent
 import dagger.Component
 
 @FragmentScope

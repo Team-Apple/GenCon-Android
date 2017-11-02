@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="bottom_navigation_view_behavior" translatable="false">.presentation.ui.main.BottomNavigationViewBehavior</string>
- </resources>
+    <string name="bottom_navigation_view_behavior" translatable="false">com.github.teamapple.wiget.BottomNavigationViewBehavior</string>
+    <string name="header_layout_scrolling_view_behavior" translatable="false">com.github.teamapple.wiget.HeaderLayoutScrollingViewBehavior</string>
+</resources>

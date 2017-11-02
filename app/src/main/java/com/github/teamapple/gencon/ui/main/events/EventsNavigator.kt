@@ -1,7 +1,7 @@
-package com.github.teamapple.gencon.presentation.ui.main.events
+package com.github.teamapple.gencon.ui.main.events
 
 import android.content.Context
-import com.github.teamapple.gencon.presentation.ui.eventEdit.EventEditActivity
+import com.github.teamapple.gencon.ui.eventEdit.EventEditActivity
 import javax.inject.Inject
 
 class EventsNavigator @Inject constructor() : EventsContract.Navigator {

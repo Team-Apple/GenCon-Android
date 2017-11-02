@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.presentation.ui.main
+package com.github.teamapple.gencon.ui.main
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.ViewGroup
 import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.extension.setupWithViewPager
-import com.github.teamapple.gencon.presentation.ui.main.events.EventsFragment
+import com.github.teamapple.gencon.ui.main.events.EventsFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        //setSupportActionBar(toolBar)
+        setSupportActionBar(toolBar)
         supportActionBar?.apply {
             setDisplayShowTitleEnabled(false)
         }

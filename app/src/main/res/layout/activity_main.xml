@@ -6,12 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".presentation.ui.main.MainActivity">
+    tools:context=".ui.main.MainActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:elevation="@dimen/dimen_20dp">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolBar"
@@ -20,11 +21,22 @@
             android:background="?attr/colorPrimary" />
     </android.support.design.widget.AppBarLayout>
 
-    <com.github.teamapple.wiget.FixedViewPager
-        android:id="@+id/viewPager"
+    <android.support.design.widget.CoordinatorLayout
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <com.github.teamapple.widget.HeaderLayout
+            android:id="@+id/dummy"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/colorAccent"
+            />
+        <com.github.teamapple.widget.FixedViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </android.support.design.widget.CoordinatorLayout>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -32,6 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/general_fab_margin_16dp"
         android:src="@drawable/ic_create_black_24dp"
+        android:tint="@color/white"
         app:fabSize="normal"
         app:layout_anchor="@+id/bottomNavigationView"
         app:layout_anchorGravity="bottom|end"
@@ -45,7 +58,7 @@
         app:itemBackground="@color/colorPrimary"
         app:itemIconTint="@color/bottom_navigation"
         app:itemTextColor="@color/bottom_navigation"
-        app:layout_behavior="@string/bottom_navigation_view_behavior"
-        app:menu="@menu/bottom_navigation" />
+        app:menu="@menu/bottom_navigation"
+        app:layout_behavior="com.github.teamapple.widget.BottomNavigationViewBehavior"/>
 
 </android.support.design.widget.CoordinatorLayout>

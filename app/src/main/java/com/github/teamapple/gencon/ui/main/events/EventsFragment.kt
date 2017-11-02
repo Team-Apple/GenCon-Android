@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.presentation.ui.main.events
+package com.github.teamapple.gencon.ui.main.events
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -8,8 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.domain.model.EventModel
-import com.github.teamapple.wiget.SpaceItemDecoration
-import com.github.teamapple.gencon.presentation.ui.main.ParentEventSubscriber
+import com.github.teamapple.gencon.ui.main.ParentEventSubscriber
+import com.github.teamapple.widget.SpaceItemDecoration
 import kotlinx.android.synthetic.main.fragment_events.*
 import javax.inject.Inject
 

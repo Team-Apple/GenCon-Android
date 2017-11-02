@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.presentation.ui.eventEdit
+package com.github.teamapple.gencon.ui.eventEdit
 
 import android.content.Context
 import android.content.Intent
