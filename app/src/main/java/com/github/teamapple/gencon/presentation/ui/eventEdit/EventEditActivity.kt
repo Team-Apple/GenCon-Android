@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.github.teamapple.gencon.presentation.common.dialogs.PrioritySelectDialogFragment
+import com.github.teamapple.gencon.R
 
 class EventEditActivity : AppCompatActivity() {
 
@@ -16,6 +16,7 @@ class EventEditActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        PrioritySelectDialogFragment.newInstance().show(supportFragmentManager,"PrioritySelectDialogFragment")
+        setContentView(R.layout.activity_event_edit)
+        //PrioritySelectDialogFragment.newInstance().show(supportFragmentManager,"PrioritySelectDialogFragment")
     }
 }
