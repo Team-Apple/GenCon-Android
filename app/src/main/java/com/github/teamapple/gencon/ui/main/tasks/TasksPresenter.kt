@@ -1,7 +1,7 @@
 package com.github.teamapple.gencon.ui.main.tasks
 
 import com.github.teamapple.gencon.domain.model.DateModel
-import com.github.teamapple.gencon.domain.usecase.EventsUseCase
+import com.github.teamapple.gencon.domain.usecase.TasksUseCase
 import com.github.teamapple.gencon.extension.plusAssign
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -9,7 +9,7 @@ import timber.log.Timber
 import javax.inject.Inject
 
 
-class TasksPresenter @Inject constructor(private val useCase: EventsUseCase) : TasksContract.Presenter {
+class TasksPresenter @Inject constructor(private val useCase: TasksUseCase) : TasksContract.Presenter {
     private lateinit var view: TasksContract.View
     private val compositeDisposable = CompositeDisposable()
 

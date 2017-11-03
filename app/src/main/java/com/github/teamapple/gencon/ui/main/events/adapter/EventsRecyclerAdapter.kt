@@ -5,7 +5,7 @@ import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
 
 class EventsRecyclerAdapter : GroupAdapter<ViewHolder>(){
-    private val eventsGroup = TasksGroup()
+    private val eventsGroup = EventsGroup()
     init {
         add(eventsGroup)
     }
