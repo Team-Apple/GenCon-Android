@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         }
         val adapter = BottomNavigationFragmentAdapter(supportFragmentManager)
         binding.viewPager.adapter = adapter
+        binding.viewPager.offscreenPageLimit = 3
         binding.bottomNavigation.setupWithViewPager(binding.viewPager)
         binding.floatingActionButton.setOnClickListener {
             val selectedFragment = adapter.getCurrentFragment()

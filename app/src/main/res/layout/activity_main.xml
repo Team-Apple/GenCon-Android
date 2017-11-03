@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
 
-    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/root"
@@ -19,28 +20,7 @@
                 android:id="@+id/tool_bar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:contentInsetStart="@dimen/dimen_48dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <android.support.v7.widget.AppCompatTextView
-                        style="@style/GenConFont.Base.Title.White"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        tools:text="Tus, 2017 20 " />
-
-                    <android.support.v7.widget.AppCompatImageView
-                        android:layout_width="@dimen/dimen_32dp"
-                        android:layout_height="@dimen/dimen_32dp"
-                        android:layout_gravity="center_vertical"
-                        android:src="@drawable/ic_arrow_drop_down_black_24dp"
-                        android:tint="@color/grey_300" />
-
-                </LinearLayout>
-            </android.support.v7.widget.Toolbar>
+                style="@style/GenConFont.Base.Title"/>
         </android.support.design.widget.AppBarLayout>
 
         <com.github.teamapple.widget.FixedViewPager
@@ -57,7 +37,7 @@
             android:src="@drawable/ic_create_black_24dp"
             android:tint="@color/white"
             app:fabSize="normal"
-            app:layout_anchor="@+id/bottomNavigationView"
+            app:layout_anchor="@+id/bottom_navigation"
             app:layout_anchorGravity="bottom|end"
             app:layout_insetEdge="bottom" />
 
