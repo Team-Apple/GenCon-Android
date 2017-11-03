@@ -11,5 +11,4 @@
         android:id="@+id/announce_item"
         android:icon="@drawable/ic_announce_black_24dp"
         android:title="@string/announce" />
-
 </menu>

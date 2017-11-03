@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import com.github.teamapple.gencon.R
+import timber.log.Timber
 
 
 class HeaderLayout @JvmOverloads constructor(
@@ -62,8 +63,6 @@ class HeaderLayout @JvmOverloads constructor(
 
     @Suppress("unused")
     class PullableViewBehavior(context: Context, attrs: AttributeSet) : CoordinatorLayout.Behavior<View>(context, attrs) {
-        private var height = 0
-        private var lastHeightDiff = 0
         private val minHeight: Int
         private var animating = false
 
@@ -83,10 +82,13 @@ class HeaderLayout @JvmOverloads constructor(
         override fun onNestedScroll(coordinatorLayout: CoordinatorLayout, child: View, target: View,
                                     dxConsumed: Int, dyConsumed: Int, dxUnconsumed: Int, dyUnconsumed: Int) {
             super.onNestedScroll(coordinatorLayout, child, target, dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed)
-            if (dyConsumed > 0 && !animating) {
+            Timber.d("onNestedScroll dx:$dxConsumed dy:$dyConsumed")
+            if (dyConsumed > 0) {
                 animate(child.height, minHeight, child)
             }
         }
+
+
 
         private fun animate(startValue: Int, endValue: Int, view: View) {
             val animator = ValueAnimator.ofInt(startValue, endValue)

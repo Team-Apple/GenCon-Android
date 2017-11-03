@@ -1,104 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/root"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context=".ui.main.MainActivity">
+<layout>
 
-
-    <com.github.teamapple.widget.HeaderLayout
-        android:id="@+id/headerLayout"
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/root"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:orientation="vertical"
-        app:layout_behavior="com.github.teamapple.widget.HeaderLayout$PullableViewBehavior"
-        app:min_height="?attr/actionBarSize">
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".ui.main.MainActivity">
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize" />
-
-        <FrameLayout
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/app_bar_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.github.sundeepk.compactcalendarview.CompactCalendarView
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/tool_bar"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                app:compactCalendarBackgroundColor="@color/colorPrimary"
-                app:compactCalendarCurrentDayBackgroundColor="@color/colorAccent"
-                app:compactCalendarCurrentSelectedDayBackgroundColor="@color/grey_500"
-                app:compactCalendarTextColor="@color/grey_300"
-                app:compactCalendarTextSize="14sp" />
-        </FrameLayout>
+                android:layout_height="?attr/actionBarSize"
+                app:contentInsetStart="@dimen/dimen_48dp">
 
-    </com.github.teamapple.widget.HeaderLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appBarLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:elevation="0dp">
+                    <android.support.v7.widget.AppCompatTextView
+                        style="@style/GenConFont.Base.Title.White"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        tools:text="Tus, 2017 20 " />
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolBar"
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="@dimen/dimen_32dp"
+                        android:layout_height="@dimen/dimen_32dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_arrow_drop_down_black_24dp"
+                        android:tint="@color/grey_300" />
+
+                </LinearLayout>
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.AppBarLayout>
+
+        <com.github.teamapple.widget.FixedViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/floating_action_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/general_fab_margin"
+            android:src="@drawable/ic_create_black_24dp"
+            android:tint="@color/white"
+            app:fabSize="normal"
+            app:layout_anchor="@+id/bottomNavigationView"
+            app:layout_anchorGravity="bottom|end"
+            app:layout_insetEdge="bottom" />
+
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary">
+            android:layout_gravity="bottom"
+            app:itemBackground="@color/colorPrimary"
+            app:itemIconTint="@color/bottom_navigation"
+            app:itemTextColor="@color/bottom_navigation"
+            app:layout_behavior="com.github.teamapple.widget.BottomNavigationViewBehavior"
+            app:menu="@menu/bottom_navigation" />
 
-            <LinearLayout
-                android:id="@+id/hoge"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackground" >
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    style="@style/GenConFont.Base.Title"
-                    android:textColor="@color/white"
-                    android:text="カレンダー"
-                    android:gravity="center_vertical"/>
-            </LinearLayout>
-
-        </android.support.v7.widget.Toolbar>
-    </android.support.design.widget.AppBarLayout>
-
-
-    <com.github.teamapple.widget.FixedViewPager
-        android:id="@+id/viewPager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="com.github.teamapple.widget.HeaderLayout$ScrollingViewBehavior" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/general_fab_margin"
-        android:src="@drawable/ic_create_black_24dp"
-        android:tint="@color/white"
-        app:fabSize="normal"
-        app:layout_anchor="@+id/bottomNavigationView"
-        app:layout_anchorGravity="bottom|end"
-        app:layout_insetEdge="bottom" />
-
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:layout_gravity="bottom"
-        app:itemBackground="@color/colorPrimary"
-        app:itemIconTint="@color/bottom_navigation"
-        app:itemTextColor="@color/bottom_navigation"
-        app:layout_behavior="com.github.teamapple.widget.BottomNavigationViewBehavior"
-        app:menu="@menu/bottom_navigation" />
-
-</android.support.design.widget.CoordinatorLayout>
+    </android.support.design.widget.CoordinatorLayout>
+</layout>
