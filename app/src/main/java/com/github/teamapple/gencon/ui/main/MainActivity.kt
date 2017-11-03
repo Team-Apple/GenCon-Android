@@ -30,6 +30,9 @@ class MainActivity : AppCompatActivity() {
                 selectedFragment.onClickCreateButton()
             }
         }
+        hoge.setOnClickListener{
+            //headerLayout.setExpanded()
+        }
     }
 
     class FragmentPagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {

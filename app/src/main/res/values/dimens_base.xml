@@ -31,7 +31,8 @@
     <dimen name="general_text_headline">@dimen/dimen_24sp</dimen>
 
 
-    <dimen name="general_fab_margin_16dp">@dimen/dimen_16dp</dimen>
+    <dimen name="general_toolbar_margin">@dimen/dimen_16dp</dimen>
+    <dimen name="general_fab_margin">@dimen/dimen_16dp</dimen>
 
 
     <!-- Form Item Layout-->

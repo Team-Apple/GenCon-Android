@@ -8,13 +8,17 @@ import android.support.v4.view.ViewCompat
 import android.util.AttributeSet
 import android.view.View
 import android.view.ViewGroup
-import android.widget.FrameLayout
+import android.widget.LinearLayout
 import com.github.teamapple.gencon.R
 
 
 class HeaderLayout @JvmOverloads constructor(
         context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
-) : FrameLayout(context, attrs, defStyleAttr) {
+) : LinearLayout(context, attrs, defStyleAttr) {
+
+    fun setExpanded(expanded: Boolean) {
+
+    }
 
     @Suppress("unused")
     class ScrollingViewBehavior(context: Context, attrs: AttributeSet) : CoordinatorLayout.Behavior<View>(context, attrs) {
@@ -66,11 +70,10 @@ class HeaderLayout @JvmOverloads constructor(
         init {
             val typedArray = context.obtainStyledAttributes(attrs, R.styleable.PullableViewBehaviorParams)
             minHeight = typedArray.getDimensionPixelSize(R.styleable.PullableViewBehaviorParams_min_height, 0)
-            if (minHeight == 0){
+            typedArray.recycle()
+            if (minHeight == 0) {
                 throw IllegalAccessException("required min_height attributes ")
             }
-            typedArray.recycle()
-
         }
 
         override fun onStartNestedScroll(coordinatorLayout: CoordinatorLayout?, child: View?, directTargetChild: View?, target: View?, nestedScrollAxes: Int): Boolean {
