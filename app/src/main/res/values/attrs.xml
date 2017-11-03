@@ -5,4 +5,8 @@
         <attr name="form_caption" format="string"/>
         <attr name="form_icon" format="reference"/>
     </declare-styleable>
+
+    <declare-styleable name="PullableViewBehaviorParams">
+        <attr name="min_height" format="dimension"/>
+    </declare-styleable>
 </resources>
