@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.databinding.ActivityMainBinding
 import com.github.teamapple.gencon.extension.setupWithViewPager
+import com.github.teamapple.gencon.ui.main.announce.AnnounceFragment
 import com.github.teamapple.gencon.ui.main.events.EventsFragment
 import com.github.teamapple.gencon.ui.main.tasks.TasksFragment
 
@@ -57,7 +58,7 @@ class MainActivity : AppCompatActivity() {
             return when (position) {
                 0 -> EventsFragment.newInstance()
                 1 -> TasksFragment.newInstance()
-                2 -> TestFragment()
+                2 -> AnnounceFragment()
                 else -> throw IllegalAccessException("illegal　position. position=$position")
             }
         }
