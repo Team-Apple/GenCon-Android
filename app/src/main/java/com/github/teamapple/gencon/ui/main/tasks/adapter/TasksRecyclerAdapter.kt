@@ -1,17 +1,16 @@
 package com.github.teamapple.gencon.ui.main.tasks.adapter
 
-import com.github.teamapple.gencon.domain.model.EventModel
-import com.github.teamapple.gencon.ui.main.events.adapter.EventsGroup
+import com.github.teamapple.gencon.domain.model.TaskModel
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
 
 class TasksRecyclerAdapter : GroupAdapter<ViewHolder>(){
-    private val eventsGroup = EventsGroup()
+    private val eventsGroup = TasksGroup()
     init {
         add(eventsGroup)
     }
-    fun updateTasks(events: List<EventModel>) {
-        eventsGroup.updateGroup(events)
+    fun updateTasks(tasks: List<TaskModel>) {
+        eventsGroup.updateGroup(tasks)
     }
 
     fun isEmpty():Boolean{

@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.github.teamapple.gencon.databinding.FragmentTasksBinding
 import com.github.teamapple.gencon.domain.model.DateModel
-import com.github.teamapple.gencon.domain.model.EventModel
+import com.github.teamapple.gencon.domain.model.TaskModel
 import com.github.teamapple.gencon.extension.visibility
 import com.github.teamapple.gencon.ui.main.BottomNavigationViewChild
 import com.github.teamapple.gencon.ui.main.tasks.adapter.TasksRecyclerAdapter
@@ -67,7 +67,7 @@ class TasksFragment : Fragment(), TasksContract.View, BottomNavigationViewChild 
         presenter.onPause()
     }
 
-    override fun updateEvents(events: List<EventModel>) {
+    override fun updateEvents(events: List<TaskModel>) {
         adapter.updateTasks(events)
     }
 
