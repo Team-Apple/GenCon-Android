@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="bottom_navigation_view_behavior" translatable="false">com.github.teamapple.wiget.BottomNavigationViewBehavior</string>
-    <string name="header_layout_scrolling_view_behavior" translatable="false">com.github.teamapple.wiget.HeaderLayoutScrollingViewBehavior</string>
-    <string name="floating_action_button_behavior" translatable="false">com.github.teamapple.wiget.FloatingActionButtonBehavior</string>
+    <string name="bottom_navigation_view_behavior" translatable="false">com.github.teamapple.widget.BottomNavigationViewBehavior</string>
+    <string name="header_layout_scrolling_view_behavior" translatable="false">com.github.teamapple.widget.HeaderLayoutScrollingViewBehavior</string>
+    <string name="floating_action_button_behavior" translatable="false">com.github.teamapple.widget.FloatingActionButtonBehavior</string>
 </resources>

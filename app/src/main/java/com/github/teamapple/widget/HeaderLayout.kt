@@ -17,9 +17,6 @@ class HeaderLayout @JvmOverloads constructor(
         context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : LinearLayout(context, attrs, defStyleAttr) {
 
-    fun setExpanded(expanded: Boolean) {
-
-    }
 
     @Suppress("unused")
     class ScrollingViewBehavior(context: Context, attrs: AttributeSet) : CoordinatorLayout.Behavior<View>(context, attrs) {
