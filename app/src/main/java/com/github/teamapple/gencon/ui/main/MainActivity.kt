@@ -11,6 +11,7 @@ import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.databinding.ActivityMainBinding
 import com.github.teamapple.gencon.extension.setupWithViewPager
 import com.github.teamapple.gencon.ui.main.events.EventsFragment
+import com.github.teamapple.gencon.ui.main.tasks.TasksFragment
 
 class MainActivity : AppCompatActivity() {
     private val binding: ActivityMainBinding by lazy { DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main) }
@@ -24,10 +25,14 @@ class MainActivity : AppCompatActivity() {
         val adapter = BottomNavigationFragmentAdapter(supportFragmentManager)
         binding.viewPager.adapter = adapter
         binding.viewPager.offscreenPageLimit = 3
-        binding.bottomNavigation.setupWithViewPager(binding.viewPager)
+        binding.toolBar.title = binding.bottomNavigation.let { menu -> menu.menu.findItem(menu.selectedItemId).title }
+        binding.bottomNavigation.setupWithViewPager(binding.viewPager) { menuItem ->
+            binding.toolBar.title = menuItem.title
+        }
+
         binding.floatingActionButton.setOnClickListener {
             val selectedFragment = adapter.getCurrentFragment()
-            if (selectedFragment is ParentEventSubscriber) {
+            if (selectedFragment is BottomNavigationViewChild) {
                 selectedFragment.onClickCreateButton()
             }
         }
@@ -51,7 +56,8 @@ class MainActivity : AppCompatActivity() {
         override fun getItem(position: Int): Fragment {
             return when (position) {
                 0 -> EventsFragment.newInstance()
-                1, 2 -> TestFragment()
+                1 -> TasksFragment.newInstance()
+                2 -> TestFragment()
                 else -> throw IllegalAccessException("illegal　position. position=$position")
             }
         }

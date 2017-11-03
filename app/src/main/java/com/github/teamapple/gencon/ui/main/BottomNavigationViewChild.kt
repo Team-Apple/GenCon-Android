@@ -1,5 +1,5 @@
 package com.github.teamapple.gencon.ui.main
 
-interface ParentEventSubscriber {
+interface BottomNavigationViewChild {
     fun onClickCreateButton()
 }

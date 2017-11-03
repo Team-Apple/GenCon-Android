@@ -10,7 +10,4 @@ abstract class EventsModule {
     @FragmentScope
     abstract fun bindsEventPresenter(presenter: EventsPresenter):EventsContract.Presenter
 
-    @Binds
-    @FragmentScope
-    abstract fun bindsEventsNavigator(navigator: EventsNavigator):EventsContract.Navigator
 }

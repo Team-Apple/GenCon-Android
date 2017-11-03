@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
 
-    <android.support.design.widget.CoordinatorLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/root"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
@@ -14,13 +12,16 @@
         <android.support.design.widget.AppBarLayout
             android:id="@+id/app_bar_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:elevation="@dimen/dimen_0dp">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/tool_bar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                style="@style/GenConFont.Base.Title"/>
+                app:contentInsetStart="@dimen/dimen_32dp"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:titleTextAppearance="@style/GenConFont.Base.Title.Bold.White" />
         </android.support.design.widget.AppBarLayout>
 
         <com.github.teamapple.widget.FixedViewPager
@@ -39,18 +40,19 @@
             app:fabSize="normal"
             app:layout_anchor="@+id/bottom_navigation"
             app:layout_anchorGravity="bottom|end"
-            app:layout_insetEdge="bottom" />
+            app:layout_insetEdge="bottom"
+            />
 
         <android.support.design.widget.BottomNavigationView
             android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             app:itemBackground="@color/colorPrimary"
             app:itemIconTint="@color/bottom_navigation"
             app:itemTextColor="@color/bottom_navigation"
-            app:layout_behavior="com.github.teamapple.widget.BottomNavigationViewBehavior"
-            app:menu="@menu/bottom_navigation" />
+            app:menu="@menu/bottom_navigation"
+           />
 
     </android.support.design.widget.CoordinatorLayout>
 </layout>

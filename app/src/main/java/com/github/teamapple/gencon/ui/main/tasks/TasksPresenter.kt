@@ -1,5 +1,6 @@
 package com.github.teamapple.gencon.ui.main.tasks
 
+import com.github.teamapple.gencon.domain.model.DateModel
 import com.github.teamapple.gencon.domain.usecase.EventsUseCase
 import com.github.teamapple.gencon.extension.plusAssign
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -20,11 +21,10 @@ class TasksPresenter @Inject constructor(private val useCase: EventsUseCase) : T
         compositeDisposable.clear()
     }
 
-    override fun loadTodayEvent() {
+    override fun loadDaysTasks(date: DateModel) {
         view.setLoadingIndicator(true)
-        compositeDisposable += useCase.getTodayEvents()
+        compositeDisposable += useCase.getDaysEvents(date)
                 .observeOn(AndroidSchedulers.mainThread())
-                .doOnDispose { view.setLoadingIndicator(false) }
                 .subscribe(
                         { events ->
                             view.setNoEventsView(events.isEmpty())

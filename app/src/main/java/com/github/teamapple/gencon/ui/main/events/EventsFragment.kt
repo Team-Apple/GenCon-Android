@@ -6,23 +6,24 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.github.teamapple.gencon.R
+import com.github.teamapple.gencon.databinding.FragmentEventsBinding
+import com.github.teamapple.gencon.domain.model.DateModel
 import com.github.teamapple.gencon.domain.model.EventModel
-import com.github.teamapple.gencon.ui.main.ParentEventSubscriber
+import com.github.teamapple.gencon.extension.visibility
+import com.github.teamapple.gencon.ui.main.BottomNavigationViewChild
 import com.github.teamapple.gencon.ui.main.events.adapter.EventsRecyclerAdapter
+import com.github.teamapple.widget.DateSelectLayout
 import com.github.teamapple.widget.SpaceItemDecoration
-import kotlinx.android.synthetic.main.fragment_events.*
 import javax.inject.Inject
 
-class EventsFragment : Fragment(), EventsContract.View, ParentEventSubscriber {
+class EventsFragment : Fragment(), EventsContract.View, BottomNavigationViewChild {
     companion object {
         fun newInstance() = EventsFragment()
     }
 
     @Inject lateinit var presenter: EventsContract.Presenter
-    @Inject lateinit var navigator: EventsContract.Navigator
-
     private val adapter = EventsRecyclerAdapter()
+    private lateinit var binding: FragmentEventsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,26 +31,35 @@ class EventsFragment : Fragment(), EventsContract.View, ParentEventSubscriber {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        return inflater.inflate(R.layout.fragment_events, container, false)
+        binding = FragmentEventsBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.addItemDecoration(SpaceItemDecoration.createByDpSize(context, 4))
-        recyclerView.setHasFixedSize(true)
-        recyclerView.adapter = adapter
+        binding.recyclerView.also { recyclerView ->
+            recyclerView.layoutManager = LinearLayoutManager(context)
+            recyclerView.addItemDecoration(SpaceItemDecoration.createByDpSize(context, 4))
+            recyclerView.setHasFixedSize(true)
+            recyclerView.adapter = adapter
+        }
     }
 
     override fun onResume() {
         super.onResume()
         presenter.onResume(this)
         if (adapter.isEmpty()) {
-            presenter.loadTodayEvent()
+            presenter.loadDaysEvents(binding.dateSelectContainer.getSelectedDate())
         }
-        swipeRefreshLayout.setOnRefreshListener {
-            presenter.loadTodayEvent()
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            presenter.loadDaysEvents(binding.dateSelectContainer.getSelectedDate())
         }
+
+        binding.dateSelectContainer.setListener(object : DateSelectLayout.DateSelectListener{
+            override fun onSelectDate(date: DateModel) {
+                presenter.loadDaysEvents(date)
+            }
+        })
     }
 
     override fun onPause() {
@@ -62,19 +72,14 @@ class EventsFragment : Fragment(), EventsContract.View, ParentEventSubscriber {
     }
 
     override fun setLoadingIndicator(active: Boolean) {
-        swipeRefreshLayout.post {
-            swipeRefreshLayout.isRefreshing = active
+        binding.swipeRefreshLayout.post {
+            binding.swipeRefreshLayout.isRefreshing = active
         }
     }
 
     override fun setNoEventsView(shown: Boolean) {
-        if (shown) {
-            recyclerView.visibility = View.GONE
-            emptyView.visibility = View.VISIBLE
-        } else {
-            recyclerView.visibility = View.VISIBLE
-            emptyView.visibility = View.GONE
-        }
+        binding.recyclerView.visibility(!shown)
+        binding.emptyView.visibility(shown)
     }
 
     override fun showMessage(message: String) {
@@ -82,7 +87,7 @@ class EventsFragment : Fragment(), EventsContract.View, ParentEventSubscriber {
     }
 
     override fun onClickCreateButton() {
-        navigator.navigateToEventEdit(activity)
+        // navigator.navigateToEventEdit(activity)
     }
 
 }

@@ -1,13 +1,13 @@
 package com.github.teamapple.gencon.ui.main.events
 
-import android.content.Context
+import com.github.teamapple.gencon.domain.model.DateModel
 import com.github.teamapple.gencon.domain.model.EventModel
 
 interface EventsContract {
     interface Presenter {
         fun onResume(view: View)
         fun onPause()
-        fun loadTodayEvent()
+        fun loadDaysEvents(date: DateModel)
     }
 
     interface View {
@@ -17,7 +17,4 @@ interface EventsContract {
         fun showMessage(message: String)
     }
 
-    interface Navigator {
-        fun navigateToEventEdit(context: Context)
-    }
 }

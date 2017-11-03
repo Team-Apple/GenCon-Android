@@ -10,7 +10,7 @@ class TasksRecyclerAdapter : GroupAdapter<ViewHolder>(){
     init {
         add(eventsGroup)
     }
-    fun updateEvents(events: List<EventModel>) {
+    fun updateTasks(events: List<EventModel>) {
         eventsGroup.updateGroup(events)
     }
 
