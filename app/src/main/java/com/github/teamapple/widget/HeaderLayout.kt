@@ -17,7 +17,7 @@ class HeaderLayout @JvmOverloads constructor(
 ) : FrameLayout(context, attrs, defStyleAttr) {
 
     @Suppress("unused")
-    class ScrollingViewBehavior(context: Context, attrs: AttributeSet?) : CoordinatorLayout.Behavior<View>(context, attrs) {
+    class ScrollingViewBehavior(context: Context, attrs: AttributeSet) : CoordinatorLayout.Behavior<View>(context, attrs) {
 
         override fun layoutDependsOn(parent: CoordinatorLayout?, child: View?, dependency: View?): Boolean {
             return dependency is HeaderLayout
@@ -57,29 +57,24 @@ class HeaderLayout @JvmOverloads constructor(
     }
 
     @Suppress("unused")
-    class PullableViewBehavior(context: Context, attrs: AttributeSet?) : CoordinatorLayout.Behavior<View>(context, attrs) {
+    class PullableViewBehavior(context: Context, attrs: AttributeSet) : CoordinatorLayout.Behavior<View>(context, attrs) {
         private var height = 0
         private var lastHeightDiff = 0
         private val minHeight: Int
         private var animating = false
 
         init {
-            if (attrs != null) {
-                val typedArray = context.obtainStyledAttributes(attrs, R.styleable.PullableViewBehaviorParams)
-                minHeight = typedArray.getDimensionPixelSize(R.styleable.PullableViewBehaviorParams_min_height, 0)
-                typedArray.recycle()
-            } else {
-                minHeight = 0
+            val typedArray = context.obtainStyledAttributes(attrs, R.styleable.PullableViewBehaviorParams)
+            minHeight = typedArray.getDimensionPixelSize(R.styleable.PullableViewBehaviorParams_min_height, 0)
+            if (minHeight == 0){
+                throw IllegalAccessException("required min_height attributes ")
             }
+            typedArray.recycle()
+
         }
 
         override fun onStartNestedScroll(coordinatorLayout: CoordinatorLayout?, child: View?, directTargetChild: View?, target: View?, nestedScrollAxes: Int): Boolean {
             return nestedScrollAxes == ViewCompat.SCROLL_AXIS_VERTICAL
-        }
-
-
-        override fun onLayoutChild(parent: CoordinatorLayout, child: View, layoutDirection: Int): Boolean {
-            return super.onLayoutChild(parent, child, layoutDirection)
         }
 
         override fun onNestedScroll(coordinatorLayout: CoordinatorLayout, child: View, target: View,
