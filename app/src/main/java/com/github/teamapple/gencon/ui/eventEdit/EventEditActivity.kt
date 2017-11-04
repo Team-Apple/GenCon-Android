@@ -13,9 +13,9 @@ class EventEditActivity : AppCompatActivity() {
             context.startActivity(Intent(context, EventEditActivity::class.java))
         }
     }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_event_edit)
     }
+
 }

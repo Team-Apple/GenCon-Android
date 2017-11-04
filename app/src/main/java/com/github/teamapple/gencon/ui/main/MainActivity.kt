@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity
 import android.view.ViewGroup
 import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.databinding.ActivityMainBinding
-import com.github.teamapple.gencon.extension.setupWithViewPager
 import com.github.teamapple.gencon.ui.main.announce.AnnounceFragment
 import com.github.teamapple.gencon.ui.main.events.EventsFragment
 import com.github.teamapple.gencon.ui.main.tasks.TasksFragment
@@ -23,18 +22,28 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.apply {
             setDisplayShowTitleEnabled(false)
         }
-        val adapter = BottomNavigationFragmentAdapter(supportFragmentManager)
+        /*val adapter = BottomNavigationFragmentAdapter(supportFragmentManager)
         binding.viewPager.adapter = adapter
         binding.viewPager.offscreenPageLimit = 3
         binding.toolBar.title = binding.bottomNavigation.let { menu -> menu.menu.findItem(menu.selectedItemId).title }
         binding.bottomNavigation.setupWithViewPager(binding.viewPager) { menuItem ->
             binding.toolBar.title = menuItem.title
+        }*/
+        binding.fragmentContainer
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, EventsFragment.newInstance())
+                    .commit()
         }
 
         binding.floatingActionButton.setOnClickListener {
-            val selectedFragment = adapter.getCurrentFragment()
+            /*val selectedFragment = adapter.getCurrentFragment()
             if (selectedFragment is BottomNavigationViewChild) {
-                selectedFragment.onClickCreateButton()
+                selectedFragment.onClickCreateFab()
+            }*/
+            val fragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
+            if (fragment is BottomNavigationViewChild) {
+               fragment.onClickCreateFab()
             }
         }
     }

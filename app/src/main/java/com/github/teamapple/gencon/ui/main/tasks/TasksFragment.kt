@@ -86,7 +86,7 @@ class TasksFragment : Fragment(), TasksContract.View, BottomNavigationViewChild 
         //todo あとで実装
     }
 
-    override fun onClickCreateButton() {
+    override fun onClickCreateFab() {
         //navigator.navigateToEventEdit(activity)
     }
 

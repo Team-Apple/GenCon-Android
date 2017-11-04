@@ -86,7 +86,7 @@ class EventsFragment : Fragment(), EventsContract.View, BottomNavigationViewChil
         //todo あとで実装
     }
 
-    override fun onClickCreateButton() {
+    override fun onClickCreateFab() {
         // navigator.navigateToEventEdit(activity)
     }
 
