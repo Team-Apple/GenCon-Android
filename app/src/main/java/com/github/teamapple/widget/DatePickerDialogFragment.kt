@@ -2,9 +2,10 @@ package com.github.teamapple.widget
 
 import android.app.DatePickerDialog
 import android.app.Dialog
-import android.app.DialogFragment
+
 import android.content.Context
 import android.os.Bundle
+import android.support.v4.app.DialogFragment
 import android.widget.DatePicker
 import com.github.teamapple.gencon.domain.model.DateModel
 import java.util.*
@@ -28,11 +29,14 @@ class DatePickerDialogFragment : DialogFragment(), DatePickerDialog.OnDateSetLis
     }
 
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
-        listener?.onSelectedDate(DateModel(year, month + 1, dayOfMonth))
+        listener?.onDateSelect(DateModel(year, month + 1, dayOfMonth))
     }
 
+    fun setListener(listener: Listener){
+        this.listener = listener
+    }
     interface Listener {
-        fun onSelectedDate(date: DateModel)
+        fun onDateSelect(date: DateModel)
     }
 
     companion object {

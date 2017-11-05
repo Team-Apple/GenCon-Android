@@ -1,10 +1,11 @@
 package com.github.teamapple.widget
 
 import android.app.Dialog
-import android.app.DialogFragment
+
 import android.app.TimePickerDialog
 import android.content.Context
 import android.os.Bundle
+import android.support.v4.app.DialogFragment
 import android.widget.TimePicker
 import com.github.teamapple.gencon.domain.model.TimeModel
 import java.util.*
@@ -28,6 +29,10 @@ class TimePickerDialogFragment : DialogFragment(), TimePickerDialog.OnTimeSetLis
 
     override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
         listener?.onTimeSelect(TimeModel(hourOfDay, minute))
+    }
+
+    fun setListener(listener:Listener){
+        this.listener = listener
     }
 
     interface Listener {
