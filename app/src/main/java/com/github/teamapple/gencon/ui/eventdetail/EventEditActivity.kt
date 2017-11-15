@@ -1,20 +1,14 @@
-package com.github.teamapple.gencon.ui.eventcreateedit
+package com.github.teamapple.gencon.ui.eventdetail
 
 import android.content.Context
 import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
+import android.support.v4.content.ContextCompat
+import android.support.v4.graphics.drawable.DrawableCompat
 import android.support.v7.app.AppCompatActivity
-import com.github.teamapple.gencon.GenConApplication
 import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.databinding.ActivityEventEditBinding
-import com.github.teamapple.gencon.domain.model.DateModel
-import com.github.teamapple.gencon.domain.model.TimeModel
-import com.github.teamapple.widget.DatePickerDialogFragment
-import com.github.teamapple.widget.TimePickerDialogFragment
-import kotlinx.android.synthetic.main.activity_event_edit.*
-import org.threeten.bp.LocalDate
-import org.threeten.bp.ZoneId
 import org.threeten.bp.ZonedDateTime
 
 class EventEditActivity : AppCompatActivity() {
@@ -25,14 +19,21 @@ class EventEditActivity : AppCompatActivity() {
         }
     }
 
-    val binging: ActivityEventEditBinding by lazy { DataBindingUtil.setContentView<ActivityEventEditBinding>(this, R.layout.activity_event_edit) }
+    private val binging: ActivityEventEditBinding by lazy { DataBindingUtil.setContentView<ActivityEventEditBinding>(this, R.layout.activity_event_detail) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setSupportActionBar(toolBar)
+        setSupportActionBar(binging.toolBar)
         supportActionBar?.apply {
             setDisplayShowTitleEnabled(false)
+            setDisplayHomeAsUpEnabled(true)
+            val drawable = getDrawable(R.drawable.ic_close_black_24dp)
+            DrawableCompat.setTint(drawable,ContextCompat.getColor(this@EventEditActivity,R.color.white))
+            setHomeAsUpIndicator(drawable)
         }
-        val now = ZonedDateTime.now()
+        supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container,EventEditFragment())
+                .commit()
+        /*val now = ZonedDateTime.now()
         val date = formatDate(now)
         val time = formatTime(now)
         val apiClient = GenConApplication.appComponent(this).apiclient()
@@ -59,7 +60,7 @@ class EventEditActivity : AppCompatActivity() {
                 override fun onDateSelect(date: DateModel) {
                     val millis = LocalDate.of(date.year, date.month, date.day)
                             .atStartOfDay().atZone(ZoneId.of("UTC")).toInstant().toEpochMilli()
-                    binging.startDayText.text ="${"%04d".format(date.year)}-${"%02d".format(date.month)}-${"%02d".format(date.day)}"
+                    binging.startDayText.text = "${"%04d".format(date.year)}-${"%02d".format(date.month)}-${"%02d".format(date.day)}"
                 }
             })
             dialog.show(supportFragmentManager, "DatePickerDialogFragment")
@@ -82,7 +83,7 @@ class EventEditActivity : AppCompatActivity() {
                 override fun onDateSelect(date: DateModel) {
                     val millis = LocalDate.of(date.year, date.month, date.day)
                             .atStartOfDay().atZone(ZoneId.of("UTC")).toInstant().toEpochMilli()
-                    binging.endDayText.text ="${"%04d".format(date.year)}-${"%02d".format(date.month)}-${"%02d".format(date.day)}"
+                    binging.endDayText.text = "${"%04d".format(date.year)}-${"%02d".format(date.month)}-${"%02d".format(date.day)}"
                 }
             })
             dialog.show(supportFragmentManager, "DatePickerDialogFragment")
@@ -93,41 +94,45 @@ class EventEditActivity : AppCompatActivity() {
             val dialog = TimePickerDialogFragment()
             dialog.setListener(object : TimePickerDialogFragment.Listener {
                 override fun onTimeSelect(date: TimeModel) {
-                    binging.endTimeText.text = "${"%02d".format(date.hour)}:${"%02d".format(date.minute)}"
+                    binging.endTimeText.text = "${"%02d".format(date.hour)}-${"%02d".format(date.minute)}"
                 }
             })
             dialog.show(supportFragmentManager, "TimePickerDialogFragment")
         }
 
         binging.sendButton.setOnClickListener {
-            /*val titile = binging.titleText.text.toString().let {
-                if (it.isEmpty()) "無題"
-                else it
+            val param = EventCreateParams(
+                    title = binging.titleText.text.toString().let {
+                        if (it.isEmpty()) "無題"
+                        else it
+                    },
+                    startDate = binging.startDayText.text.toString(),
+                    statTime = binging.startTimeText.text.toString(),
+                    endDate = binging.endDayText.text.toString(),
+                    endTime = binging.endTimeText.text.toString(),
+                    priority = "normal",
+                    memo = binging.memoEditText.text.toString())
+            if (disposable.isDisposed) {
+                disposable = apiClient.createEvent(param)
+                        .subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe(
+                                {
+                                    Toast.makeText(this, "作成したよ", Toast.LENGTH_SHORT).show()
+                                    finish()
+                                },
+                                {
+                                    Timber.d(it)
+                                    Toast.makeText(this, "エラーだよ！！", Toast.LENGTH_SHORT).show()
+                                }
+                        )
+
             }
-            apiClient.createEvent(hashMapOf(
-                    "title" to titile,
-                    "start_at_date" to binging.startDayText.text.toString(),
-                    "start_at_time" to binging.startTimeText.text.toString(),
-                    "end_at_date" to binging.endDayText.text.toString(),
-                    "end_at_time" to binging.endTimeText.text.toString(),
-                    "memo" to binging.memoEditText.toString(),
-                    "priority" to  "normal"))
-                    .subscribeOn(Schedulers.io())
-                    .subscribe(
-                            {
-                                Toast.makeText(this,"作成したよ",Toast.LENGTH_SHORT).show()
-                            },
-                            {
-                                Toast.makeText(this,"エラーだよ！！",Toast.LENGTH_SHORT).show()
-                            }
-                    )*/
-
-        }
-        binging.closeButton.setOnClickListener {
-            finish()
-        }
+            binging.closeButton.setOnClickListener {
+                finish()
+            }
+        }*/
     }
-
 
 
     private fun formatDate(date: ZonedDateTime): String {

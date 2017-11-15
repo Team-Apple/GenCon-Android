@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.github.teamapple.gencon.ui.eventcreateedit.EventEditActivity"
+            android:name="com.github.teamapple.gencon.ui.eventdetail.EventEditActivity"
             android:screenOrientation="portrait" />
     </application>
 

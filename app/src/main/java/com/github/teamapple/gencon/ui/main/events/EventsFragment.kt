@@ -10,7 +10,7 @@ import com.github.teamapple.gencon.databinding.FragmentEventsBinding
 import com.github.teamapple.gencon.domain.model.DateModel
 import com.github.teamapple.gencon.domain.model.EventModel
 import com.github.teamapple.gencon.extension.visibility
-import com.github.teamapple.gencon.ui.eventcreateedit.EventEditActivity
+import com.github.teamapple.gencon.ui.eventdetail.EventEditActivity
 import com.github.teamapple.gencon.ui.main.BottomNavigationViewChild
 import com.github.teamapple.gencon.ui.main.events.adapter.EventsRecyclerAdapter
 import com.github.teamapple.widget.DateSelectLayout
