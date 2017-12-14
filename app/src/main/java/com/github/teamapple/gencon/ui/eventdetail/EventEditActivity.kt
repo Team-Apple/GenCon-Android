@@ -8,18 +8,18 @@ import android.support.v4.content.ContextCompat
 import android.support.v4.graphics.drawable.DrawableCompat
 import android.support.v7.app.AppCompatActivity
 import com.github.teamapple.gencon.R
-import com.github.teamapple.gencon.databinding.ActivityEventEditBinding
-import org.threeten.bp.ZonedDateTime
+import com.github.teamapple.gencon.databinding.ActivityEventDetailBinding
+import com.github.teamapple.gencon.domain.model.EventModel
+import com.github.teamapple.gencon.domain.model.PriorityModel
 
 class EventEditActivity : AppCompatActivity() {
-
     companion object {
         fun start(context: Context) {
             context.startActivity(Intent(context, EventEditActivity::class.java))
         }
     }
 
-    private val binging: ActivityEventEditBinding by lazy { DataBindingUtil.setContentView<ActivityEventEditBinding>(this, R.layout.activity_event_detail) }
+    private val binging: ActivityEventDetailBinding by lazy { DataBindingUtil.setContentView<ActivityEventDetailBinding>(this, R.layout.activity_event_detail) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setSupportActionBar(binging.toolBar)
@@ -27,12 +27,22 @@ class EventEditActivity : AppCompatActivity() {
             setDisplayShowTitleEnabled(false)
             setDisplayHomeAsUpEnabled(true)
             val drawable = getDrawable(R.drawable.ic_close_black_24dp)
-            DrawableCompat.setTint(drawable,ContextCompat.getColor(this@EventEditActivity,R.color.white))
+            DrawableCompat.setTint(drawable, ContextCompat.getColor(this@EventEditActivity, R.color.white))
             setHomeAsUpIndicator(drawable)
         }
-        supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container,EventEditFragment())
-                .commit()
+        if (savedInstanceState != null) {
+            val model = EventModel(
+                    id = 512,
+                    name = "プロ応用",
+                    memo = "none",
+                    startTime = "",
+                    endTime = "",
+                    priority = PriorityModel.Normal
+            )
+            supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, EventDetailFragment.newInstance(model))
+                    .commit()
+        }
         /*val now = ZonedDateTime.now()
         val date = formatDate(now)
         val time = formatTime(now)
@@ -133,16 +143,4 @@ class EventEditActivity : AppCompatActivity() {
             }
         }*/
     }
-
-
-    private fun formatDate(date: ZonedDateTime): String {
-        return "${"%04d".format(date.year)}-${"%02d".format(date.monthValue)}-${"%02d".format(date.dayOfMonth)}"
-    }
-
-    private fun formatTime(time: ZonedDateTime): String {
-        return "${"%02d".format(time.hour)}-${"%02d".format(time.minute)}"
-
-    }
-
-
 }

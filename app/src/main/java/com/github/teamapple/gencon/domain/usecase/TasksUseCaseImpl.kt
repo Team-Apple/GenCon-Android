@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 class TasksUseCaseImpl @Inject constructor() : TasksUseCase {
 
-    override fun getDaysEvents(date:DateModel): Single<List<TaskModel>> {
+    override fun getEvents(date:DateModel): Single<List<TaskModel>> {
         val event = TaskModel(id = 0, name = "hoge", memo = "", priority = PriorityModel.Normal)
         return Single.just(0.until(20).map { event.copy() }).subscribeOn(Schedulers.io())
     }

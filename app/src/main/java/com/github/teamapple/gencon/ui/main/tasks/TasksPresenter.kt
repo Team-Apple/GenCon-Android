@@ -23,7 +23,7 @@ class TasksPresenter @Inject constructor(private val useCase: TasksUseCase) : Ta
 
     override fun loadDaysTasks(date: DateModel) {
         view.setLoadingIndicator(true)
-        compositeDisposable += useCase.getDaysEvents(date)
+        compositeDisposable += useCase.getEvents(date)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                         { events ->

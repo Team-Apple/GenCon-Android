@@ -5,5 +5,6 @@ import com.github.teamapple.gencon.domain.model.TaskModel
 import io.reactivex.Single
 
 interface TasksUseCase {
-    fun getDaysEvents(date:DateModel): Single<List<TaskModel>>
+    fun getEvents(date:DateModel): Single<List<TaskModel>>
+
 }

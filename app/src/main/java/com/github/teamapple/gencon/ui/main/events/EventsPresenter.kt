@@ -23,7 +23,7 @@ class EventsPresenter @Inject constructor(private val useCase: EventsUseCase) : 
 
     override fun loadDaysEvents(date: DateModel) {
         view.setLoadingIndicator(true)
-        compositeDisposable += useCase.getDaysEvents(date)
+        compositeDisposable += useCase.getEventsOfDay(date)
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnDispose { view.setLoadingIndicator(false) }
                 .subscribe(

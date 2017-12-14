@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 class EventsRepositoryImpl @Inject constructor(private val client: ApiClient) : EventsRepository {
 
-    override fun fetchDailyEvents(date: DateModel): Single<List<EventResponse>> {
+    override fun getEvents(date: DateModel): Single<List<EventResponse>> {
         return client.fetchDailyEvents(formatDate(date))
     }
 

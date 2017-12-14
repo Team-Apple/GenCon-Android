@@ -40,4 +40,8 @@
         <item name="android:textSize">@dimen/general_text_headline</item>
     </style>
 
+    <style name="GenConFont.Base.HeadLine.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>
