@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.ui.eventdetail
+package com.github.teamapple.gencon.ui.eventdetail.detail
 
 import android.os.Bundle
 import android.support.v4.app.Fragment

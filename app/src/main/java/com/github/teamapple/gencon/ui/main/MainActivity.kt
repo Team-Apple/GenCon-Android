@@ -1,6 +1,5 @@
 package com.github.teamapple.gencon.ui.main
 
-import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
@@ -8,42 +7,43 @@ import android.support.v4.app.FragmentStatePagerAdapter
 import android.support.v7.app.AppCompatActivity
 import android.view.ViewGroup
 import com.github.teamapple.gencon.R
-import com.github.teamapple.gencon.databinding.ActivityMainBinding
+import com.github.teamapple.gencon.extension.setupWithViewPager
 import com.github.teamapple.gencon.ui.main.announce.AnnounceFragment
 import com.github.teamapple.gencon.ui.main.events.EventsFragment
 import com.github.teamapple.gencon.ui.main.tasks.TasksFragment
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    private val binding: ActivityMainBinding by lazy { DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main) }
+    //private val binding: ActivityMainBinding by lazy { DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setSupportActionBar(binding.toolBar)
+        setContentView(R.layout.activity_main)
+        //setSupportActionBar(binding.toolBar)
         supportActionBar?.apply {
             setDisplayShowTitleEnabled(false)
         }
-        /*val adapter = BottomNavigationFragmentAdapter(supportFragmentManager)
-        binding.viewPager.adapter = adapter
-        binding.viewPager.offscreenPageLimit = 3
-        binding.toolBar.title = binding.bottomNavigation.let { menu -> menu.menu.findItem(menu.selectedItemId).title }
-        binding.bottomNavigation.setupWithViewPager(binding.viewPager) { menuItem ->
-            binding.toolBar.title = menuItem.title
-        }*/
-        binding.fragmentContainer
+        val adapter = BottomNavigationFragmentAdapter(supportFragmentManager)
+        viewPager.adapter = adapter
+        viewPager.offscreenPageLimit = 3
+        toolbar.title = bottomNavigation.let { menu -> menu.menu.findItem(menu.selectedItemId).title }
+        bottomNavigation.setupWithViewPager(viewPager) { menuItem ->
+            toolbar.title = menuItem.title
+        }
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
                     .replace(R.id.fragment_container, EventsFragment.newInstance())
                     .commit()
         }
 
-        binding.floatingActionButton.setOnClickListener {
+        fab.setOnClickListener {
             /*val selectedFragment = adapter.getCurrentFragment()
             if (selectedFragment is BottomNavigationViewChild) {
                 selectedFragment.onClickCreateFab()
             }*/
             val fragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
             if (fragment is BottomNavigationViewChild) {
-               fragment.onClickCreateFab()
+                fragment.onClickCreateFab()
             }
         }
     }
@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
             super.setPrimaryItem(container, position, obj)
         }
 
-        fun getCurrentFragment() = currentFragment
+        //fun getCurrentFragment() = currentFragment
 
         override fun getItem(position: Int): Fragment {
             return when (position) {

@@ -11,6 +11,7 @@ import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.databinding.ActivityEventDetailBinding
 import com.github.teamapple.gencon.domain.model.EventModel
 import com.github.teamapple.gencon.domain.model.PriorityModel
+import com.github.teamapple.gencon.ui.eventdetail.detail.EventDetailFragment
 
 class EventEditActivity : AppCompatActivity() {
     companion object {

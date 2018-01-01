@@ -5,8 +5,17 @@
     <string name="event">Event</string>
     <string name="task">Task</string>
 
-    <string name="start_time">start time : %s</string>
-    <string name="end_time">end time  : %s</string>
+    <string name="start_time">start time</string>
+    <string name="end_time">end time</string>
+
+    <string name="monday">monday</string>
+    <string name="tuesday">tuesday</string>
+    <string name="wednesday">wednesday</string>
+    <string name="thursday">thursday</string>
+    <string name="friday">friday</string>
+    <string name="saturday">saturday</string>
+    <string name="sunday">sunday</string>
+
 
     <string name="common_priority">Priority</string>
     <string name="common_ok">OK</string>
