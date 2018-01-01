@@ -6,7 +6,7 @@ import com.github.teamapple.widget.FixedViewPager
 
 fun BottomNavigationView.setupWithViewPager(viewPager: FixedViewPager ,onSelect:(MenuItem) -> Unit) {
     val menuItems = 0.until(this.menu.size()).map { index-> this.menu.getItem(index) }
-    this.setOnNavigationItemSelectedListener { menuItem->
+    setOnNavigationItemSelectedListener { menuItem->
         val index = menuItems.indexOf(menuItem)
         if(index >= 0){
             viewPager.setCurrentItem(index,false)
