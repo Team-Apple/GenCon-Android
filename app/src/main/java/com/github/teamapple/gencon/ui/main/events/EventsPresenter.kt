@@ -10,9 +10,10 @@ import org.threeten.bp.LocalDate
 import org.threeten.bp.LocalDateTime
 import org.threeten.bp.format.DateTimeFormatter
 import timber.log.Timber
+import javax.inject.Inject
 
 
-class EventsPresenter(private val repository: EventsRepository) : EventsContract.Presenter {
+class EventsPresenter @Inject constructor(private val repository: EventsRepository) : EventsContract.Presenter {
     private lateinit var view: EventsContract.View
     private val compositeDisposable = CompositeDisposable()
 
