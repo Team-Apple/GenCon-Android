@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.domain.util
+package com.github.teamapple.gencon.util
 
 internal interface DateFormatter {
     fun format(dateTime:String):String
