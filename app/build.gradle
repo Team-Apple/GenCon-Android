@@ -37,7 +37,10 @@ dependencies {
     def retrofit_version = '2.3.0'
     def support_library_version = '27.0.2'
     def constraint_layout_version = '1.1.0-beta4'
-    def okhttp_version="3.9.1"
+    def okhttp_version = "3.9.1"
+    def dagger_version = "2.13"
+    def aac_lifecycle_versions = "1.1.0"
+    def aac_room_versions = "1.0.0"
 
     //support library
     implementation "com.android.support:design:$support_library_version"
@@ -46,9 +49,16 @@ dependencies {
     implementation "com.android.support.constraint:constraint-layout:$constraint_layout_version"
 
     //android architecture components
-    implementation "android.arch.lifecycle:runtime:1.1.0"
-    implementation "android.arch.lifecycle:extensions:1.1.0"
-    annotationProcessor "android.arch.lifecycle:compiler:1.1.0"
+    implementation "android.arch.lifecycle:runtime:$aac_lifecycle_versions"
+    implementation "android.arch.lifecycle:extensions:$aac_lifecycle_versions"
+    implementation "android.arch.lifecycle:reactivestreams:$aac_lifecycle_versions"
+    kapt "android.arch.lifecycle:compiler:$aac_lifecycle_versions"
+    implementation "android.arch.persistence.room:runtime:$aac_room_versions"
+
+    implementation "android.arch.persistence.room:runtime:$aac_room_versions"
+    implementation "android.arch.persistence.room:rxjava2:$aac_room_versions"
+    kapt "android.arch.persistence.room:compiler:$aac_room_versions"
+
     //data binding
     kapt 'com.android.databinding:compiler:3.0.1'
 
@@ -64,8 +74,8 @@ dependencies {
     implementation 'com.jakewharton.timber:timber:4.6.0'
 
     //dependency injection
-    implementation 'com.google.dagger:dagger:2.13'
-    kapt 'com.google.dagger:dagger-compiler:2.13'
+    implementation "com.google.dagger:dagger:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
 
     // network
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
@@ -76,7 +86,7 @@ dependencies {
     implementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
 
     //recycler view
-    implementation ('com.xwray:groupie:2.0.2'){
+    implementation('com.xwray:groupie:2.0.2') {
         exclude group: 'com.android.support', module: 'recyclerview-v7'
     }
 
