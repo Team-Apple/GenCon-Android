@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.ui.main.tasks
+package com.github.teamapple.gencon.persentaion.main.tasks
 
 import com.github.teamapple.gencon.domain.model.DateModel
 import io.reactivex.disposables.CompositeDisposable

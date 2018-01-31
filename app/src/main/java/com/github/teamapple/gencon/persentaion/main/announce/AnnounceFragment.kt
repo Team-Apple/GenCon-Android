@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.ui.main.announce
+package com.github.teamapple.gencon.persentaion.main.announce
 
 import android.os.Bundle
 import android.support.v4.app.Fragment

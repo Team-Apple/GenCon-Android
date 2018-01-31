@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.ui.eventdetail
+package com.github.teamapple.gencon.persentaion.eventdetail
 
 import android.content.Context
 import android.content.Intent
@@ -11,7 +11,7 @@ import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.databinding.ActivityEventDetailBinding
 import com.github.teamapple.gencon.domain.model.EventModel
 import com.github.teamapple.gencon.domain.model.PriorityModel
-import com.github.teamapple.gencon.ui.eventdetail.detail.EventDetailFragment
+import com.github.teamapple.gencon.persentaion.eventdetail.detail.EventDetailFragment
 
 class EventEditActivity : AppCompatActivity() {
     companion object {

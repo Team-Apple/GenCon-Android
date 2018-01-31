@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.ui.main
+package com.github.teamapple.gencon.persentaion.main
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -7,9 +7,9 @@ import android.support.v4.app.FragmentStatePagerAdapter
 import android.support.v7.app.AppCompatActivity
 import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.extension.setupWithViewPager
-import com.github.teamapple.gencon.ui.main.announce.AnnounceFragment
-import com.github.teamapple.gencon.ui.main.events.EventsFragment
-import com.github.teamapple.gencon.ui.main.tasks.TasksFragment
+import com.github.teamapple.gencon.persentaion.main.announce.AnnounceFragment
+import com.github.teamapple.gencon.persentaion.main.events.EventsFragment
+import com.github.teamapple.gencon.persentaion.main.tasks.TasksFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

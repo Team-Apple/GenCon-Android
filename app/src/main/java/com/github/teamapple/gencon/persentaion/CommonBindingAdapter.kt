@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.ui
+package com.github.teamapple.gencon.persentaion
 
 import android.databinding.BindingAdapter
 import android.view.View

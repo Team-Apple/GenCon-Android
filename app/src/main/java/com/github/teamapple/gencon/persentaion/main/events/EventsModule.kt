@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.ui.main.events
+package com.github.teamapple.gencon.persentaion.main.events
 
 import com.github.teamapple.gencon.di.scopes.FragmentScope
 import dagger.Binds

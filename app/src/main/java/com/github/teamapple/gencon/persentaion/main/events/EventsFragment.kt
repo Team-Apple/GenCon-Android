@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.ui.main.events
+package com.github.teamapple.gencon.persentaion.main.events
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -7,15 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.github.teamapple.gencon.databinding.FragmentEventsBinding
-import com.github.teamapple.gencon.domain.model.DateModel
 import com.github.teamapple.gencon.domain.model.EventModel
 import com.github.teamapple.gencon.extension.visibility
-import com.github.teamapple.gencon.ui.eventdetail.EventEditActivity
-import com.github.teamapple.gencon.ui.main.BottomNavigationViewChild
-import com.github.teamapple.gencon.ui.main.events.adapter.EventsRecyclerAdapter
-import com.github.teamapple.widget.DateSelectLayout
+import com.github.teamapple.gencon.persentaion.main.BottomNavigationViewChild
+import com.github.teamapple.gencon.persentaion.main.events.adapter.EventsRecyclerAdapter
 import com.github.teamapple.widget.SpaceItemDecoration
-import javax.inject.Inject
 
 class EventsFragment : Fragment(), EventsContract.View, BottomNavigationViewChild {
     companion object {

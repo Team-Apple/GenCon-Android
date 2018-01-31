@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.ui.main.tasks
+package com.github.teamapple.gencon.persentaion.main.tasks
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -10,8 +10,8 @@ import com.github.teamapple.gencon.databinding.FragmentTasksBinding
 import com.github.teamapple.gencon.domain.model.DateModel
 import com.github.teamapple.gencon.domain.model.TaskModel
 import com.github.teamapple.gencon.extension.visibility
-import com.github.teamapple.gencon.ui.main.BottomNavigationViewChild
-import com.github.teamapple.gencon.ui.main.tasks.adapter.TasksRecyclerAdapter
+import com.github.teamapple.gencon.persentaion.main.BottomNavigationViewChild
+import com.github.teamapple.gencon.persentaion.main.tasks.adapter.TasksRecyclerAdapter
 import com.github.teamapple.widget.DateSelectLayout
 import com.github.teamapple.widget.SpaceItemDecoration
 import javax.inject.Inject
