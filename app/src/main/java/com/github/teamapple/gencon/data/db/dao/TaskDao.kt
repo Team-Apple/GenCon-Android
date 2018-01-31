@@ -3,6 +3,7 @@ package com.github.teamapple.gencon.data.db.dao
 import android.arch.persistence.room.*
 import com.github.teamapple.gencon.data.db.entity.TaskEntity
 import io.reactivex.Flowable
+import io.reactivex.Maybe
 
 @Dao
 abstract class TaskDao {
@@ -10,7 +11,7 @@ abstract class TaskDao {
     abstract fun getAllTasks(): Flowable<List<TaskEntity>>
 
     @Query("SELECT * FROM task WHERE task_id = :taskId")
-    abstract fun getTaskById(taskId: Int): Flowable<TaskEntity>
+    abstract fun getTaskById(taskId: Int): Maybe<TaskEntity>
 
     @Query("DELETE FROM task")
     abstract fun deleteAll()

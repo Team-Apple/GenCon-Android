@@ -3,6 +3,7 @@ package com.github.teamapple.gencon.data.db.dao
 import android.arch.persistence.room.*
 import com.github.teamapple.gencon.data.db.entity.EventEntity
 import io.reactivex.Flowable
+import io.reactivex.Maybe
 
 @Dao
 abstract class EventDao {
@@ -10,7 +11,7 @@ abstract class EventDao {
     abstract fun getAllEvents(): Flowable<List<EventEntity>>
 
     @Query("SELECT * FROM event WHERE event_id = :eventId")
-    abstract fun getEventById(eventId: Int): Flowable<EventEntity>
+    abstract fun getEventById(eventId: Int): Maybe<EventEntity>
 
     @Query("DELETE FROM event")
     abstract fun deleteAll()
