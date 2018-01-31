@@ -16,9 +16,4 @@ data class EventEntity(
         @ColumnInfo(name = "start_at")
         var startAt: String,
         @ColumnInfo(name = "end_at")
-        var endAt: String,
-        @ColumnInfo(name = "created_at")
-        var createdAt: String,
-        @ColumnInfo(name = "updated_at")
-        var updatedAt: String
-)
+        var endAt: String)

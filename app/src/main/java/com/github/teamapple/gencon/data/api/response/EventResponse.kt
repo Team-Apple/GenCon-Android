@@ -10,8 +10,4 @@ data class EventResponse(
         @Json(name = "start_at")
         val startAt: String,
         @Json(name = "end_at")
-        val endAt: String,
-        @Json(name = "created_at")
-        val createdAt: String,
-        @Json(name = "updated_at")
-        val updatedAt: String)
+        val endAt: String)
