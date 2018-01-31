@@ -2,7 +2,6 @@ package com.github.teamapple.gencon.data.db
 
 import android.arch.persistence.room.Database
 import android.arch.persistence.room.RoomDatabase
-import android.arch.persistence.room.TypeConverters
 import com.github.teamapple.gencon.data.db.dao.AnnouncementDao
 import com.github.teamapple.gencon.data.db.dao.EventDao
 import com.github.teamapple.gencon.data.db.dao.TaskDao
@@ -18,7 +17,6 @@ import com.github.teamapple.gencon.data.db.entity.TaskEntity
         ],
         version = 1
 )
-@TypeConverters(com.github.teamapple.gencon.data.db.TypeConverters::class)
 abstract class AppDatabase: RoomDatabase(){
     abstract fun announcementDao(): AnnouncementDao
     abstract fun eventDao(): EventDao
