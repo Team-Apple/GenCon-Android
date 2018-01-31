@@ -35,8 +35,8 @@ androidExtensions {
 dependencies {
     def moshi_version = '1.5.0'
     def retrofit_version = '2.3.0'
-    def support_library_version = '25.3.1'
-    def constraint_layout_version = '1.1.0-beta3'
+    def support_library_version = '25.4.0'
+    def constraint_layout_version = '1.1.0-beta4'
     def rxjava_version = "2.1.3"
     def okhttp_version="3.9.1"
 
@@ -47,7 +47,7 @@ dependencies {
     implementation "com.android.support.constraint:constraint-layout:$constraint_layout_version"
 
     //data binding
-    kapt 'com.android.databinding:compiler:3.0.0'
+    kapt 'com.android.databinding:compiler:3.0.1'
 
     //kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -72,7 +72,9 @@ dependencies {
     implementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
 
     //recycler view
-    implementation 'com.xwray:groupie:2.0.0-alpha2'
+    implementation ('com.xwray:groupie:2.0.2'){
+        exclude group: 'com.android.support', module: 'recyclerview-v7'
+    }
 
     //json parser
     implementation "com.squareup.moshi:moshi:$moshi_version"
