@@ -22,13 +22,13 @@ class EventsFragment : Fragment(), EventsContract.View, BottomNavigationViewChil
         fun newInstance() = EventsFragment()
     }
 
-    @Inject lateinit var presenter: EventsContract.Presenter
+    //@Inject lateinit var presenter: EventsContract.Presenter
     private val adapter = EventsRecyclerAdapter()
     private lateinit var binding: FragmentEventsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        EventsComponent.Initializer.init(context).inject(this)
+        EventsComponent.Initializer.init(context!!).inject(this)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -36,11 +36,11 @@ class EventsFragment : Fragment(), EventsContract.View, BottomNavigationViewChil
         return binding.root
     }
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.recyclerView.also { recyclerView ->
             recyclerView.layoutManager = LinearLayoutManager(context)
-            recyclerView.addItemDecoration(SpaceItemDecoration.createByDpSize(context, 4))
+            recyclerView.addItemDecoration(SpaceItemDecoration.createByDpSize(context!!, 4))
             recyclerView.setHasFixedSize(true)
             recyclerView.adapter = adapter
         }
@@ -48,7 +48,7 @@ class EventsFragment : Fragment(), EventsContract.View, BottomNavigationViewChil
 
     override fun onResume() {
         super.onResume()
-        presenter.onResume(this)
+        /*presenter.onResume(this)
         if (adapter.isEmpty()) {
             presenter.loadDaysEvents(binding.dateSelectContainer.getSelectedDate())
         }
@@ -60,12 +60,12 @@ class EventsFragment : Fragment(), EventsContract.View, BottomNavigationViewChil
             override fun onSelectDate(date: DateModel) {
                 presenter.loadDaysEvents(date)
             }
-        })
+        })*/
     }
 
     override fun onPause() {
         super.onPause()
-        presenter.onPause()
+        //presenter.onPause()
     }
 
     override fun updateEvents(events: List<EventModel>) {
@@ -88,7 +88,7 @@ class EventsFragment : Fragment(), EventsContract.View, BottomNavigationViewChil
     }
 
     override fun onClickCreateFab() {
-        EventEditActivity.start(context)
+        //EventEditActivity.start(context)
     }
 
 }

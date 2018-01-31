@@ -6,7 +6,6 @@ import com.github.teamapple.gencon.extension.plusAssign
 import com.github.teamapple.gencon.util.DateFormatter
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
-import org.threeten.bp.LocalDate
 import org.threeten.bp.LocalDateTime
 import org.threeten.bp.format.DateTimeFormatter
 import timber.log.Timber
@@ -28,10 +27,10 @@ class EventsPresenter @Inject constructor(private val repository: EventsReposito
 
     override fun onResume(view: EventsContract.View) {
         this.view = view
-        if (this.view.isEmpty()) {
+        /*if (this.view.isEmpty()) {
             val today = LocalDate.now()
             loadDaysEvents(today.year, today.monthValue, today.dayOfMonth)
-        }
+        }*/
     }
 
     override fun onPause() {

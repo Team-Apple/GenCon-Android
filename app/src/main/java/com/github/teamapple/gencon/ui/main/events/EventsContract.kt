@@ -9,7 +9,6 @@ interface EventsContract {
     }
 
     interface View {
-        fun isEmpty(): Boolean
         fun updateEvents(events: List<EventModel>)
         fun setLoadingIndicator(active: Boolean)
         fun setNoEventsView(shown: Boolean)

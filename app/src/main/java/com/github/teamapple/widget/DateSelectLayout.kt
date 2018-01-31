@@ -1,5 +1,6 @@
 package com.github.teamapple.widget
 
+
 import android.content.Context
 import android.support.v4.content.ContextCompat
 import android.text.format.DateUtils
@@ -22,7 +23,7 @@ class DateSelectLayout @JvmOverloads constructor(
         context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : FrameLayout(context, attrs, defStyleAttr) {
     private val layout: View = LayoutInflater.from(context).inflate(R.layout.view_date_select_layout, this)
-    private val selectedDayText = layout.findViewById(R.id.selected_date_text) as TextView
+    private val selectedDayText = layout.findViewById<TextView>(R.id.selected_date_text)
     private var popupWindow: PopupWindow? = null
     private var listener:DateSelectListener? = null
     private var currentDay = LocalDate.now().let { date -> DateModel(date.year, date.monthValue, date.dayOfMonth) }

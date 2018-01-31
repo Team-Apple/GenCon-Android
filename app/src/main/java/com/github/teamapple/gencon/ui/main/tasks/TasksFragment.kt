@@ -27,7 +27,7 @@ class TasksFragment : Fragment(), TasksContract.View, BottomNavigationViewChild 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        TasksComponent.Initializer.init(context).inject(this)
+        TasksComponent.Initializer.init(context!!).inject(this)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -35,11 +35,11 @@ class TasksFragment : Fragment(), TasksContract.View, BottomNavigationViewChild 
         return binding.root
     }
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.recyclerView.also { recyclerView ->
             recyclerView.layoutManager = LinearLayoutManager(context)
-            recyclerView.addItemDecoration(SpaceItemDecoration.createByDpSize(context, 4))
+            recyclerView.addItemDecoration(SpaceItemDecoration.createByDpSize(context!!, 4))
             recyclerView.setHasFixedSize(true)
             recyclerView.adapter = adapter
         }
