@@ -1,7 +1,7 @@
-package com.github.teamapple.gencon.data.network
+package com.github.teamapple.gencon.data.api
 
+import com.github.teamapple.gencon.data.api.response.EventResponse
 import com.github.teamapple.gencon.data.entity.params.EventCreateParams
-import com.github.teamapple.gencon.data.entity.response.EventResponse
 import io.reactivex.Completable
 import io.reactivex.Single
 import retrofit2.http.Body

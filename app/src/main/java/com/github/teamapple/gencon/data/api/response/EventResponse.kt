@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.data.entity.response
+package com.github.teamapple.gencon.data.api.response
 
 import com.squareup.moshi.Json
 
@@ -14,5 +14,4 @@ data class EventResponse(
         @Json(name = "created_at")
         val createdAt: String,
         @Json(name = "updated_at")
-        val updatedAt: String
-        )
+        val updatedAt: String)

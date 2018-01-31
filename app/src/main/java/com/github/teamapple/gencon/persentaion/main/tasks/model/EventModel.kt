@@ -2,7 +2,7 @@ package com.github.teamapple.gencon.ui.main.tasks.model
 
 import android.annotation.SuppressLint
 import android.os.Parcelable
-import com.github.teamapple.gencon.data.entity.response.EventResponse
+import com.github.teamapple.gencon.data.api.response.EventResponse
 import com.github.teamapple.gencon.domain.model.PriorityModel
 import com.github.teamapple.gencon.util.DateFormatter
 import kotlinx.android.parcel.Parcelize
