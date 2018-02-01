@@ -29,5 +29,12 @@
 
     <string name="event_not_exist">There isn’t any events.</string>
     <string name="task_not_exist">There isn’t any tasks.</string>
-    <string name="announcement_not_exist">There isn’t any nnouncements.</string>
+    <string name="announcement_not_exist">There isn’t any announcements.</string>
+
+    <string name="start_at">from</string>
+    <string name="end_at">to</string>
+
+    <string name="hint_event_title">event name</string>
+    <string name="hint_task_title">task name</string>
+    <string name="hint_memo">memo</string>
 </resources>

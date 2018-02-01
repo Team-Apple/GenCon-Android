@@ -2,14 +2,12 @@ package com.github.teamapple.gencon.persentaion.main.events
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.github.teamapple.gencon.databinding.FragmentEventsBinding
 import com.github.teamapple.gencon.model.EventModel
 import com.github.teamapple.gencon.ui.main.events.adapter.EventsRecyclerAdapter
-import com.github.teamapple.gencon.util.view.SpaceItemDecoration
 
 class EventsFragment : Fragment(), EventsContract.View {
     companion object {
@@ -32,12 +30,12 @@ class EventsFragment : Fragment(), EventsContract.View {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.recyclerView.also { recyclerView ->
+        /*binding.recyclerView.also { recyclerView ->
             recyclerView.layoutManager = LinearLayoutManager(context)
             recyclerView.addItemDecoration(SpaceItemDecoration.createByDpSize(context!!, 4))
             recyclerView.setHasFixedSize(true)
             recyclerView.adapter = adapter
-        }
+        }*/
     }
 
     override fun onResume() {
@@ -67,9 +65,9 @@ class EventsFragment : Fragment(), EventsContract.View {
     }
 
     override fun setLoadingIndicator(active: Boolean) {
-        binding.swipeRefreshLayout.post {
+        /*binding.swipeRefreshLayout.post {
             binding.swipeRefreshLayout.isRefreshing = active
-        }
+        }*/
     }
 
     override fun setNoEventsView(shown: Boolean) {

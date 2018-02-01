@@ -10,8 +10,8 @@ class TaskItem(private val event: TaskModel) : Item<ViewHolder>() {
 
     override fun bind(viewHolder: ViewHolder, position: Int) {
         with(viewHolder.itemView) {
-            eventName.text = event.name
-            /*startTime.text = context.getString(R.string.start_time, event.startTime)
+            /*eventName.text = event.name
+            startTime.text = context.getString(R.string.start_time, event.startTime)
             endTime.text = context.getString(R.string.end_time, event.endTime)*/
         }
     }

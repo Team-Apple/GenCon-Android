@@ -2,13 +2,11 @@ package com.github.teamapple.gencon.persentaion.main.tasks
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.github.teamapple.gencon.databinding.FragmentTasksBinding
 import com.github.teamapple.gencon.model.TaskModel
-import com.github.teamapple.gencon.util.view.SpaceItemDecoration
 import javax.inject.Inject
 
 class TasksFragment : Fragment(), TasksContract.View {
@@ -32,12 +30,12 @@ class TasksFragment : Fragment(), TasksContract.View {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.recyclerView.also { recyclerView ->
+        /*binding.recyclerView.also { recyclerView ->
             recyclerView.layoutManager = LinearLayoutManager(context)
             recyclerView.addItemDecoration(SpaceItemDecoration.createByDpSize(context!!, 4))
             recyclerView.setHasFixedSize(true)
             //recyclerView.adapter = adapter
-        }
+        }*/
     }
 
     override fun onResume() {
@@ -46,9 +44,9 @@ class TasksFragment : Fragment(), TasksContract.View {
         /*if (adapter.isEmpty()) {
             //presenter.loadDaysTasks(binding.dateSelectContainer.getSelectedDate())
         }*/
-        binding.swipeRefreshLayout.setOnRefreshListener {
+        /*binding.swipeRefreshLayout.setOnRefreshListener {
             //presenter.loadDaysTasks(binding.dateSelectContainer.getSelectedDate())
-        }
+        }*/
     }
 
     override fun onPause() {
@@ -61,9 +59,9 @@ class TasksFragment : Fragment(), TasksContract.View {
     }
 
     override fun setLoadingIndicator(active: Boolean) {
-        binding.swipeRefreshLayout.post {
+        /*binding.swipeRefreshLayout.post {
             binding.swipeRefreshLayout.isRefreshing = active
-        }
+        }*/
     }
 
     override fun setNoEventsView(shown: Boolean) {
