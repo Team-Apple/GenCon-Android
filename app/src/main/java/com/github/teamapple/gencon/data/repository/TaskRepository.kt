@@ -1,6 +1,6 @@
 package com.github.teamapple.gencon.data.repository
 
-import com.github.teamapple.gencon.data.api.response.EventResponse
+import com.github.teamapple.gencon.data.api.entity.response.EventResponse
 import io.reactivex.Single
 
 interface TaskRepository {

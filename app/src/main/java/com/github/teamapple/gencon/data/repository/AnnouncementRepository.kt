@@ -1,8 +1,10 @@
 package com.github.teamapple.gencon.data.repository
 
-import com.github.teamapple.gencon.data.api.response.EventResponse
-import io.reactivex.Single
+import com.github.teamapple.gencon.model.AnnouncementModel
+import io.reactivex.Flowable
 
 interface AnnouncementRepository {
-    fun getEvents(year: Int, month: Int, day: Int): Single<List<EventResponse>>
+    val announcements: Flowable<List<AnnouncementModel>>
+
+
 }

@@ -1,9 +1,12 @@
 package com.github.teamapple.gencon.data.api
 
-import com.github.teamapple.gencon.data.api.response.EventResponse
-import com.github.teamapple.gencon.data.api.response.TaskResponse
+import com.github.teamapple.gencon.data.api.entity.response.AnnouncementResonce
+import com.github.teamapple.gencon.data.api.entity.response.EventResponse
+import com.github.teamapple.gencon.data.api.entity.response.TaskResponse
 import io.reactivex.Single
 import retrofit2.http.GET
+import retrofit2.http.POST
+import retrofit2.http.PUT
 import retrofit2.http.Query
 
 interface ApiClient {
@@ -13,6 +16,14 @@ interface ApiClient {
     @GET("tasks.json")
     fun getDailyTasks(@Query("start_from_date") startDate: String): Single<List<TaskResponse>>
 
+    //announcements
     @GET("announcements.json")
-    fun getAllAnnouncement(): Single<List<TaskResponse>>
+    fun getAllAnnouncements(): Single<List<TaskResponse>>
+
+    @PUT("announcements/{id}/")
+    fun editAnnouncement(): Single<AnnouncementResonce>
+
+    @POST("announcements")
+    fun createAnnouncement(): Single<AnnouncementResonce>
+
 }
