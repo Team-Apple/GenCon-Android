@@ -20,7 +20,7 @@ class EventsFragment : Fragment(), EventsContract.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        EventsComponent.Initializer.init(context!!).inject(this)
+        //EventsComponent.Initializer.init(context!!).inject(this)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {

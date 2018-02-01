@@ -20,7 +20,7 @@ class TasksFragment : Fragment(), TasksContract.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        TasksComponent.Initializer.init(context!!).inject(this)
+        //TasksComponent.Initializer.init(context!!).inject(this)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {

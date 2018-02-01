@@ -11,12 +11,16 @@ import javax.inject.Singleton
 @Component(modules = [
     AndroidInjectionModule::class,
     AppModule::class,
-    DataModule::class])
+    DataModule::class,
+    RepositoryModule::class,
+    DatabaseModule::class,
+    ViewModelModule::class])
 interface AppComponent {
     @Component.Builder
     interface Builder {
         @BindsInstance
         fun application(application: Application): Builder
+
         fun appModule(module: AppModule): Builder
         fun build(): AppComponent
     }

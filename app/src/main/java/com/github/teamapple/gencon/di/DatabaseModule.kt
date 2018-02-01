@@ -5,15 +5,15 @@ import dagger.Binds
 import dagger.Module
 
 @Module
-abstract class DatabaseModule {
+interface DatabaseModule {
 
     @Binds
-    abstract fun provideEventDatabase(database: EventRoomDatabase): EventDatabase
+     fun bindEventDatabase(database: EventRoomDatabase): EventDatabase
 
     @Binds
-    abstract fun provideTaskDatabase(database: TaskRoomDatabase): TaskDatabase
+     fun bindTaskDatabase(database: TaskRoomDatabase): TaskDatabase
 
     @Binds
-    abstract fun provideAnnouncementDatabase(database: AnnouncementRoomDatabase): AnnouncementDatabase
+     fun bindAnnouncementDatabase(database: AnnouncementRoomDatabase): AnnouncementDatabase
 
 }
