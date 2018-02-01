@@ -7,7 +7,7 @@ import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.DialogFragment
 import android.widget.TimePicker
-import com.github.teamapple.gencon.domain.model.TimeModel
+import com.github.teamapple.gencon.model.TimeModel
 import java.util.*
 
 class TimePickerDialogFragment : DialogFragment(), TimePickerDialog.OnTimeSetListener {

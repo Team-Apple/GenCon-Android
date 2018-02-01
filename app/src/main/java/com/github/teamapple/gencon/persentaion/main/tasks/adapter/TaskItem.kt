@@ -1,7 +1,7 @@
 package com.github.teamapple.gencon.persentaion.main.tasks.adapter
 
 import com.github.teamapple.gencon.R
-import com.github.teamapple.gencon.domain.model.TaskModel
+import com.github.teamapple.gencon.model.TaskModel
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.row_events_event.view.*

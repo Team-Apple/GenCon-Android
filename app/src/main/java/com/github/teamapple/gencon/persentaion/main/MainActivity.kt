@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentStatePagerAdapter
 import android.support.v7.app.AppCompatActivity
 import com.github.teamapple.gencon.R
-import com.github.teamapple.gencon.extension.setupWithViewPager
+import com.github.teamapple.gencon.util.ext.setupWithViewPager
 import com.github.teamapple.gencon.persentaion.main.announce.AnnounceFragment
 import com.github.teamapple.gencon.persentaion.main.events.EventsFragment
 import com.github.teamapple.gencon.persentaion.main.tasks.TasksFragment

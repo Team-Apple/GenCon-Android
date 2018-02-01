@@ -7,9 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.github.teamapple.gencon.databinding.FragmentTasksBinding
-import com.github.teamapple.gencon.domain.model.DateModel
-import com.github.teamapple.gencon.domain.model.TaskModel
-import com.github.teamapple.gencon.extension.visibility
+import com.github.teamapple.gencon.model.DateModel
+import com.github.teamapple.gencon.model.TaskModel
+import com.github.teamapple.gencon.util.ext.visibility
 import com.github.teamapple.gencon.persentaion.main.BottomNavigationViewChild
 import com.github.teamapple.gencon.persentaion.main.tasks.adapter.TasksRecyclerAdapter
 import com.github.teamapple.widget.DateSelectLayout

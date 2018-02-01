@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.github.teamapple.gencon.databinding.FragmentEventDetailBinding
-import com.github.teamapple.gencon.domain.model.EventModel
+import com.github.teamapple.gencon.model.EventModel
 
 class EventDetailFragment : Fragment() {
     private lateinit var binging:FragmentEventDetailBinding

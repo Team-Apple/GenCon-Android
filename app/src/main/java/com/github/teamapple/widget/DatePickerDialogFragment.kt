@@ -7,7 +7,7 @@ import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.DialogFragment
 import android.widget.DatePicker
-import com.github.teamapple.gencon.domain.model.DateModel
+import com.github.teamapple.gencon.model.DateModel
 import java.util.*
 
 class DatePickerDialogFragment : DialogFragment(), DatePickerDialog.OnDateSetListener {

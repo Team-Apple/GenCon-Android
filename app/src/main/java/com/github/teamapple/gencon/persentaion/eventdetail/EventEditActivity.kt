@@ -9,8 +9,8 @@ import android.support.v4.graphics.drawable.DrawableCompat
 import android.support.v7.app.AppCompatActivity
 import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.databinding.ActivityEventDetailBinding
-import com.github.teamapple.gencon.domain.model.EventModel
-import com.github.teamapple.gencon.domain.model.PriorityModel
+import com.github.teamapple.gencon.model.EventModel
+import com.github.teamapple.gencon.model.PriorityModel
 import com.github.teamapple.gencon.persentaion.eventdetail.detail.EventDetailFragment
 
 class EventEditActivity : AppCompatActivity() {

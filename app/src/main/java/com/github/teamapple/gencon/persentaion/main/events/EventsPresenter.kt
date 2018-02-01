@@ -1,8 +1,8 @@
 package com.github.teamapple.gencon.persentaion.main.events
 
-import com.github.teamapple.gencon.data.repository.EventsRepository
-import com.github.teamapple.gencon.domain.model.EventModel
-import com.github.teamapple.gencon.extension.plusAssign
+import com.github.teamapple.gencon.data.repository.EventRepository
+import com.github.teamapple.gencon.model.EventModel
+import com.github.teamapple.gencon.util.ext.plusAssign
 import com.github.teamapple.gencon.util.DateFormatter
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -12,7 +12,7 @@ import timber.log.Timber
 import javax.inject.Inject
 
 
-class EventsPresenter @Inject constructor(private val repository: EventsRepository) : EventsContract.Presenter {
+class EventsPresenter @Inject constructor(private val repository: EventRepository) : EventsContract.Presenter {
     private lateinit var view: EventsContract.View
     private val compositeDisposable = CompositeDisposable()
 

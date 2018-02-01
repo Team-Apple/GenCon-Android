@@ -1,7 +1,7 @@
 package com.github.teamapple.gencon.ui.main.events.adapter
 
 import com.github.teamapple.gencon.R
-import com.github.teamapple.gencon.domain.model.EventModel
+import com.github.teamapple.gencon.model.EventModel
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.row_events_event.view.*

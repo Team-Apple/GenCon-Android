@@ -1,6 +1,6 @@
 package com.github.teamapple.gencon.ui.main.events.adapter
 
-import com.github.teamapple.gencon.domain.model.EventModel
+import com.github.teamapple.gencon.model.EventModel
 import com.xwray.groupie.UpdatingGroup
 
 class EventsGroup :UpdatingGroup() {

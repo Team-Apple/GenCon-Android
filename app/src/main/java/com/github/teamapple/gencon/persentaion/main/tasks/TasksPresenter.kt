@@ -1,6 +1,6 @@
 package com.github.teamapple.gencon.persentaion.main.tasks
 
-import com.github.teamapple.gencon.domain.model.DateModel
+import com.github.teamapple.gencon.model.DateModel
 import io.reactivex.disposables.CompositeDisposable
 import javax.inject.Inject
 

@@ -1,6 +1,6 @@
 package com.github.teamapple.gencon.persentaion.main.events
 
-import com.github.teamapple.gencon.domain.model.EventModel
+import com.github.teamapple.gencon.model.EventModel
 
 interface EventsContract {
     interface Presenter {

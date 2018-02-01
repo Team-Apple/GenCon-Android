@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.extension
+package com.github.teamapple.gencon.util.ext
 
 import android.support.design.widget.BottomNavigationView
 import android.view.MenuItem

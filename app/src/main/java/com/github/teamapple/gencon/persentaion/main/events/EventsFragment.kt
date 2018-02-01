@@ -7,8 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.github.teamapple.gencon.databinding.FragmentEventsBinding
-import com.github.teamapple.gencon.domain.model.EventModel
-import com.github.teamapple.gencon.extension.visibility
+import com.github.teamapple.gencon.model.EventModel
+import com.github.teamapple.gencon.util.ext.visibility
 import com.github.teamapple.gencon.persentaion.main.BottomNavigationViewChild
 import com.github.teamapple.gencon.persentaion.main.events.adapter.EventsRecyclerAdapter
 import com.github.teamapple.widget.SpaceItemDecoration

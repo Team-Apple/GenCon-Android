@@ -11,7 +11,7 @@ class TaskRoomDatabase @Inject constructor(
         private val database: RoomDatabase,
         private val dao: TaskDao
 ) : TaskDatabase {
-    
+
     override fun getAllTasks(): Flowable<List<TaskEntity>> = dao.getAllTasks()
 
     override fun getEventById(taskId: Int): Maybe<TaskEntity> = dao.getTaskById(taskId)

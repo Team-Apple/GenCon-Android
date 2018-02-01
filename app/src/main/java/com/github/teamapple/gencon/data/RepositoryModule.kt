@@ -1,7 +1,6 @@
 package com.github.teamapple.gencon.data
 
-import com.github.teamapple.gencon.data.repository.EventsRepositoryImpl
-import com.github.teamapple.gencon.data.repository.EventsRepository
+import com.github.teamapple.gencon.data.repository.EventRepository
 import dagger.Binds
 import dagger.Module
 import javax.inject.Singleton
@@ -11,5 +10,5 @@ abstract class RepositoryModule {
 
     @Binds
     @Singleton
-    abstract fun bindsEventsRepository(repository:EventsRepositoryImpl): EventsRepository
+    abstract fun bindsEventsRepository(repository:EventsRepositoryImpl): EventRepository
 }

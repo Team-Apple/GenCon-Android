@@ -1,6 +1,6 @@
 package com.github.teamapple.gencon.persentaion.main.tasks.adapter
 
-import com.github.teamapple.gencon.domain.model.TaskModel
+import com.github.teamapple.gencon.model.TaskModel
 import com.xwray.groupie.UpdatingGroup
 
 class TasksGroup :UpdatingGroup() {

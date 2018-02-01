@@ -14,7 +14,7 @@ import android.widget.FrameLayout
 import android.widget.PopupWindow
 import android.widget.TextView
 import com.github.teamapple.gencon.R
-import com.github.teamapple.gencon.domain.model.DateModel
+import com.github.teamapple.gencon.model.DateModel
 import org.threeten.bp.LocalDate
 import org.threeten.bp.ZoneId
 
