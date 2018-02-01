@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.github.teamapple.gencon.databinding.FragmentEventDetailBinding
 import com.github.teamapple.gencon.model.EventModel
+import timber.log.Timber
 
 class EventDetailFragment : Fragment() {
     private lateinit var binging:FragmentEventDetailBinding
@@ -23,6 +24,7 @@ class EventDetailFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+        binging.startDateEditText.setOnClickListener { Timber.d("aaakakaka")}
     }
 
     override fun onPause() {

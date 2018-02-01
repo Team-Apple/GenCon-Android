@@ -4,7 +4,6 @@ import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.model.TaskModel
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
-import kotlinx.android.synthetic.main.item_events_event.view.*
 
 class TaskItem(private val event: TaskModel) : Item<ViewHolder>() {
 

@@ -1,44 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<layout>
 
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appBarLayout"
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:elevation="0dp">
+        android:layout_height="match_parent">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:titleTextAppearance="@style/TextAppearance.Base.Title"
+                app:titleTextColor="@color/white"
+                tools:title="Event"/>
+        </android.support.design.widget.AppBarLayout>
+
+        <com.github.teamapple.gencon.util.view.FixedViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/bottomNavigation"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:contentInsetStart="@dimen/dimen_32dp"
-            app:layout_scrollFlags="scroll|enterAlways"
-            app:titleTextAppearance="@style/GenConFont.Base.Title.Bold.White" />
-    </android.support.design.widget.AppBarLayout>
+            android:layout_gravity="bottom"
+            app:elevation="@dimen/dimen_4dp"
+            app:menu="@menu/menu_bottom_navigation" />
 
-    <com.github.teamapple.gencon.util.view.FixedViewPager
-        android:id="@+id/viewPager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bottomNavigation"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:layout_gravity="bottom"
-        app:elevation="@dimen/dimen_4dp"
-        app:itemBackground="@color/colorPrimary"
-        app:itemIconTint="@color/bottom_navigation"
-        app:itemTextColor="@color/bottom_navigation"
-        app:menu="@menu/menu_bottom_navigation" />
-
-</android.support.design.widget.CoordinatorLayout>
-
+    </android.support.design.widget.CoordinatorLayout>
+</layout>
