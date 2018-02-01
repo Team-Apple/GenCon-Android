@@ -5,7 +5,9 @@ import com.github.teamapple.gencon.data.db.dao.AnnouncementDao
 import com.github.teamapple.gencon.data.db.entity.AnnouncementEntity
 import io.reactivex.Flowable
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class AnnouncementRoomDatabase @Inject constructor(
         private val database: RoomDatabase,
         private val dao: AnnouncementDao

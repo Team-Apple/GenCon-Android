@@ -2,7 +2,6 @@ package com.github.teamapple.gencon.di
 
 import android.app.Application
 import com.github.teamapple.gencon.GenConApplication
-import com.github.teamapple.gencon.data.DataModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule

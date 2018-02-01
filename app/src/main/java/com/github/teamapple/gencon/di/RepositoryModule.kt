@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.data
+package com.github.teamapple.gencon.di
 
 import dagger.Module
 

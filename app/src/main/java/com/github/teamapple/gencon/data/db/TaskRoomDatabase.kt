@@ -6,7 +6,9 @@ import com.github.teamapple.gencon.data.db.entity.TaskEntity
 import io.reactivex.Flowable
 import io.reactivex.Maybe
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class TaskRoomDatabase @Inject constructor(
         private val database: RoomDatabase,
         private val dao: TaskDao
@@ -17,8 +19,8 @@ class TaskRoomDatabase @Inject constructor(
     override fun getEventById(taskId: Int): Maybe<TaskEntity> = dao.getTaskById(taskId)
 
     override fun save(tasks: List<TaskEntity>) {
-       database.runInTransaction {
-           dao.clearAndInsert(tasks)
-       }
+        database.runInTransaction {
+            dao.clearAndInsert(tasks)
+        }
     }
 }

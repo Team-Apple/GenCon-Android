@@ -1,7 +1,11 @@
-package com.github.teamapple.gencon.data
+package com.github.teamapple.gencon.di
 
+import android.arch.persistence.room.Room
+import android.arch.persistence.room.RoomDatabase
+import android.content.Context
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.github.teamapple.gencon.data.api.ApiClient
+import com.github.teamapple.gencon.data.db.AppDatabase
 import com.squareup.moshi.KotlinJsonAdapterFactory
 import com.squareup.moshi.Moshi
 import dagger.Module
@@ -28,7 +32,7 @@ class DataModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit(moshi: Moshi, okHttpClient: OkHttpClient):Retrofit{
+    fun provideRetrofit(moshi: Moshi, okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .client(okHttpClient)
@@ -39,7 +43,7 @@ class DataModule {
 
     @Provides
     @Singleton
-    fun provideMoshi():Moshi{
+    fun provideMoshi(): Moshi {
         return Moshi.Builder()
                 .add(KotlinJsonAdapterFactory())
                 .build()
@@ -47,13 +51,19 @@ class DataModule {
 
     @Provides
     @Singleton
-    fun provideOkHttpClient(): OkHttpClient{
+    fun provideOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
                 .addInterceptor(StethoInterceptor())
                 .addInterceptor(HttpLoggingInterceptor().apply {
                     level = HttpLoggingInterceptor.Level.HEADERS
                 })
                 .build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideRoom(context: Context): RoomDatabase {
+        return Room.databaseBuilder(context, AppDatabase::class.java, "gencon.db").build()
     }
 
 }

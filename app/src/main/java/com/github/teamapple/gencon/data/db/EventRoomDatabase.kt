@@ -6,7 +6,9 @@ import com.github.teamapple.gencon.data.db.entity.EventEntity
 import io.reactivex.Flowable
 import io.reactivex.Maybe
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class EventRoomDatabase @Inject constructor(
         private val database: RoomDatabase,
         private val dao: EventDao
