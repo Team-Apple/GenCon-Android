@@ -19,7 +19,7 @@ interface ApiClient {
 
     //announcements
     @GET("announcements.json")
-    fun getAllAnnouncements(): Single<List<TaskResponse>>
+    fun getAllAnnouncements(): Single<List<AnnouncementResponse>>
 
     @PUT("announcements/{id}/")
     fun editAnnouncement(params: AnnouncementParams.EditParams): Single<AnnouncementResponse>
