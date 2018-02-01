@@ -10,7 +10,7 @@ abstract class TaskDao {
     @Query("SELECT * FROM task")
     abstract fun getAllTasks(): Flowable<List<TaskEntity>>
 
-    @Query("SELECT * FROM task WHERE task_id = :taskId")
+    @Query("SELECT * FROM task WHERE id = :taskId")
     abstract fun getTaskById(taskId: Int): Maybe<TaskEntity>
 
     @Query("DELETE FROM task")

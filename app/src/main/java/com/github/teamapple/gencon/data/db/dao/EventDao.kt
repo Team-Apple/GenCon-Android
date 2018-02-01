@@ -10,7 +10,7 @@ abstract class EventDao {
     @Query("SELECT * FROM event")
     abstract fun getAllEvents(): Flowable<List<EventEntity>>
 
-    @Query("SELECT * FROM event WHERE event_id = :eventId")
+    @Query("SELECT * FROM event WHERE id = :eventId")
     abstract fun getEventById(eventId: Int): Maybe<EventEntity>
 
     @Query("DELETE FROM event")
