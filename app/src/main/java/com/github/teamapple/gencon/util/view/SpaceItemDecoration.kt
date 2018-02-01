@@ -1,10 +1,10 @@
-package com.github.teamapple.widget
+package com.github.teamapple.gencon.util.view
 
 import android.content.Context
 import android.graphics.Rect
 import android.support.v7.widget.RecyclerView
 import android.view.View
-import com.github.teamapple.gencon.util.ext.toPx
+import com.github.teamapple.gencon.extension.toPx
 
 class SpaceItemDecoration private constructor(private val spaceSize: Int) : RecyclerView.ItemDecoration() {
 

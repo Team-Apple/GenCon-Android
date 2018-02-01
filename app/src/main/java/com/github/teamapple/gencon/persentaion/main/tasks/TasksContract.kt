@@ -1,6 +1,5 @@
 package com.github.teamapple.gencon.persentaion.main.tasks
 
-import com.github.teamapple.gencon.model.DateModel
 import com.github.teamapple.gencon.model.TaskModel
 
 interface TasksContract {

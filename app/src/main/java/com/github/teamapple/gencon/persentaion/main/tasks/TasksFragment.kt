@@ -7,13 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.github.teamapple.gencon.databinding.FragmentTasksBinding
-import com.github.teamapple.gencon.model.DateModel
 import com.github.teamapple.gencon.model.TaskModel
 import com.github.teamapple.gencon.util.ext.visibility
 import com.github.teamapple.gencon.persentaion.main.BottomNavigationViewChild
 import com.github.teamapple.gencon.persentaion.main.tasks.adapter.TasksRecyclerAdapter
-import com.github.teamapple.widget.DateSelectLayout
-import com.github.teamapple.widget.SpaceItemDecoration
+import com.github.teamapple.gencon.util.view.SpaceItemDecoration
 import javax.inject.Inject
 
 class TasksFragment : Fragment(), TasksContract.View, BottomNavigationViewChild {

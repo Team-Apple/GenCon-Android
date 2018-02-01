@@ -11,7 +11,7 @@ import com.github.teamapple.gencon.model.EventModel
 import com.github.teamapple.gencon.util.ext.visibility
 import com.github.teamapple.gencon.persentaion.main.BottomNavigationViewChild
 import com.github.teamapple.gencon.persentaion.main.events.adapter.EventsRecyclerAdapter
-import com.github.teamapple.widget.SpaceItemDecoration
+import com.github.teamapple.gencon.util.view.SpaceItemDecoration
 
 class EventsFragment : Fragment(), EventsContract.View, BottomNavigationViewChild {
     companion object {

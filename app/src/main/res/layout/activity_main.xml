@@ -25,7 +25,7 @@
             app:titleTextAppearance="@style/GenConFont.Base.Title.Bold.White" />
     </android.support.design.widget.AppBarLayout>
 
-    <com.github.teamapple.widget.FixedViewPager
+    <com.github.teamapple.gencon.util.view.FixedViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

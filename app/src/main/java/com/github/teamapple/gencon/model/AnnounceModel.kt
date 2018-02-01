@@ -1,4 +1,11 @@
-package com.github.teamapple.gencon.domain.model
+package com.github.teamapple.gencon.model
 
-class AnnounceModel {
+data class AnnounceModel(
+        val timing: AnnounceTimingModel,
+        val mode: Int
+)
+
+enum class AnnounceTimingModel {
+    MORNING,
+    NIGHT
 }

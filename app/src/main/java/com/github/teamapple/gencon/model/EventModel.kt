@@ -2,8 +2,6 @@ package com.github.teamapple.gencon.model
 
 import android.annotation.SuppressLint
 import android.os.Parcelable
-import com.github.teamapple.gencon.data.entity.response.EventResponse
-import com.github.teamapple.gencon.util.DateFormatter
 import kotlinx.android.parcel.Parcelize
 
 @SuppressLint("ParcelCreator")
@@ -14,17 +12,4 @@ data class EventModel(val id: Int,
                       val startTime: String,
                       val endTime: String,
                       val priority: PriorityModel
-):Parcelable{
-    companion object {
-        internal fun convert(response: EventResponse,formatter: DateFormatter):EventModel{
-            return EventModel(
-                    id = response.id,
-                    name = response.title,
-                    memo = response.memo?:"",
-                    startTime = formatter.format(response.startAt),
-                    endTime = formatter.format(response.endAt),
-                    priority = PriorityModel.from(response.priority)
-                    )
-        }
-    }
-}
+):Parcelable
