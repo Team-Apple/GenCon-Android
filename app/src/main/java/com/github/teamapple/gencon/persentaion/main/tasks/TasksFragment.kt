@@ -75,6 +75,6 @@ class TasksFragment : Fragment(), TasksContract.View {
         //todo あとで実装
     }
 
-    
+
 
 }

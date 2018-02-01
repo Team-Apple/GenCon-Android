@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextAppearance.Base.Caption" parent="TextAppearance.AppCompat.Button">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextAppearance.Base.Caption.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Base.Body" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextAppearance.Base.Body.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Base.Subhead" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextAppearance.Base.Subhead.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Base.Title" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="TextAppearance.Base.Title.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

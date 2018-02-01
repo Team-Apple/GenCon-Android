@@ -6,12 +6,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.github.teamapple.widget.DateSelectLayout
-            android:id="@+id/date_select_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
 
-        <include layout="@layout/include_toolbar_shadow" />
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -49,7 +44,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:text="@string/no_events"
+                    android:text="@string/event_not_exist"
                     android:textColor="@color/grey_400" />
             </RelativeLayout>
         </FrameLayout>

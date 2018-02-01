@@ -10,6 +10,6 @@ import com.github.teamapple.gencon.R
 class AnnouncementFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_announce, container, false)
+        return inflater.inflate(R.layout.fragment_announcement, container, false)
     }
 }

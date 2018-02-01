@@ -1,6 +1,7 @@
-package com.github.teamapple.gencon.ui.main.tasks.adapter
+package com.github.teamapple.gencon.persentaion.main.tasks.adapter
 
 import com.github.teamapple.gencon.model.TaskModel
+import com.github.teamapple.gencon.persentaion.main.tasks.adapter.TasksGroup
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
 

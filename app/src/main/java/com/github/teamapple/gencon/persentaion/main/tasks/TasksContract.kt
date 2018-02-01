@@ -6,7 +6,7 @@ interface TasksContract {
     interface Presenter {
         fun onResume(view: View)
         fun onPause()
-        fun loadDaysTasks(date: DateModel)
+        //fun loadDaysTasks(date: DateModel)
     }
 
     interface View {

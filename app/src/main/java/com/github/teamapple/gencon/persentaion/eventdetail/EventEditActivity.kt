@@ -11,7 +11,6 @@ import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.databinding.ActivityEventDetailBinding
 import com.github.teamapple.gencon.model.EventModel
 import com.github.teamapple.gencon.model.PriorityModel
-import com.github.teamapple.gencon.persentaion.eventdetail.detail.EventDetailFragment
 
 class EventEditActivity : AppCompatActivity() {
     companion object {
@@ -40,9 +39,9 @@ class EventEditActivity : AppCompatActivity() {
                     endTime = "",
                     priority = PriorityModel.Normal
             )
-            supportFragmentManager.beginTransaction()
+            /*supportFragmentManager.beginTransaction()
                     .replace(R.id.fragment_container, EventDetailFragment.newInstance(model))
-                    .commit()
+                    .commit()*/
         }
         /*val now = ZonedDateTime.now()
         val date = formatDate(now)

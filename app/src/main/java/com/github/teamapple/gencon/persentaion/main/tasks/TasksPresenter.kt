@@ -16,7 +16,7 @@ class TasksPresenter @Inject constructor() : TasksContract.Presenter {
         compositeDisposable.clear()
     }
 
-    override fun loadDaysTasks(date: DateModel) {
+    /*override fun loadDaysTasks(date: DateModel) {
         view.setLoadingIndicator(true)
         /*compositeDisposable += useCase.getEvents(date)
                 .observeOn(AndroidSchedulers.mainThread())
@@ -33,5 +33,5 @@ class TasksPresenter @Inject constructor() : TasksContract.Presenter {
                             view.setLoadingIndicator(false)
                         }
                 )*/
-    }
+    }*/
 }

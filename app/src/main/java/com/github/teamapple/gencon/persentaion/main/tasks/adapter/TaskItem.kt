@@ -4,7 +4,7 @@ import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.model.TaskModel
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
-import kotlinx.android.synthetic.main.row_events_event.view.*
+import kotlinx.android.synthetic.main.item_events_event.view.*
 
 class TaskItem(private val event: TaskModel) : Item<ViewHolder>() {
 
@@ -16,5 +16,5 @@ class TaskItem(private val event: TaskModel) : Item<ViewHolder>() {
         }
     }
 
-    override fun getLayout(): Int = R.layout.row_events_event
+    override fun getLayout(): Int = R.layout.item_events_event
 }

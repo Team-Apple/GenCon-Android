@@ -1,7 +1,7 @@
 package com.github.teamapple.gencon.data
 
 import com.facebook.stetho.okhttp3.StethoInterceptor
-import com.github.teamapple.gencon.data.network.ApiClient
+import com.github.teamapple.gencon.data.api.ApiClient
 import com.squareup.moshi.KotlinJsonAdapterFactory
 import com.squareup.moshi.Moshi
 import dagger.Module
@@ -12,6 +12,7 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
+
 
 @Module(includes = arrayOf(RepositoryModule::class))
 class DataModule {
@@ -27,7 +28,7 @@ class DataModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit(moshi: Moshi,okHttpClient: OkHttpClient):Retrofit{
+    fun provideRetrofit(moshi: Moshi, okHttpClient: OkHttpClient):Retrofit{
         return Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .client(okHttpClient)

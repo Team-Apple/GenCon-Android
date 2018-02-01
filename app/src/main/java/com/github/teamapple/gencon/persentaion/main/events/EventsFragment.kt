@@ -8,8 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.github.teamapple.gencon.databinding.FragmentEventsBinding
 import com.github.teamapple.gencon.model.EventModel
-import com.github.teamapple.gencon.util.ext.visibility
-import com.github.teamapple.gencon.persentaion.main.events.adapter.EventsRecyclerAdapter
+import com.github.teamapple.gencon.ui.main.events.adapter.EventsRecyclerAdapter
 import com.github.teamapple.gencon.util.view.SpaceItemDecoration
 
 class EventsFragment : Fragment(), EventsContract.View {
@@ -74,16 +73,11 @@ class EventsFragment : Fragment(), EventsContract.View {
     }
 
     override fun setNoEventsView(shown: Boolean) {
-        binding.recyclerView.visibility(!shown)
-        binding.emptyView.visibility(shown)
+        //binding.recyclerView.visibility(!shown)
+        //binding.emptyView.visibility(shown)
     }
 
     override fun showMessage(message: String) {
         //todo あとで実装
     }
-
-    override fun onClickCreateFab() {
-        //EventEditActivity.start(context)
-    }
-
 }

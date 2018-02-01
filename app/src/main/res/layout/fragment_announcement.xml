@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/announcement_swipe_refresh"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/event_recycler"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/recycler_view_bottom_padding"
+                android:paddingTop="@dimen/recycler_view_top_padding"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_events_event" />
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/announcement_inactive_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:tint="@color/grey_400"
+            app:layout_constraintBottom_toTopOf="@id/announcement_inactive_title"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:srcCompat="@drawable/ic_announce_black_24dp" />
+
+        <TextView
+            android:id="@+id/announcement_inactive_title"
+            style="@style/GenConFont.Base.Title.Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/event_not_exist"
+            android:textColor="@color/grey_400"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/announcement_inactive_image" />
+
+        <android.support.constraint.Group
+            android:id="@+id/announcement_inactive_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="announcement_inactive_image,announcement_inactive_title" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>
