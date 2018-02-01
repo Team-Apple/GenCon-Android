@@ -27,7 +27,7 @@
     <string name="common_submit">submit</string>
     <string name="event_edit_hint_text">Please input title</string>
 
-    <string name="event_not_exist">There is no events of today</string>
-    <string name="task_not_exist">There is no tasks of today</string>
-    <string name="announcement_not_exist">There are no tasks of today</string>
+    <string name="event_not_exist">There isn’t any events.</string>
+    <string name="task_not_exist">There isn’t any tasks.</string>
+    <string name="announcement_not_exist">There isn’t any nnouncements.</string>
 </resources>
