@@ -49,12 +49,11 @@ dependencies {
     implementation "com.android.support.constraint:constraint-layout:$constraint_layout_version"
 
     //android architecture components
-    implementation "android.arch.lifecycle:runtime:$aac_lifecycle_versions"
     implementation "android.arch.lifecycle:extensions:$aac_lifecycle_versions"
     implementation "android.arch.lifecycle:reactivestreams:$aac_lifecycle_versions"
-    kapt "android.arch.lifecycle:compiler:$aac_lifecycle_versions"
-    implementation "android.arch.persistence.room:runtime:$aac_room_versions"
+    //kapt "android.arch.lifecycle:compiler:$aac_lifecycle_versions"
 
+    //room
     implementation "android.arch.persistence.room:runtime:$aac_room_versions"
     implementation "android.arch.persistence.room:rxjava2:$aac_room_versions"
     kapt "android.arch.persistence.room:compiler:$aac_room_versions"

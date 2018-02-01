@@ -8,20 +8,17 @@ import android.view.View
 import android.view.ViewGroup
 import com.github.teamapple.gencon.databinding.FragmentTasksBinding
 import com.github.teamapple.gencon.model.TaskModel
-import com.github.teamapple.gencon.util.ext.visibility
-import com.github.teamapple.gencon.persentaion.main.BottomNavigationViewChild
-import com.github.teamapple.gencon.persentaion.main.tasks.adapter.TasksRecyclerAdapter
 import com.github.teamapple.gencon.util.view.SpaceItemDecoration
 import javax.inject.Inject
 
-class TasksFragment : Fragment(), TasksContract.View, BottomNavigationViewChild {
+class TasksFragment : Fragment(), TasksContract.View {
     companion object {
         fun newInstance() = TasksFragment()
     }
 
     @Inject lateinit var presenter: TasksContract.Presenter
     private lateinit var binding: FragmentTasksBinding
-    private val adapter = TasksRecyclerAdapter()
+    //private val adapter = TasksRecyclerAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,25 +36,19 @@ class TasksFragment : Fragment(), TasksContract.View, BottomNavigationViewChild 
             recyclerView.layoutManager = LinearLayoutManager(context)
             recyclerView.addItemDecoration(SpaceItemDecoration.createByDpSize(context!!, 4))
             recyclerView.setHasFixedSize(true)
-            recyclerView.adapter = adapter
+            //recyclerView.adapter = adapter
         }
     }
 
     override fun onResume() {
         super.onResume()
         presenter.onResume(this)
-        if (adapter.isEmpty()) {
-            presenter.loadDaysTasks(binding.dateSelectContainer.getSelectedDate())
-        }
+        /*if (adapter.isEmpty()) {
+            //presenter.loadDaysTasks(binding.dateSelectContainer.getSelectedDate())
+        }*/
         binding.swipeRefreshLayout.setOnRefreshListener {
-            presenter.loadDaysTasks(binding.dateSelectContainer.getSelectedDate())
+            //presenter.loadDaysTasks(binding.dateSelectContainer.getSelectedDate())
         }
-
-        binding.dateSelectContainer.setListener(object :DateSelectLayout.DateSelectListener{
-            override fun onSelectDate(date: DateModel) {
-                presenter.loadDaysTasks(date)
-            }
-        })
     }
 
     override fun onPause() {
@@ -66,7 +57,7 @@ class TasksFragment : Fragment(), TasksContract.View, BottomNavigationViewChild 
     }
 
     override fun updateEvents(events: List<TaskModel>) {
-        adapter.updateTasks(events)
+        //adapter.updateTasks(events)
     }
 
     override fun setLoadingIndicator(active: Boolean) {
@@ -76,16 +67,14 @@ class TasksFragment : Fragment(), TasksContract.View, BottomNavigationViewChild 
     }
 
     override fun setNoEventsView(shown: Boolean) {
-        binding.recyclerView.visibility(!shown)
-        binding.emptyView.visibility(shown)
+        //binding.recyclerView.visibility(!shown)
+        //binding.emptyView.visibility(shown)
     }
 
     override fun showMessage(message: String) {
         //todo あとで実装
     }
 
-    override fun onClickCreateFab() {
-        //navigator.navigateToEventEdit(activity)
-    }
+    
 
 }

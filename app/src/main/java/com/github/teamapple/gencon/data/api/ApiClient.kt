@@ -1,6 +1,7 @@
 package com.github.teamapple.gencon.data.api
 
-import com.github.teamapple.gencon.data.api.entity.response.AnnouncementResonce
+import com.github.teamapple.gencon.data.api.entity.params.AnnouncementParams
+import com.github.teamapple.gencon.data.api.entity.response.AnnouncementResponse
 import com.github.teamapple.gencon.data.api.entity.response.EventResponse
 import com.github.teamapple.gencon.data.api.entity.response.TaskResponse
 import io.reactivex.Single
@@ -21,9 +22,9 @@ interface ApiClient {
     fun getAllAnnouncements(): Single<List<TaskResponse>>
 
     @PUT("announcements/{id}/")
-    fun editAnnouncement(): Single<AnnouncementResonce>
+    fun editAnnouncement(params: AnnouncementParams.EditParams): Single<AnnouncementResponse>
 
     @POST("announcements")
-    fun createAnnouncement(): Single<AnnouncementResonce>
+    fun createAnnouncement(params: AnnouncementParams.CreateParams): Single<AnnouncementResponse>
 
 }

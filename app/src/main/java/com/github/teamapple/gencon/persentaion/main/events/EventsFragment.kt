@@ -9,11 +9,10 @@ import android.view.ViewGroup
 import com.github.teamapple.gencon.databinding.FragmentEventsBinding
 import com.github.teamapple.gencon.model.EventModel
 import com.github.teamapple.gencon.util.ext.visibility
-import com.github.teamapple.gencon.persentaion.main.BottomNavigationViewChild
 import com.github.teamapple.gencon.persentaion.main.events.adapter.EventsRecyclerAdapter
 import com.github.teamapple.gencon.util.view.SpaceItemDecoration
 
-class EventsFragment : Fragment(), EventsContract.View, BottomNavigationViewChild {
+class EventsFragment : Fragment(), EventsContract.View {
     companion object {
         fun newInstance() = EventsFragment()
     }

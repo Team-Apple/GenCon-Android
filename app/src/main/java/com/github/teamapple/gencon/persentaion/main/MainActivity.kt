@@ -6,10 +6,10 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentStatePagerAdapter
 import android.support.v7.app.AppCompatActivity
 import com.github.teamapple.gencon.R
-import com.github.teamapple.gencon.util.ext.setupWithViewPager
-import com.github.teamapple.gencon.persentaion.main.announce.AnnounceFragment
+import com.github.teamapple.gencon.persentaion.main.announcement.AnnouncementFragment
 import com.github.teamapple.gencon.persentaion.main.events.EventsFragment
 import com.github.teamapple.gencon.persentaion.main.tasks.TasksFragment
+import com.github.teamapple.gencon.util.ext.setupWithViewPager
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             return when (position) {
                 0 -> EventsFragment.newInstance()
                 1 -> TasksFragment.newInstance()
-                2 -> AnnounceFragment()
+                2 -> AnnouncementFragment()
                 else -> throw IllegalAccessException("Illegal　position. position=$position")
             }
         }
