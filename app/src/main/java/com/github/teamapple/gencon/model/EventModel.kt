@@ -9,7 +9,7 @@ import kotlinx.android.parcel.Parcelize
 data class EventModel(val id: Int,
                       val name: String,
                       val memo: String,
-                      val startTime: String,
-                      val endTime: String,
+                      val startAt: String,
+                      val endAt: String,
                       val priority: PriorityModel
 ):Parcelable

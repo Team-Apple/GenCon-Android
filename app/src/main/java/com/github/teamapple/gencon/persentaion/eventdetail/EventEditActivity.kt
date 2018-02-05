@@ -35,8 +35,8 @@ class EventEditActivity : AppCompatActivity() {
                     id = 512,
                     name = "プロ応用",
                     memo = "none",
-                    startTime = "",
-                    endTime = "",
+                    startAt = "",
+                    endAt = "",
                     priority = PriorityModel.Normal
             )
             /*supportFragmentManager.beginTransaction()
@@ -119,7 +119,7 @@ class EventEditActivity : AppCompatActivity() {
                     startDate = binging.startDayText.text.toString(),
                     statTime = binging.startTimeText.text.toString(),
                     endDate = binging.endDayText.text.toString(),
-                    endTime = binging.endTimeText.text.toString(),
+                    endAt = binging.endTimeText.text.toString(),
                     priority = "normal",
                     memo = binging.memoEditText.text.toString())
             if (disposable.isDisposed) {

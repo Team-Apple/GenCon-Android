@@ -1,19 +1,18 @@
 package com.github.teamapple.gencon.persentaion.main.tasks
 
 import com.github.teamapple.gencon.R
+import com.github.teamapple.gencon.databinding.ItemTaskBinding
 import com.github.teamapple.gencon.model.TaskModel
-import com.xwray.groupie.Item
-import com.xwray.groupie.ViewHolder
+import com.xwray.groupie.databinding.BindableItem
 
-class TaskItem(private val event: TaskModel) : Item<ViewHolder>() {
+class TaskItem(private val taak: TaskModel) : BindableItem<ItemTaskBinding>() {
 
-    override fun bind(viewHolder: ViewHolder, position: Int) {
-        with(viewHolder.itemView) {
-            /*eventName.text = event.name
-            startTime.text = context.getString(R.string.start_time, event.startTime)
-            endTime.text = context.getString(R.string.end_time, event.endTime)*/
-        }
+    override fun bind(binding: ItemTaskBinding, position: Int) {
+        /*binding.taskName.text = taak.name
+        binding.startAt.text = taak.startAt
+        binding.deadline.text = taak*/
     }
 
-    override fun getLayout(): Int = R.layout.item_events_event
+
+    override fun getLayout(): Int = R.layout.item_event
 }

@@ -92,10 +92,12 @@ dependencies {
     implementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
 
     //recycler view
-    implementation('com.xwray:groupie:2.0.2') {
+    implementation('com.xwray:groupie:2.0.3') {
         exclude group: 'com.android.support', module: 'recyclerview-v7'
     }
-
+    implementation('com.xwray:groupie-databinding:2.0.3') {
+        exclude group: 'com.android.support', module: 'recyclerview-v7'
+    }
     //json parser
     implementation "com.squareup.moshi:moshi:$moshi_version"
     implementation "com.squareup.moshi:moshi-kotlin:$moshi_version"

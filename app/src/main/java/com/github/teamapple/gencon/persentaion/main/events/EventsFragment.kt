@@ -12,7 +12,7 @@ class EventsFragment : Fragment() {
         fun newInstance() = EventsFragment()
     }
 
-    //@Inject lateinit var presenter: EventsContract.Presenter
+
     private lateinit var binding: FragmentEventsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

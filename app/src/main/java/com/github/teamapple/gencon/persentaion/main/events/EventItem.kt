@@ -1,19 +1,18 @@
 package com.github.teamapple.gencon.persentaion.main.events
 
 import com.github.teamapple.gencon.R
+import com.github.teamapple.gencon.databinding.ItemEventBinding
 import com.github.teamapple.gencon.model.EventModel
-import com.xwray.groupie.Item
-import com.xwray.groupie.ViewHolder
+import com.xwray.groupie.databinding.BindableItem
 
-class EventItem(private val event: EventModel) : BindableItem<ViewHolder>() {
+class EventItem(private val event: EventModel) : BindableItem<ItemEventBinding>() {
 
-    override fun bind(viewHolder: ViewHolder, position: Int) {
-        /*with(viewHolder.itemView) {
-            eventName.text = event.name
-            startTime.text = context.getString(R.string.start_time, event.startTime)
-            endTime.text = context.getString(R.string.end_time, event.endTime)
-        }*/
+    override fun bind(binding: ItemEventBinding, position: Int) {
+        binding.eventName.text = event.name
+        binding.startAt.text = event.startAt
+        binding.endAt.text = event.endAt
     }
 
-    override fun getLayout(): Int = R.layout.item_events_event
+
+    override fun getLayout(): Int = R.layout.item_event
 }
