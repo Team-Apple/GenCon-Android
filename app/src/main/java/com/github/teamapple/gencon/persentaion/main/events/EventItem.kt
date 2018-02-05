@@ -1,11 +1,11 @@
-package com.github.teamapple.gencon.ui.main.events.adapter
+package com.github.teamapple.gencon.persentaion.main.events
 
 import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.model.EventModel
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 
-class EventItem(private val event: EventModel) : Item<ViewHolder>() {
+class EventItem(private val event: EventModel) : BindableItem<ViewHolder>() {
 
     override fun bind(viewHolder: ViewHolder, position: Int) {
         /*with(viewHolder.itemView) {

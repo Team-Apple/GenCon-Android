@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon
+package com.github.teamapple.gencon.persentaion
 
 import android.app.Activity
 import android.app.Application
@@ -13,7 +13,7 @@ import dagger.android.HasActivityInjector
 import timber.log.Timber
 import javax.inject.Inject
 
-class GenConApplication : Application(), HasActivityInjector {
+class App : Application(), HasActivityInjector {
 
     private val component: AppComponent by  lazy{
         DaggerAppComponent.builder()
@@ -34,6 +34,6 @@ class GenConApplication : Application(), HasActivityInjector {
     }
 
     companion object {
-        fun appComponent(context: Context):AppComponent = (context.applicationContext as GenConApplication).component
+        fun appComponent(context: Context):AppComponent = (context.applicationContext as App).component
     }
 }

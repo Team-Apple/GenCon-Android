@@ -46,7 +46,7 @@ class EventEditActivity : AppCompatActivity() {
         /*val now = ZonedDateTime.now()
         val date = formatDate(now)
         val time = formatTime(now)
-        val apiClient = GenConApplication.appComponent(this).apiclient()
+        val apiClient = App.appComponent(this).apiclient()
         binging.startDayText.text = date
         binging.endDayText.text = date
 

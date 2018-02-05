@@ -1,7 +1,7 @@
 package com.github.teamapple.gencon.di
 
 import android.app.Application
-import com.github.teamapple.gencon.GenConApplication
+import com.github.teamapple.gencon.persentaion.App
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -25,5 +25,5 @@ interface AppComponent {
         fun build(): AppComponent
     }
 
-    fun inject(application: GenConApplication)
+    fun inject(application: App)
 }

@@ -6,16 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.github.teamapple.gencon.databinding.FragmentEventsBinding
-import com.github.teamapple.gencon.model.EventModel
-import com.github.teamapple.gencon.ui.main.events.adapter.EventsRecyclerAdapter
 
-class EventsFragment : Fragment(), EventsContract.View {
+class EventsFragment : Fragment() {
     companion object {
         fun newInstance() = EventsFragment()
     }
 
     //@Inject lateinit var presenter: EventsContract.Presenter
-    private val adapter = EventsRecyclerAdapter()
     private lateinit var binding: FragmentEventsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,24 +55,5 @@ class EventsFragment : Fragment(), EventsContract.View {
     override fun onPause() {
         super.onPause()
         //presenter.onPause()
-    }
-
-    override fun updateEvents(events: List<EventModel>) {
-        adapter.updateEvents(events)
-    }
-
-    override fun setLoadingIndicator(active: Boolean) {
-        /*binding.swipeRefreshLayout.post {
-            binding.swipeRefreshLayout.isRefreshing = active
-        }*/
-    }
-
-    override fun setNoEventsView(shown: Boolean) {
-        //binding.recyclerView.visibility(!shown)
-        //binding.emptyView.visibility(shown)
-    }
-
-    override fun showMessage(message: String) {
-        //todo あとで実装
     }
 }

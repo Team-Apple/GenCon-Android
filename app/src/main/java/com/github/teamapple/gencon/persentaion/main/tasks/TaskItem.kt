@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.persentaion.main.tasks.adapter
+package com.github.teamapple.gencon.persentaion.main.tasks
 
 import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.model.TaskModel

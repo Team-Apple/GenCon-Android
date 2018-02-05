@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.extension
+package com.github.teamapple.gencon.util.ext
 
 import android.content.Context
 

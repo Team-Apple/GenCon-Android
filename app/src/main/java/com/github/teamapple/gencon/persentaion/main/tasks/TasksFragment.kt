@@ -9,7 +9,7 @@ import com.github.teamapple.gencon.databinding.FragmentTasksBinding
 import com.github.teamapple.gencon.model.TaskModel
 import javax.inject.Inject
 
-class TasksFragment : Fragment(), TasksContract.View {
+class TasksFragment : Fragment() {
     companion object {
         fun newInstance() = TasksFragment()
     }
