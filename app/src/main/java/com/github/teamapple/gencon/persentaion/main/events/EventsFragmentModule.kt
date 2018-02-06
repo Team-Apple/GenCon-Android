@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.persentaion.main.tasks
+package com.github.teamapple.gencon.persentaion.main.events
 
 import com.github.teamapple.gencon.di.modules.ViewModelModule
 import com.github.teamapple.gencon.di.scopes.ActivityScope
@@ -7,13 +7,13 @@ import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
 @Module
-interface TasksFragmentModule {
+interface EventsFragmentModule {
 
     @FragmentScope
     @ContributesAndroidInjector
-    fun contributeTasksFragment(): TasksFragment
+    fun contributeEventsFragment(): EventsFragment
 }
 
 @Module
 @ActivityScope
-class TasksViewModelModule: ViewModelModule<TasksViewModel>(TasksViewModel::class.java)
+class EventsViewModelModule: ViewModelModule<EventsViewModel>(EventsViewModel::class.java)
