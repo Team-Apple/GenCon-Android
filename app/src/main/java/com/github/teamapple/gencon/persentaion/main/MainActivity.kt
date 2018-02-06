@@ -9,21 +9,21 @@ import android.support.v7.app.AppCompatActivity
 import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.databinding.ActivityMainBinding
 import com.github.teamapple.gencon.persentaion.main.announcement.AnnouncementFragment
-import com.github.teamapple.gencon.persentaion.main.events.EventsFragment
 import com.github.teamapple.gencon.persentaion.main.tasks.TasksFragment
-import com.github.teamapple.gencon.util.ext.setupWithViewPager
+import com.github.teamapple.gencon.persentaion.main.tasks.TasksViewModel
 import dagger.android.AndroidInjection
-import dagger.android.AndroidInjector
-import dagger.android.DispatchingAndroidInjector
-import dagger.android.support.HasSupportFragmentInjector
 import kotlinx.android.synthetic.main.activity_main.*
+import timber.log.Timber
 import javax.inject.Inject
 
 
-class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
+class MainActivity : AppCompatActivity() {
 
+    /*@Inject
+    lateinit var fragmentDispatchingAndroidInjector: DispatchingAndroidInjector<Fragment>*/
     @Inject
-    lateinit var fragmentDispatchingAndroidInjector: DispatchingAndroidInjector<Fragment>
+    lateinit var viewModel: TasksViewModel
+
     val binding: ActivityMainBinding by lazy {
         DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
     }
@@ -36,26 +36,26 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
         supportActionBar?.apply {
             setDisplayShowTitleEnabled(false)
         }
-        val adapter = BottomNavigationFragmentAdapter(supportFragmentManager)
+
+        /*val adapter = BottomNavigationFragmentAdapter(supportFragmentManager)
         viewPager.adapter = adapter
         viewPager.offscreenPageLimit = 3
         toolbar.title = bottomNavigation.let { menu -> menu.menu.findItem(menu.selectedItemId).title }
         bottomNavigation.setupWithViewPager(viewPager) { menuItem ->
             toolbar.title = menuItem.title
-        }
+        }*/
+        Timber.d( "viewmodel ${viewModel.hashCode()}")
     }
 
-    override fun supportFragmentInjector(): AndroidInjector<Fragment> =
-            fragmentDispatchingAndroidInjector
 
     class BottomNavigationFragmentAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
         companion object {
-            const val ITEM_COUNT = 3
+            const val ITEM_COUNT = 1
         }
 
         override fun getItem(position: Int): Fragment {
             return when (position) {
-                0 -> EventsFragment.newInstance()
+                0 -> TasksFragment.newInstance()
                 1 -> TasksFragment.newInstance()
                 2 -> AnnouncementFragment()
                 else -> throw IllegalAccessException("Illegal　position. position=$position")

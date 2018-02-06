@@ -1,11 +1,13 @@
 package com.github.teamapple.gencon.di.modules
 
 import android.arch.persistence.room.Room
-import android.arch.persistence.room.RoomDatabase
 import android.content.Context
 import com.facebook.stetho.okhttp3.StethoInterceptor
-import com.github.teamapple.gencon.data.api.ApiClient
+import com.github.teamapple.gencon.data.api.GenConApiClient
 import com.github.teamapple.gencon.data.db.AppDatabase
+import com.github.teamapple.gencon.data.db.dao.AnnouncementDao
+import com.github.teamapple.gencon.data.db.dao.EventDao
+import com.github.teamapple.gencon.data.db.dao.TaskDao
 import com.squareup.moshi.KotlinJsonAdapterFactory
 import com.squareup.moshi.Moshi
 import dagger.Module
@@ -26,8 +28,8 @@ class DataModule {
 
     @Provides
     @Singleton
-    fun provideApiClient(retrofit: Retrofit): ApiClient {
-        return retrofit.create(ApiClient::class.java)
+    fun provideApiClient(retrofit: Retrofit): GenConApiClient {
+        return retrofit.create(GenConApiClient::class.java)
     }
 
     @Provides
@@ -62,8 +64,23 @@ class DataModule {
 
     @Provides
     @Singleton
-    fun provideRoom(context: Context): RoomDatabase {
-        return Room.databaseBuilder(context, AppDatabase::class.java, "gencon.db").build()
+    fun provideRoom(context: Context): AppDatabase {
+        return Room.databaseBuilder(context, AppDatabase::class.java, "gencon.db")
+                .fallbackToDestructiveMigration()
+                .build()
     }
+
+    @Provides
+    @Singleton
+    fun provideTaskDao(db: AppDatabase): TaskDao = db.taskDao()
+
+    @Provides
+    @Singleton
+    fun provideEventDao(db: AppDatabase): EventDao = db.eventDao()
+
+    @Provides
+    @Singleton
+    fun provideAnnouncementDao(db: AppDatabase): AnnouncementDao = db.announcementDao()
+
 
 }

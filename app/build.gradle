@@ -48,7 +48,7 @@ dependencies {
     def support_library_version = '27.0.2'
     def constraint_layout_version = '1.1.0-beta4'
     def okhttp_version = "3.9.1"
-    def dagger_version = "2.13"
+    def dagger_version = "2.14.1"
     def aac_lifecycle_versions = "1.1.0"
     def aac_room_versions = "1.0.0"
 
@@ -75,7 +75,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     //reactive extension
-    implementation "io.reactivex.rxjava2:rxjava:2.1.8"
+    implementation "io.reactivex.rxjava2:rxjava:2.1.9"
     implementation "io.reactivex.rxjava2:rxandroid:2.0.1"
     implementation 'io.reactivex.rxjava2:rxkotlin:2.2.0'
 

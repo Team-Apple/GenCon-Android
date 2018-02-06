@@ -10,7 +10,7 @@ import retrofit2.http.POST
 import retrofit2.http.PUT
 import retrofit2.http.Query
 
-interface ApiClient {
+interface GenConApiClient {
     @GET("events.json")
     fun getDailyEvents(@Query("start_from_data") startDate: String): Single<List<EventResponse>>
 

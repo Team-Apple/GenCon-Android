@@ -1,11 +1,15 @@
 package com.github.teamapple.gencon.di.modules
 
+import com.github.teamapple.gencon.data.repository.TaskRepository
+import com.github.teamapple.gencon.data.repository.TaskRepositoryImpl
+import dagger.Binds
 import dagger.Module
+import javax.inject.Singleton
 
 @Module
-abstract class RepositoryModule {
+interface RepositoryModule {
 
-    /*@Binds
+    @Binds
     @Singleton
-    abstract fun bindsEventsRepository(repository:EventsRepositoryImpl): EventRepository*/
+    fun bindsEventsRepository(repository: TaskRepositoryImpl): TaskRepository
 }

@@ -6,19 +6,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.github.teamapple.gencon.databinding.FragmentTasksBinding
+import com.github.teamapple.gencon.di.Injectable
+import com.github.teamapple.gencon.util.ext.observe
+import timber.log.Timber
+import javax.inject.Inject
 
-class TasksFragment : Fragment() {
+class TasksFragment : Fragment(), Injectable {
     companion object {
         fun newInstance() = TasksFragment()
     }
 
-    //@Inject lateinit var presenter: TasksContract.Presenter
+    @Inject
+    lateinit var viewModel: TasksViewModel
     private lateinit var binding: FragmentTasksBinding
     //private val adapter = TasksRecyclerAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //TasksComponent.Initializer.init(context!!).inject(this)
+
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -28,6 +33,9 @@ class TasksFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel.tasks.observe(this,{
+            Timber.d(it.toString())
+        })
         /*binding.recyclerView.also { recyclerView ->
             recyclerView.layoutManager = LinearLayoutManager(context)
             recyclerView.addItemDecoration(SpaceItemDecoration.createByDpSize(context!!, 4))

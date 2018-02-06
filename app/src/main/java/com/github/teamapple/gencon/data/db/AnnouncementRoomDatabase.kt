@@ -1,6 +1,5 @@
 package com.github.teamapple.gencon.data.db
 
-import android.arch.persistence.room.RoomDatabase
 import com.github.teamapple.gencon.data.db.dao.AnnouncementDao
 import com.github.teamapple.gencon.data.db.entity.AnnouncementEntity
 import io.reactivex.Flowable
@@ -9,7 +8,7 @@ import javax.inject.Singleton
 
 @Singleton
 class AnnouncementRoomDatabase @Inject constructor(
-        private val database: RoomDatabase,
+        private val database: AppDatabase,
         private val dao: AnnouncementDao
 ) : AnnouncementDatabase {
 

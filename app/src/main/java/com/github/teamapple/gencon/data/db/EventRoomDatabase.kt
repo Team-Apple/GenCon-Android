@@ -1,6 +1,5 @@
 package com.github.teamapple.gencon.data.db
 
-import android.arch.persistence.room.RoomDatabase
 import com.github.teamapple.gencon.data.db.dao.EventDao
 import com.github.teamapple.gencon.data.db.entity.EventEntity
 import io.reactivex.Flowable
@@ -10,7 +9,7 @@ import javax.inject.Singleton
 
 @Singleton
 class EventRoomDatabase @Inject constructor(
-        private val database: RoomDatabase,
+        private val database: AppDatabase,
         private val dao: EventDao
 ) : EventDatabase {
 

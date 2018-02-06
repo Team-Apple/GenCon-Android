@@ -1,6 +1,6 @@
 package com.github.teamapple.gencon.data.repository
 
-import com.github.teamapple.gencon.data.api.ApiClient
+import com.github.teamapple.gencon.data.api.GenConApiClient
 import com.github.teamapple.gencon.data.db.AnnouncementDatabase
 import com.github.teamapple.gencon.data.mapper.toAnnouncementEntities
 import com.github.teamapple.gencon.data.mapper.toAnnouncementModels
@@ -12,7 +12,7 @@ import javax.inject.Singleton
 
 @Singleton
 class AnnouncementRepositoryImpl @Inject constructor(
-        private val apiClient: ApiClient,
+        private val apiClient: GenConApiClient,
         private val database: AnnouncementDatabase
 ) : AnnouncementRepository {
 

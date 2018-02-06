@@ -6,12 +6,12 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentActivity
 import android.support.v4.app.FragmentManager
-import com.github.teamapple.gencon.persentaion.App
+import com.github.teamapple.gencon.App
 import dagger.android.AndroidInjection
 import dagger.android.support.AndroidSupportInjection
 import dagger.android.support.HasSupportFragmentInjector
 
-fun App.applyAutoInjecter(){
+fun App.applyAutoInjector() {
     registerActivityLifecycleCallbacks(object : Application.ActivityLifecycleCallbacks {
         override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
             handleActivity(activity)
@@ -25,8 +25,7 @@ fun App.applyAutoInjecter(){
 
         override fun onActivityStopped(activity: Activity) = Unit
 
-        override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle?) =
-                Unit
+        override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle?) = Unit
 
         override fun onActivityDestroyed(activity: Activity) = Unit
     })
