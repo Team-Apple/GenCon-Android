@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.di
+package com.github.teamapple.gencon.di.modules
 
 import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase

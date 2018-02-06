@@ -6,15 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.github.teamapple.gencon.databinding.FragmentTasksBinding
-import com.github.teamapple.gencon.model.TaskModel
-import javax.inject.Inject
 
 class TasksFragment : Fragment() {
     companion object {
         fun newInstance() = TasksFragment()
     }
 
-    @Inject lateinit var presenter: TasksContract.Presenter
+    //@Inject lateinit var presenter: TasksContract.Presenter
     private lateinit var binding: FragmentTasksBinding
     //private val adapter = TasksRecyclerAdapter()
 
@@ -40,7 +38,7 @@ class TasksFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        presenter.onResume(this)
+        //presenter.onResume(this)
         /*if (adapter.isEmpty()) {
             //presenter.loadDaysTasks(binding.dateSelectContainer.getSelectedDate())
         }*/
@@ -51,28 +49,7 @@ class TasksFragment : Fragment() {
 
     override fun onPause() {
         super.onPause()
-        presenter.onPause()
+        //presenter.onPause()
     }
-
-    override fun updateEvents(events: List<TaskModel>) {
-        //adapter.updateTasks(events)
-    }
-
-    override fun setLoadingIndicator(active: Boolean) {
-        /*binding.swipeRefreshLayout.post {
-            binding.swipeRefreshLayout.isRefreshing = active
-        }*/
-    }
-
-    override fun setNoEventsView(shown: Boolean) {
-        //binding.recyclerView.visibility(!shown)
-        //binding.emptyView.visibility(shown)
-    }
-
-    override fun showMessage(message: String) {
-        //todo あとで実装
-    }
-
-
 
 }

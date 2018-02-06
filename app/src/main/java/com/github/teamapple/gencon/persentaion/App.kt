@@ -2,10 +2,9 @@ package com.github.teamapple.gencon.persentaion
 
 import android.app.Activity
 import android.app.Application
-import android.content.Context
-import com.github.teamapple.gencon.di.AppComponent
-import com.github.teamapple.gencon.di.AppModule
 import com.github.teamapple.gencon.di.DaggerAppComponent
+import com.github.teamapple.gencon.di.applyAutoInjecter
+import com.github.teamapple.gencon.di.modules.AppModule
 import com.jakewharton.threetenabp.AndroidThreeTen
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
@@ -15,16 +14,15 @@ import javax.inject.Inject
 
 class App : Application(), HasActivityInjector {
 
-    private val component: AppComponent by  lazy{
-        DaggerAppComponent.builder()
-                .appModule(AppModule(this))
-                .build()
-    }
     @Inject lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
 
     override fun onCreate() {
         super.onCreate()
-        component.inject(this)
+        DaggerAppComponent.builder()
+                .appModule(AppModule(this))
+                .build()
+                .inject(this)
+        applyAutoInjecter()
         Timber.plant(Timber.DebugTree())
         AndroidThreeTen.init(this);
     }
@@ -33,7 +31,5 @@ class App : Application(), HasActivityInjector {
         return dispatchingAndroidInjector
     }
 
-    companion object {
-        fun appComponent(context: Context):AppComponent = (context.applicationContext as App).component
-    }
+
 }

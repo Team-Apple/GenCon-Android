@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.di
+package com.github.teamapple.gencon.di.modules
 
 import com.github.teamapple.gencon.data.db.*
 import dagger.Binds

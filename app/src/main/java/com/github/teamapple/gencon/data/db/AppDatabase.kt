@@ -15,7 +15,8 @@ import com.github.teamapple.gencon.data.db.entity.TaskEntity
             (EventEntity::class),
             (TaskEntity::class)
         ],
-        version = 1
+        version = 1,
+        exportSchema = true
 )
 abstract class AppDatabase: RoomDatabase(){
     abstract fun announcementDao(): AnnouncementDao
