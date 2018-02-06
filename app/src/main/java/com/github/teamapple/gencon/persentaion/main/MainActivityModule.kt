@@ -24,5 +24,7 @@ interface MainActivityModuleBuilder {
 interface MainActivityModule {
     @Binds
     fun providesAppCompatActivity(mainActivity: MainActivity): AppCompatActivity
+
+
 }
 

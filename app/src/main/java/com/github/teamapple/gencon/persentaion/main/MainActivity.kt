@@ -10,19 +10,19 @@ import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.databinding.ActivityMainBinding
 import com.github.teamapple.gencon.persentaion.main.announcement.AnnouncementFragment
 import com.github.teamapple.gencon.persentaion.main.tasks.TasksFragment
-import com.github.teamapple.gencon.persentaion.main.tasks.TasksViewModel
+import com.github.teamapple.gencon.util.ext.setupWithViewPager
 import dagger.android.AndroidInjection
+import dagger.android.AndroidInjector
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.support.HasSupportFragmentInjector
 import kotlinx.android.synthetic.main.activity_main.*
-import timber.log.Timber
 import javax.inject.Inject
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
 
-    /*@Inject
-    lateinit var fragmentDispatchingAndroidInjector: DispatchingAndroidInjector<Fragment>*/
     @Inject
-    lateinit var viewModel: TasksViewModel
+    lateinit var fragmentDispatchingAndroidInjector: DispatchingAndroidInjector<Fragment>
 
     val binding: ActivityMainBinding by lazy {
         DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
@@ -37,15 +37,17 @@ class MainActivity : AppCompatActivity() {
             setDisplayShowTitleEnabled(false)
         }
 
-        /*val adapter = BottomNavigationFragmentAdapter(supportFragmentManager)
+        val adapter = BottomNavigationFragmentAdapter(supportFragmentManager)
         viewPager.adapter = adapter
         viewPager.offscreenPageLimit = 3
         toolbar.title = bottomNavigation.let { menu -> menu.menu.findItem(menu.selectedItemId).title }
         bottomNavigation.setupWithViewPager(viewPager) { menuItem ->
             toolbar.title = menuItem.title
-        }*/
-        Timber.d( "viewmodel ${viewModel.hashCode()}")
+        }
     }
+
+    override fun supportFragmentInjector(): AndroidInjector<Fragment> =
+            fragmentDispatchingAndroidInjector
 
 
     class BottomNavigationFragmentAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {

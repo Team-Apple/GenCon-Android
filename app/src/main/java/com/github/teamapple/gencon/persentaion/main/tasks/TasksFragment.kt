@@ -1,17 +1,19 @@
 package com.github.teamapple.gencon.persentaion.main.tasks
 
+import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.github.teamapple.gencon.databinding.FragmentTasksBinding
-import com.github.teamapple.gencon.di.Injectable
 import com.github.teamapple.gencon.util.ext.observe
+import dagger.android.support.AndroidSupportInjection
+import dagger.android.support.HasSupportFragmentInjector
 import timber.log.Timber
 import javax.inject.Inject
 
-class TasksFragment : Fragment(), Injectable {
+class TasksFragment : Fragment() {
     companion object {
         fun newInstance() = TasksFragment()
     }
@@ -21,6 +23,11 @@ class TasksFragment : Fragment(), Injectable {
     private lateinit var binding: FragmentTasksBinding
     //private val adapter = TasksRecyclerAdapter()
 
+    override fun onAttach(context: Context?) {
+        Timber.d("activity  ${activity is HasSupportFragmentInjector}")
+        AndroidSupportInjection.inject(this)
+        super.onAttach(context)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
