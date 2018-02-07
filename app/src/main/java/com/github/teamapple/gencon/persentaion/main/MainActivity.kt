@@ -16,7 +16,6 @@ import dagger.android.AndroidInjection
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
-import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
 
@@ -33,7 +32,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
+        setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
             setDisplayShowTitleEnabled(false)
         }
@@ -43,7 +42,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
         binding.viewPager.offscreenPageLimit = 3
         binding.toolbar.title = binding.bottomNavigation.let { menu -> menu.menu.findItem(menu.selectedItemId).title }
         binding.bottomNavigation.setupWithViewPager(binding.viewPager) { menuItem ->
-            toolbar.title = menuItem.title
+            binding.toolbar.title = menuItem.title
         }
     }
 
@@ -53,13 +52,13 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
 
     class BottomNavigationFragmentAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
         companion object {
-            const val ITEM_COUNT = 1
+            const val ITEM_COUNT = 2
         }
 
         override fun getItem(position: Int): Fragment {
             return when (position) {
-                0 -> TaskFragment.newInstance()
-                1 -> EventsFragment.newInstance()
+                0 -> EventsFragment.newInstance()
+                1 -> TaskFragment.newInstance()
                 2 -> AnnouncementFragment()
                 else -> throw IllegalAccessException("Illegal　position. position=$position")
             }

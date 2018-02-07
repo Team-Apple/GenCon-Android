@@ -37,16 +37,18 @@
             app:menu="@menu/menu_bottom_navigation" />
 
         <android.support.design.widget.FloatingActionButton
-            style="@style/Widget.Design.FloatingActionButton.Margin"
             android:id="@+id/events_fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="top|end|center_vertical"
+            android:layout_gravity="top|end"
             android:src="@drawable/ic_create_black_24dp"
             android:tint="@color/white"
+            android:layout_marginBottom="70dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             app:fabSize="normal"
             app:layout_anchor="@id/bottom_navigation"
-            app:layout_anchorGravity="top|center_vertical|end" />
+            app:layout_anchorGravity="top|end" />
 
     </android.support.design.widget.CoordinatorLayout>
 </layout>

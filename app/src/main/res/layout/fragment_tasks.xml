@@ -7,25 +7,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <android.support.v4.widget.SwipeRefreshLayout
-            android:id="@+id/tasks_swipe_refresh"
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/tasks_recycler"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/recycler_view_bottom_padding"
+            android:paddingTop="@dimen/recycler_view_top_padding"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/tasks_recycler"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:clipToPadding="false"
-                android:orientation="vertical"
-                android:paddingBottom="@dimen/recycler_view_bottom_padding"
-                android:paddingTop="@dimen/recycler_view_top_padding"
-                app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
-        </android.support.v4.widget.SwipeRefreshLayout>
 
         <android.support.v7.widget.AppCompatImageView
             android:id="@+id/tasks_inactive_image"

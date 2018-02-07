@@ -1,5 +1,7 @@
 package com.github.teamapple.gencon.persentaion.main.task
 
+
+import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -10,6 +12,7 @@ import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.databinding.FragmentTasksBinding
 import com.github.teamapple.gencon.di.Injectable
 import com.github.teamapple.gencon.di.ViewModelFactory
+import com.github.teamapple.gencon.util.ext.observe
 import com.github.teamapple.gencon.util.view.SpaceItemDecoration
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
@@ -27,6 +30,10 @@ class TaskFragment : Fragment(), Injectable {
     @Inject
     lateinit var viewmodelFactory: ViewModelFactory
 
+    private val viewModel: TaskViewModel by lazy {
+        ViewModelProviders.of(this,viewmodelFactory).get(TaskViewModel::class.java)
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentTasksBinding.inflate(inflater, container, false)
         return binding.root
@@ -40,16 +47,11 @@ class TaskFragment : Fragment(), Injectable {
             recyclerView.setHasFixedSize(true)
             recyclerView.adapter = adapter
         }
-        /*apiClient.fetchAllTasksOfDay("2018-02-07")
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(
-                        {
-                            Timber.d("onsucsess")
-                            adapter.clear()
-                            adapter.addAll(it.toTaskEntities().toTaskModels().map { TaskItem(it) })
-                        },
-                        { Timber.e(it) }
-                )*/
+        viewModel.getAllTasksOfDay()
+                .observe(this, {
+                    adapter.clear()
+                    it?.map { TaskItem(it) }?.run { adapter.addAll(this) }
+                })
 
     }
 }
