@@ -8,10 +8,10 @@ import android.support.v4.content.ContextCompat
 import android.support.v4.graphics.drawable.DrawableCompat
 import android.support.v7.app.AppCompatActivity
 import com.github.teamapple.gencon.R
-import com.github.teamapple.gencon.databinding.ActivityEventDetailBinding
+//import com.github.teamapple.gencon.databinding.ActivityEventDetailBinding
 import com.github.teamapple.gencon.domain.model.EventModel
 import com.github.teamapple.gencon.domain.model.PriorityModel
-
+/*
 class EventEditActivity : AppCompatActivity() {
     companion object {
         fun start(context: Context) {
@@ -19,7 +19,7 @@ class EventEditActivity : AppCompatActivity() {
         }
     }
 
-    private val binging: ActivityEventDetailBinding by lazy { DataBindingUtil.setContentView<ActivityEventDetailBinding>(this, R.layout.activity_event_detail) }
+    private val binging: ActivityEventDetailBinding by lazy { DataBindingUtil.setContentView<ActivityEventDetailBinding>(this, R.layout.activity_task_detail) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setSupportActionBar(binging.toolBar)
@@ -144,3 +144,4 @@ class EventEditActivity : AppCompatActivity() {
         }*/
     }
 }
+*/
