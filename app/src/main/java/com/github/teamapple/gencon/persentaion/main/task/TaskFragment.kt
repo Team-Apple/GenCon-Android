@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.github.teamapple.gencon.databinding.FragmentTasksBinding
 import com.github.teamapple.gencon.di.Injectable
-import com.github.teamapple.gencon.di.ViewModelFactory
+import com.github.teamapple.gencon.di.InteractorFactory
 import javax.inject.Inject
 
 class TaskFragment : Fragment(), Injectable {
@@ -17,7 +17,7 @@ class TaskFragment : Fragment(), Injectable {
     }
 
     @Inject
-    lateinit var viewModelFactory: ViewModelFactory
+    lateinit var viewModelFactory: InteractorFactory
     val viewModel: TaskViewModel by lazy {
         ViewModelProviders.of(this, viewModelFactory).get(TaskViewModel::class.java)
     }

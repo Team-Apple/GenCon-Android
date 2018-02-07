@@ -5,7 +5,6 @@ import com.github.teamapple.gencon.data.repository.TaskRepository
 import javax.inject.Inject
 
 class TaskViewModel @Inject constructor(private val repository: TaskRepository) : ViewModel() {
-
-
+    
 
 }
