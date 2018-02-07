@@ -12,14 +12,22 @@ class TaskDatabaseImpl @Inject constructor(
         private val database: AppDatabase,
         private val dao: TaskDao
 ) : TaskDatabase {
-
     override fun getAllTasksOfDay(date: String): Flowable<List<TaskEntity>> = dao.getAllTasksOfDay(date)
+
+    override fun deleteAllTaskOfDay(date: String) {
+        dao.deleteAllTasksOfDay(date)
+    }
 
     override fun getEvent(taskId: Int): Maybe<TaskEntity> = dao.getTask(taskId)
 
-    override fun save(tasks: List<TaskEntity>) {
+    override fun deleteTask(taskId: Int) {
+        dao.deleteTask(taskId)
+    }
+
+    override fun save(date: String, tasks: List<TaskEntity>) {
         database.runInTransaction {
-            dao.clearAndInsert(tasks)
+            dao.deleteAllTasksOfDay(date)
+            dao.insert(tasks)
         }
     }
 }
