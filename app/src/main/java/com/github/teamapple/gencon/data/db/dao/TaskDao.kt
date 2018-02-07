@@ -7,7 +7,7 @@ import io.reactivex.Maybe
 
 @Dao
 abstract class TaskDao {
-    @Query("SELECT * FROM task BETWEEN ':date  00:00:00' and ':date 23:59:59'")
+    @Query("SELECT * FROM task WHERE start_at BETWEEN :date || ' 00:00:00' AND :date || ' 23:59:59'")
     abstract fun getAllTasksOfDay(): Flowable<List<TaskEntity>>
 
     @Query("SELECT * FROM task WHERE id = :taskId")

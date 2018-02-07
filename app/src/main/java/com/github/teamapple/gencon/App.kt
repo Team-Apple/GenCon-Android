@@ -3,6 +3,7 @@ package com.github.teamapple.gencon
 import android.app.Activity
 import android.app.Application
 import com.github.teamapple.gencon.di.DaggerAppComponent
+import com.github.teamapple.gencon.di.applyAutoInjector
 import com.github.teamapple.gencon.di.modules.AppModule
 import com.jakewharton.threetenabp.AndroidThreeTen
 import dagger.android.AndroidInjector
@@ -22,7 +23,7 @@ class App : Application(), HasActivityInjector {
                 .appModule(AppModule(this))
                 .build()
                 .inject(this)
-        //applyAutoInjector()
+        applyAutoInjector()
         Timber.plant(Timber.DebugTree())
         AndroidThreeTen.init(this);
     }

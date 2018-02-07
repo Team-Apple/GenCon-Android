@@ -8,7 +8,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class EventRoomDatabase @Inject constructor(
+class EventDatabaseImpl @Inject constructor(
         private val database: AppDatabase,
         private val dao: EventDao
 ) : EventDatabase {

@@ -1,18 +1,13 @@
 package com.github.teamapple.gencon.di.modules
 
-import android.arch.lifecycle.ViewModel
-import android.arch.lifecycle.ViewModelProviders
-import android.support.v7.app.AppCompatActivity
-import com.github.teamapple.gencon.di.ViewModelInjectorFactory
+import android.arch.lifecycle.ViewModelProvider
+import com.github.teamapple.gencon.di.ViewModelFactory
+import dagger.Binds
 import dagger.Module
-import dagger.Provides
-
 
 @Module
-abstract class ViewModelModule<VM : ViewModel>(private val clazz: Class<VM>) {
+interface ViewModelModule {
 
-    @Provides
-    fun provideViewModel(activity: AppCompatActivity, factory: ViewModelInjectorFactory<VM>): VM {
-        return ViewModelProviders.of(activity, factory).get(clazz)
-    }
+    @Binds
+    fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory
 }

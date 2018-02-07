@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.persentaion.main.tasks
+package com.github.teamapple.gencon.persentaion.main.task
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.ViewModel
@@ -7,10 +7,9 @@ import com.github.teamapple.gencon.data.repository.TaskRepository
 import com.github.teamapple.gencon.util.ext.toLiveData
 import javax.inject.Inject
 
-class TasksViewModel: ViewModel(){
-    @Inject lateinit var repository: TaskRepository
+class TasksViewModel @Inject constructor(private val repository: TaskRepository) : ViewModel() {
 
     val tasks: LiveData<List<TaskResponse>>
-        get() = repository.getTasks(2018,2,6).toFlowable().toLiveData()
+        get() = repository.getTasks(2018, 2, 6).toFlowable().toLiveData()
 
 }

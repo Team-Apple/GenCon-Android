@@ -1,33 +1,23 @@
-package com.github.teamapple.gencon.persentaion.main.tasks
+package com.github.teamapple.gencon.persentaion.main.task
 
-import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.github.teamapple.gencon.databinding.FragmentTasksBinding
-import com.github.teamapple.gencon.util.ext.observe
-import dagger.android.support.AndroidSupportInjection
-import dagger.android.support.HasSupportFragmentInjector
-import timber.log.Timber
+import com.github.teamapple.gencon.di.Injectable
 import javax.inject.Inject
 
-class TasksFragment : Fragment() {
+class TaskFragment : Fragment(), Injectable {
     companion object {
-        fun newInstance() = TasksFragment()
+        fun newInstance() = TaskFragment()
     }
 
     @Inject
     lateinit var viewModel: TasksViewModel
     private lateinit var binding: FragmentTasksBinding
     //private val adapter = TasksRecyclerAdapter()
-
-    override fun onAttach(context: Context?) {
-        Timber.d("activity  ${activity is HasSupportFragmentInjector}")
-        AndroidSupportInjection.inject(this)
-        super.onAttach(context)
-    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentTasksBinding.inflate(inflater, container, false)
@@ -36,9 +26,9 @@ class TasksFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.tasks.observe(this,{
+        /*viewModel.tasks.observe(this, {
             Timber.d(it.toString())
-        })
+        })*/
         /*binding.recyclerView.also { recyclerView ->
             recyclerView.layoutManager = LinearLayoutManager(context)
             recyclerView.addItemDecoration(SpaceItemDecoration.createByDpSize(context!!, 4))

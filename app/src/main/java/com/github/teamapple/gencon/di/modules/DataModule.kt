@@ -20,7 +20,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
 
 
-@Module
+@Module(includes = [DatabaseModule::class, RepositoryModule::class])
 class DataModule {
     companion object {
         private const val BASE_URL = "https://gencon-web.herokuapp.com/api/"

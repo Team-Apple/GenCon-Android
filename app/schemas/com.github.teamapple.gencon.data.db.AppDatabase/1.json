@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "f7e1c92d19c652258c81d42975cd2e05",
+    "identityHash": "e3fe0de16e1c75069976aeaa107f1605",
     "entities": [
       {
         "tableName": "announcement",
@@ -83,7 +83,16 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_event_start_at",
+            "unique": false,
+            "columnNames": [
+              "start_at"
+            ],
+            "createSql": "CREATE  INDEX `index_event_start_at` ON `${TABLE_NAME}` (`start_at`)"
+          }
+        ],
         "foreignKeys": []
       },
       {
@@ -133,13 +142,22 @@
           ],
           "autoGenerate": false
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_task_start_at",
+            "unique": false,
+            "columnNames": [
+              "start_at"
+            ],
+            "createSql": "CREATE  INDEX `index_task_start_at` ON `${TABLE_NAME}` (`start_at`)"
+          }
+        ],
         "foreignKeys": []
       }
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"f7e1c92d19c652258c81d42975cd2e05\")"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"e3fe0de16e1c75069976aeaa107f1605\")"
     ]
   }
 }

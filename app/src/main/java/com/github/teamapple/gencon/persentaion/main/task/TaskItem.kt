@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.persentaion.main.tasks
+package com.github.teamapple.gencon.persentaion.main.task
 
 import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.databinding.ItemTaskBinding

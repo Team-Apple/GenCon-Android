@@ -9,9 +9,8 @@ import android.support.v7.app.AppCompatActivity
 import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.databinding.ActivityMainBinding
 import com.github.teamapple.gencon.persentaion.main.announcement.AnnouncementFragment
-import com.github.teamapple.gencon.persentaion.main.tasks.TasksFragment
+import com.github.teamapple.gencon.persentaion.main.task.TaskFragment
 import com.github.teamapple.gencon.util.ext.setupWithViewPager
-import dagger.android.AndroidInjection
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
@@ -29,7 +28,6 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
@@ -57,8 +55,8 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
 
         override fun getItem(position: Int): Fragment {
             return when (position) {
-                0 -> TasksFragment.newInstance()
-                1 -> TasksFragment.newInstance()
+                0 -> TaskFragment.newInstance()
+                1 -> TaskFragment.newInstance()
                 2 -> AnnouncementFragment()
                 else -> throw IllegalAccessException("Illegal　position. position=$position")
             }

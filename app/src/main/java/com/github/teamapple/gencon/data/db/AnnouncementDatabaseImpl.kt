@@ -7,7 +7,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class AnnouncementRoomDatabase @Inject constructor(
+class AnnouncementDatabaseImpl @Inject constructor(
         private val database: AppDatabase,
         private val dao: AnnouncementDao
 ) : AnnouncementDatabase {

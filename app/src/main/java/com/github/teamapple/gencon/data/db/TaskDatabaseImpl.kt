@@ -8,7 +8,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class TaskRoomDatabase @Inject constructor(
+class TaskDatabaseImpl @Inject constructor(
         private val database: AppDatabase,
         private val dao: TaskDao
 ) : TaskDatabase {

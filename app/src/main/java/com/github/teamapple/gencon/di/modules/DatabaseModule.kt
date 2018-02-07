@@ -8,12 +8,12 @@ import dagger.Module
 interface DatabaseModule {
 
     @Binds
-     fun bindEventDatabase(database: EventRoomDatabase): EventDatabase
+     fun bindEventDatabase(database: EventDatabaseImpl): EventDatabase
 
     @Binds
-     fun bindTaskDatabase(database: TaskRoomDatabase): TaskDatabase
+     fun bindTaskDatabase(database: TaskDatabaseImpl): TaskDatabase
 
     @Binds
-     fun bindAnnouncementDatabase(database: AnnouncementRoomDatabase): AnnouncementDatabase
+     fun bindAnnouncementDatabase(database: AnnouncementDatabaseImpl): AnnouncementDatabase
 
 }

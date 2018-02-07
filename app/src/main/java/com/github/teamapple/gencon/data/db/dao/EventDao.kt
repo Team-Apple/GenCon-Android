@@ -7,7 +7,7 @@ import io.reactivex.Maybe
 
 @Dao
 abstract class EventDao {
-    @Query("SELECT * FROM event BETWEEN ':date  00:00:00' and ':date 23:59:59'")
+    @Query("SELECT * FROM event WHERE start_at BETWEEN :date || ' 00:00:00' AND :date || ' 23:59:59'")
     abstract fun getAllEventsOfDay(date: String): Flowable<List<EventEntity>>
 
     @Query("SELECT * FROM event WHERE id = :eventId")
