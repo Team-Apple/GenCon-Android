@@ -11,7 +11,7 @@ class TaskEntity(
         var title: String,
         var memo: String?,
         var priority: String,
-        @ColumnInfo(name = "start_at")
+        @ColumnInfo(name = "start_at", index = true)
         var startAt: String,
         @ColumnInfo(name = "deadline")
         var deadline: String

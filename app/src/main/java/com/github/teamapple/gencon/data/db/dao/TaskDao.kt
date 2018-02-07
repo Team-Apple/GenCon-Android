@@ -7,11 +7,11 @@ import io.reactivex.Maybe
 
 @Dao
 abstract class TaskDao {
-    @Query("SELECT * FROM task")
-    abstract fun getAllTasks(): Flowable<List<TaskEntity>>
+    @Query("SELECT * FROM task BETWEEN ':date  00:00:00' and ':date 23:59:59'")
+    abstract fun getAllTasksOfDay(): Flowable<List<TaskEntity>>
 
     @Query("SELECT * FROM task WHERE id = :taskId")
-    abstract fun getTaskById(taskId: Int): Maybe<TaskEntity>
+    abstract fun getTask(taskId: Int): Maybe<TaskEntity>
 
     @Query("DELETE FROM task")
     abstract fun deleteAll()

@@ -13,9 +13,9 @@ class EventRoomDatabase @Inject constructor(
         private val dao: EventDao
 ) : EventDatabase {
 
-    override fun getAllEvents(): Flowable<List<EventEntity>> = dao.getAllEvents()
+    override fun getAllEventsOfDay(date: String): Flowable<List<EventEntity>> = dao.getAllEventsOfDay(date)
 
-    override fun getEventById(eventId: Int): Maybe<EventEntity> = dao.getEventById(eventId)
+    override fun getEvent(eventId: Int): Maybe<EventEntity> = dao.getEvent(eventId)
 
     override fun save(events: List<EventEntity>) {
         database.runInTransaction {

@@ -5,7 +5,7 @@ import io.reactivex.Flowable
 import io.reactivex.Maybe
 
 interface EventDatabase {
-    fun getAllEvents(): Flowable<List<EventEntity>>
-    fun getEventById(eventId: Int): Maybe<EventEntity>
+    fun getAllEventsOfDay(date: String): Flowable<List<EventEntity>>
+    fun getEvent(eventId: Int): Maybe<EventEntity>
     fun save(events: List<EventEntity>)
 }
