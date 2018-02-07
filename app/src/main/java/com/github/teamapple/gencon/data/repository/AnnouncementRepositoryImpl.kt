@@ -13,8 +13,7 @@ import javax.inject.Singleton
 
 @Singleton
 class AnnouncementRepositoryImpl @Inject constructor(
-        private val apiClient: GenConApiClient,
-        private val database: AnnouncementDatabase
+        private val apiClient: GenConApiClient
 ) : AnnouncementRepository {
 
     override val announcements: Flowable<List<AnnouncementModel>>

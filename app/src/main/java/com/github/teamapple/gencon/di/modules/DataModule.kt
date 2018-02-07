@@ -1,14 +1,8 @@
 package com.github.teamapple.gencon.di.modules
 
-import android.arch.persistence.room.Room
-import android.content.Context
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.github.teamapple.gencon.data.api.GenConApiClient
 import com.github.teamapple.gencon.data.api.response.mapper.LocalDateTimeAdapter
-import com.github.teamapple.gencon.data.db.AppDatabase
-import com.github.teamapple.gencon.data.db.dao.AnnouncementDao
-import com.github.teamapple.gencon.data.db.dao.EventDao
-import com.github.teamapple.gencon.data.db.dao.TaskDao
 import com.squareup.moshi.KotlinJsonAdapterFactory
 import com.squareup.moshi.Moshi
 import dagger.Module
@@ -22,7 +16,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
 
 
-@Module(includes = [DatabaseModule::class, RepositoryModule::class])
+@Module(includes = [RepositoryModule::class])
 class DataModule {
     companion object {
         private const val BASE_URL = "https://gencon-web.herokuapp.com/api/"
@@ -64,7 +58,7 @@ class DataModule {
                 })
                 .build()
     }
-
+    /*
     @Provides
     @Singleton
     fun provideRoom(context: Context): AppDatabase {
@@ -83,7 +77,7 @@ class DataModule {
 
     @Provides
     @Singleton
-    fun provideAnnouncementDao(db: AppDatabase): AnnouncementDao = db.announcementDao()
+    fun provideAnnouncementDao(db: AppDatabase): AnnouncementDao = db.announcementDao()*/
 
 
 }
