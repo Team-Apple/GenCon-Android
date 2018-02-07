@@ -4,7 +4,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
 
     <!-- ===========================  General Dimen ==================================-->
-    <dimen name="general_fab_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 
     <!-- Common Wight Dimen-->
     <dimen name="recycler_view_top_padding">4dp</dimen>

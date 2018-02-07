@@ -12,14 +12,14 @@ import retrofit2.http.Query
 
 interface GenConApiClient {
     @GET("events.json")
-    fun getDailyEvents(@Query("start_from_data") startDate: String): Single<List<EventResponse>>
+    fun fetchAllEventsOfDay(@Query("start_from_dae") startDate: String): Single<List<EventResponse>>
 
     @GET("tasks.json")
-    fun getDailyTasks(@Query("start_from_date") startDate: String): Single<List<TaskResponse>>
+    fun fetchAllTasksOfDay(@Query("start_from_date") startDate: String): Single<List<TaskResponse>>
 
     //announcements
     @GET("announcements.json")
-    fun getAllAnnouncements(): Single<List<AnnouncementResponse>>
+    fun fetchAllAnnouncements(): Single<List<AnnouncementResponse>>
 
     @PUT("announcements/{id}/")
     fun editAnnouncement(params: AnnouncementParams.EditParams): Single<AnnouncementResponse>

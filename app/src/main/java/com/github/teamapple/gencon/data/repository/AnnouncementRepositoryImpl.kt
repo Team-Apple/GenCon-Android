@@ -22,7 +22,7 @@ class AnnouncementRepositoryImpl @Inject constructor(
                 .map { it.toAnnouncementModels() }
 
     override fun refreshAnnouncements(): Completable =
-            apiClient.getAllAnnouncements()
+            apiClient.fetchAllAnnouncements()
                     .doOnSuccess { database.save(it.toAnnouncementEntities()) }
                     .toCompletable()
 
