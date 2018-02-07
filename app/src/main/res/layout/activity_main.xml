@@ -33,7 +33,6 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:layout_gravity="bottom"
-            app:elevation="@dimen/dimen_4dp"
             app:menu="@menu/menu_bottom_navigation" />
 
     </android.support.design.widget.CoordinatorLayout>
