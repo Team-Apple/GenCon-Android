@@ -27,9 +27,9 @@
 
             <TextView
                 android:id="@+id/start_at"
-                style="@style/GenConFont.Base.Body"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.Base.Body"
                 android:textColor="@color/black"
                 app:layout_constraintTop_toBottomOf="@id/task_name"
                 tools:text="from: 19:10" />
@@ -39,9 +39,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:textAppearance="@style/TextAppearance.Base.Body"
                 android:textColor="@color/black"
-                app:layout_constraintTop_toBottomOf="@id/task_name"
                 app:layout_constraintLeft_toRightOf="@id/start_at"
+                app:layout_constraintTop_toBottomOf="@id/task_name"
                 tools:text="to: 19:10" />
 
         </android.support.constraint.ConstraintLayout>

@@ -7,7 +7,7 @@ data class TaskResponse(
         val title: String,
         val memo: String?,
         val priority: String,
-        @Json(name = "start_at")
+        @Json(name = "start_from")
         val startAt: String,
         @Json(name = "deadline")
         val deadline: String)

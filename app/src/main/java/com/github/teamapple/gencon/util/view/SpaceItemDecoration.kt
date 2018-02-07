@@ -2,9 +2,9 @@ package com.github.teamapple.gencon.util.view
 
 import android.content.Context
 import android.graphics.Rect
+import android.support.annotation.DimenRes
 import android.support.v7.widget.RecyclerView
 import android.view.View
-import com.github.teamapple.gencon.util.ext.toPx
 
 class SpaceItemDecoration private constructor(private val spaceSize: Int) : RecyclerView.ItemDecoration() {
 
@@ -15,8 +15,6 @@ class SpaceItemDecoration private constructor(private val spaceSize: Int) : Recy
     }
 
     companion object {
-        fun createByDpSize(context:Context, dpSize:Int) = SpaceItemDecoration(context.toPx(dpSize).toInt())
-        fun createByPxSize(pxSize:Int) = SpaceItemDecoration(pxSize)
-        fun createFromResource(context: Context,resId:Int) = SpaceItemDecoration(context.resources.getDimensionPixelSize(resId))
+        fun createFromResource(context: Context,@DimenRes resId:Int) = SpaceItemDecoration(context.resources.getDimensionPixelSize(resId))
     }
 }

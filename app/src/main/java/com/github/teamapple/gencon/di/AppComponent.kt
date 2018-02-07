@@ -1,6 +1,7 @@
 package com.github.teamapple.gencon.di
 
 import com.github.teamapple.gencon.App
+import com.github.teamapple.gencon.di.modules.ActivityModules
 import com.github.teamapple.gencon.di.modules.AppModule
 import com.github.teamapple.gencon.di.modules.DataModule
 import com.github.teamapple.gencon.di.modules.ViewModelModule
@@ -12,6 +13,7 @@ import javax.inject.Singleton
 @Component(modules = [
     AndroidSupportInjectionModule::class,
     AppModule::class,
+    ActivityModules::class,
     DataModule::class,
     ViewModelModule::class])
 interface AppComponent {

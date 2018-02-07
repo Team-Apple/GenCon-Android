@@ -25,7 +25,7 @@
                 android:layout_height="?attr/actionBarSize"
                 android:background="@color/colorPrimary"
                 android:gravity="center_vertical"
-                android:paddingStart="@dimen/dimen_16dp"
+                android:paddingStart="16dp"
                 android:textAppearance="@style/TextAppearance.Base.Subhead.Bold"
                 android:textColor="@color/white"
                 tools:text="なんかのよてい" />

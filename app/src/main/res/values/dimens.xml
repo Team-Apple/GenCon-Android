@@ -10,6 +10,6 @@
     <dimen name="recycler_view_top_padding">4dp</dimen>
     <dimen name="recycler_view_bottom_padding">12dp</dimen>
 
-
+    <dimen name="recycler_view_item_margin">2dp</dimen>
 </resources>
 

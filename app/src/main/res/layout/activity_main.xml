@@ -17,13 +17,13 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:layout_scrollFlags="scroll|enterAlways"
                 app:titleTextAppearance="@style/TextAppearance.Base.Title"
                 app:titleTextColor="@color/white"
                 tools:title="Event"/>
         </android.support.design.widget.AppBarLayout>
 
         <com.github.teamapple.gencon.util.view.FixedViewPager
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>

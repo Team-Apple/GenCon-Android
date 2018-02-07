@@ -5,14 +5,13 @@ import com.github.teamapple.gencon.databinding.ItemTaskBinding
 import com.github.teamapple.gencon.domain.model.TaskModel
 import com.xwray.groupie.databinding.BindableItem
 
-class TaskItem(private val taak: TaskModel) : BindableItem<ItemTaskBinding>() {
+class TaskItem(private val task: TaskModel) : BindableItem<ItemTaskBinding>() {
 
     override fun bind(binding: ItemTaskBinding, position: Int) {
-        /*binding.taskName.text = taak.name
-        binding.startAt.text = taak.startAt
-        binding.deadline.text = taak*/
+        binding.taskName.text = task.name
+        binding.startAt.text = task.startAt
+        binding.deadline.text = task.deadline
     }
 
-
-    override fun getLayout(): Int = R.layout.item_event
+    override fun getLayout(): Int = R.layout.item_task
 }
