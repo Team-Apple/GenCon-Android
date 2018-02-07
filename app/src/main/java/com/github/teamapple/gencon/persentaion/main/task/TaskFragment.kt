@@ -1,5 +1,6 @@
 package com.github.teamapple.gencon.persentaion.main.task
 
+import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -7,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.github.teamapple.gencon.databinding.FragmentTasksBinding
 import com.github.teamapple.gencon.di.Injectable
+import com.github.teamapple.gencon.di.ViewModelFactory
 import javax.inject.Inject
 
 class TaskFragment : Fragment(), Injectable {
@@ -15,7 +17,10 @@ class TaskFragment : Fragment(), Injectable {
     }
 
     @Inject
-    lateinit var viewModel: TasksViewModel
+    lateinit var viewModelFactory: ViewModelFactory
+    val viewModel: TaskViewModel by lazy {
+        ViewModelProviders.of(this, viewModelFactory).get(TaskViewModel::class.java)
+    }
     private lateinit var binding: FragmentTasksBinding
     //private val adapter = TasksRecyclerAdapter()
 

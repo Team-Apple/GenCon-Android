@@ -1,8 +1,8 @@
-package com.github.teamapple.gencon.data.mapper
+package com.github.teamapple.gencon.domain.mapper
 
 import com.github.teamapple.gencon.data.db.entity.EventEntity
-import com.github.teamapple.gencon.model.EventModel
-import com.github.teamapple.gencon.model.PriorityModel
+import com.github.teamapple.gencon.domain.model.EventModel
+import com.github.teamapple.gencon.domain.model.PriorityModel
 
 private fun EventEntity.toEventModel(): EventModel =
         EventModel(id, title, memo ?: "", startAt, endAt, priority.toPriorityModel())

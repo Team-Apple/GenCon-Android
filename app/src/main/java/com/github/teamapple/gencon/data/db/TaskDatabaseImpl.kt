@@ -13,7 +13,7 @@ class TaskDatabaseImpl @Inject constructor(
         private val dao: TaskDao
 ) : TaskDatabase {
 
-    override fun getAllTasksOfDay(date: String): Flowable<List<TaskEntity>> = dao.getAllTasksOfDay()
+    override fun getAllTasksOfDay(date: String): Flowable<List<TaskEntity>> = dao.getAllTasksOfDay(date)
 
     override fun getEvent(taskId: Int): Maybe<TaskEntity> = dao.getTask(taskId)
 

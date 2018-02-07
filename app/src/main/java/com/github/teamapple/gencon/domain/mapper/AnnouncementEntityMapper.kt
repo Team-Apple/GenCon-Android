@@ -1,7 +1,7 @@
-package com.github.teamapple.gencon.data.mapper
+package com.github.teamapple.gencon.domain.mapper
 
 import com.github.teamapple.gencon.data.db.entity.AnnouncementEntity
-import com.github.teamapple.gencon.model.AnnouncementModel
+import com.github.teamapple.gencon.domain.model.AnnouncementModel
 
 
 fun List<AnnouncementEntity>.toAnnouncementModels(): List<AnnouncementModel> =

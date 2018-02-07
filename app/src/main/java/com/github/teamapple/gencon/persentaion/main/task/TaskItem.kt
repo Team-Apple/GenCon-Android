@@ -2,7 +2,7 @@ package com.github.teamapple.gencon.persentaion.main.task
 
 import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.databinding.ItemTaskBinding
-import com.github.teamapple.gencon.model.TaskModel
+import com.github.teamapple.gencon.domain.model.TaskModel
 import com.xwray.groupie.databinding.BindableItem
 
 class TaskItem(private val taak: TaskModel) : BindableItem<ItemTaskBinding>() {

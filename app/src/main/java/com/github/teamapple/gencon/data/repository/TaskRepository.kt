@@ -1,8 +1,8 @@
 package com.github.teamapple.gencon.data.repository
 
-import com.github.teamapple.gencon.data.api.entity.response.TaskResponse
-import io.reactivex.Single
+import com.github.teamapple.gencon.data.db.entity.TaskEntity
+import io.reactivex.Flowable
 
 interface TaskRepository {
-    fun getTasks(year: Int, month: Int, day: Int): Single<List<TaskResponse>>
+    fun getAllTasksOfDay(date: String): Flowable<List<TaskEntity>>
 }

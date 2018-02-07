@@ -2,7 +2,7 @@ package com.github.teamapple.gencon.persentaion.main.events
 
 import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.databinding.ItemEventBinding
-import com.github.teamapple.gencon.model.EventModel
+import com.github.teamapple.gencon.domain.model.EventModel
 import com.xwray.groupie.databinding.BindableItem
 
 class EventItem(private val event: EventModel) : BindableItem<ItemEventBinding>() {

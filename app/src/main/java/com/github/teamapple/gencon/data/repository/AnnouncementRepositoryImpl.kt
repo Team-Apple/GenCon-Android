@@ -2,9 +2,9 @@ package com.github.teamapple.gencon.data.repository
 
 import com.github.teamapple.gencon.data.api.GenConApiClient
 import com.github.teamapple.gencon.data.db.AnnouncementDatabase
-import com.github.teamapple.gencon.data.mapper.toAnnouncementEntities
-import com.github.teamapple.gencon.data.mapper.toAnnouncementModels
-import com.github.teamapple.gencon.model.AnnouncementModel
+import com.github.teamapple.gencon.data.db.entity.mapper.toAnnouncementEntities
+import com.github.teamapple.gencon.domain.mapper.toAnnouncementModels
+import com.github.teamapple.gencon.domain.model.AnnouncementModel
 import io.reactivex.Completable
 import io.reactivex.Flowable
 import javax.inject.Inject

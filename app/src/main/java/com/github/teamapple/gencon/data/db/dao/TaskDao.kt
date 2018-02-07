@@ -8,7 +8,7 @@ import io.reactivex.Maybe
 @Dao
 abstract class TaskDao {
     @Query("SELECT * FROM task WHERE start_at BETWEEN :date || ' 00:00:00' AND :date || ' 23:59:59'")
-    abstract fun getAllTasksOfDay(): Flowable<List<TaskEntity>>
+    abstract fun getAllTasksOfDay(date: String): Flowable<List<TaskEntity>>
 
     @Query("SELECT * FROM task WHERE id = :taskId")
     abstract fun getTask(taskId: Int): Maybe<TaskEntity>
@@ -20,7 +20,7 @@ abstract class TaskDao {
     abstract fun insert(tasks: List<TaskEntity>)
 
     @Transaction
-    open fun clearAndInsert(tasks: List<TaskEntity>){
+    open fun clearAndInsert(tasks: List<TaskEntity>) {
         deleteAll()
         insert(tasks)
     }

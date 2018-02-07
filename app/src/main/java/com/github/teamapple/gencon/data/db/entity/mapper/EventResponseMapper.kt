@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.data.mapper
+package com.github.teamapple.gencon.data.db.entity.mapper
 
 import com.github.teamapple.gencon.data.api.entity.response.EventResponse
 import com.github.teamapple.gencon.data.db.entity.EventEntity

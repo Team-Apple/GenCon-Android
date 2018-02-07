@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.model
+package com.github.teamapple.gencon.domain.model
 
 data class TaskModel(val id: Int,
                      val name: String,
