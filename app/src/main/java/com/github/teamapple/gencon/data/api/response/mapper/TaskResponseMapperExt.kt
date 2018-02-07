@@ -1,6 +1,6 @@
-package com.github.teamapple.gencon.data.db.entity.mapper
+package com.github.teamapple.gencon.data.api.response.mapper
 
-import com.github.teamapple.gencon.data.api.entity.response.TaskResponse
+import com.github.teamapple.gencon.data.api.response.TaskResponse
 import com.github.teamapple.gencon.data.db.entity.TaskEntity
 
 private fun TaskResponse.toTaskEntity(): TaskEntity =

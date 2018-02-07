@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.data.repository
+package com.github.teamapple.gencon.domain.repository
 
 import com.github.teamapple.gencon.data.db.entity.TaskEntity
 import io.reactivex.Flowable

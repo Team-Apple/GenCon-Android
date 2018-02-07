@@ -1,9 +1,10 @@
 package com.github.teamapple.gencon.data.api
 
-import com.github.teamapple.gencon.data.api.entity.params.AnnouncementParams
-import com.github.teamapple.gencon.data.api.entity.response.AnnouncementResponse
-import com.github.teamapple.gencon.data.api.entity.response.EventResponse
-import com.github.teamapple.gencon.data.api.entity.response.TaskResponse
+import com.github.teamapple.gencon.data.api.params.AnnouncementParams
+import com.github.teamapple.gencon.data.api.response.AnnouncementResponse
+import com.github.teamapple.gencon.data.api.response.EventResponse
+import com.github.teamapple.gencon.data.api.response.TaskResponse
+import io.reactivex.Flowable
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -15,7 +16,7 @@ interface GenConApiClient {
     fun fetchAllEventsOfDay(@Query("start_from_dae") startDate: String): Single<List<EventResponse>>
 
     @GET("tasks.json")
-    fun fetchAllTasksOfDay(@Query("start_from_date") startDate: String): Single<List<TaskResponse>>
+    fun fetchAllTasksOfDay(@Query("start_from_date") startDate: String):Flowable<List<TaskResponse>>
 
     //announcements
     @GET("announcements.json")

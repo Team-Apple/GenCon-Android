@@ -26,6 +26,7 @@ class App : Application(), HasActivityInjector {
         applyAutoInjector()
         Timber.plant(Timber.DebugTree())
         AndroidThreeTen.init(this);
+        Timber.d("create app")
     }
 
     override fun activityInjector(): AndroidInjector<Activity> {

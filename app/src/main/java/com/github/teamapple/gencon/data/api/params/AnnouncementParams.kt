@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.data.api.entity.params
+package com.github.teamapple.gencon.data.api.params
 
 
 class AnnouncementParams {

@@ -2,7 +2,7 @@ package com.github.teamapple.gencon.persentaion.main.announcement
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.ViewModel
-import com.github.teamapple.gencon.data.repository.AnnouncementRepository
+import com.github.teamapple.gencon.domain.repository.AnnouncementRepository
 import com.github.teamapple.gencon.domain.model.AnnouncementModel
 import com.github.teamapple.gencon.util.ext.toLiveData
 import io.reactivex.disposables.CompositeDisposable

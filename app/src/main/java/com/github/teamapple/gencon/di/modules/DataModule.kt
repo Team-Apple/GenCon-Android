@@ -4,6 +4,7 @@ import android.arch.persistence.room.Room
 import android.content.Context
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.github.teamapple.gencon.data.api.GenConApiClient
+import com.github.teamapple.gencon.data.api.response.mapper.LocalDateTimeAdapter
 import com.github.teamapple.gencon.data.db.AppDatabase
 import com.github.teamapple.gencon.data.db.dao.AnnouncementDao
 import com.github.teamapple.gencon.data.db.dao.EventDao
@@ -14,6 +15,7 @@ import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.threeten.bp.LocalDateTime
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -48,6 +50,7 @@ class DataModule {
     fun provideMoshi(): Moshi {
         return Moshi.Builder()
                 .add(KotlinJsonAdapterFactory())
+                .add(LocalDateTime::class.java, LocalDateTimeAdapter())
                 .build()
     }
 

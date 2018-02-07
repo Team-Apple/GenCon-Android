@@ -1,8 +1,7 @@
 package com.github.teamapple.gencon.persentaion.main.events
 
 import android.arch.lifecycle.LiveData
-import com.github.teamapple.gencon.data.datasource.CachePolicy
-import com.github.teamapple.gencon.data.repository.EventRepository
+import com.github.teamapple.gencon.domain.repository.EventRepository
 import com.github.teamapple.gencon.domain.model.EventModel
 import javax.inject.Inject
 

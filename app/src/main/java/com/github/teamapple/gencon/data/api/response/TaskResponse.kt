@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.data.api.entity.response
+package com.github.teamapple.gencon.data.api.response
 
 import com.squareup.moshi.Json
 
