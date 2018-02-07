@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity
 import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.databinding.ActivityMainBinding
 import com.github.teamapple.gencon.persentaion.main.announcement.AnnouncementFragment
+import com.github.teamapple.gencon.persentaion.main.events.EventsFragment
 import com.github.teamapple.gencon.persentaion.main.task.TaskFragment
 import com.github.teamapple.gencon.util.ext.setupWithViewPager
 import dagger.android.AndroidInjection
@@ -38,10 +39,10 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
         }
 
         val adapter = BottomNavigationFragmentAdapter(supportFragmentManager)
-        viewPager.adapter = adapter
-        viewPager.offscreenPageLimit = 3
-        toolbar.title = bottomNavigation.let { menu -> menu.menu.findItem(menu.selectedItemId).title }
-        bottomNavigation.setupWithViewPager(viewPager) { menuItem ->
+        binding.viewPager.adapter = adapter
+        binding.viewPager.offscreenPageLimit = 3
+        binding.toolbar.title = binding.bottomNavigation.let { menu -> menu.menu.findItem(menu.selectedItemId).title }
+        binding.bottomNavigation.setupWithViewPager(binding.viewPager) { menuItem ->
             toolbar.title = menuItem.title
         }
     }
@@ -58,7 +59,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
         override fun getItem(position: Int): Fragment {
             return when (position) {
                 0 -> TaskFragment.newInstance()
-                1 -> TaskFragment.newInstance()
+                1 -> EventsFragment.newInstance()
                 2 -> AnnouncementFragment()
                 else -> throw IllegalAccessException("Illegal　position. position=$position")
             }

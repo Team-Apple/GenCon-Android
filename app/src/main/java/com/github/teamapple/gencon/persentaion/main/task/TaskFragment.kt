@@ -7,15 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.github.teamapple.gencon.R
-import com.github.teamapple.gencon.data.api.GenConApiClient
-import com.github.teamapple.gencon.data.db.entity.mapper.toTaskEntities
 import com.github.teamapple.gencon.databinding.FragmentTasksBinding
 import com.github.teamapple.gencon.di.Injectable
+import com.github.teamapple.gencon.di.ViewModelFactory
 import com.github.teamapple.gencon.util.view.SpaceItemDecoration
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
-import io.reactivex.android.schedulers.AndroidSchedulers
-import timber.log.Timber
 import javax.inject.Inject
 
 
@@ -24,11 +21,11 @@ class TaskFragment : Fragment(), Injectable {
         fun newInstance() = TaskFragment()
     }
 
-    @Inject
-    lateinit var apiClient: GenConApiClient
 
     private lateinit var binding: FragmentTasksBinding
     private val adapter = GroupAdapter<ViewHolder>()
+    @Inject
+    lateinit var viewmodelFactory: ViewModelFactory
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentTasksBinding.inflate(inflater, container, false)
@@ -43,7 +40,7 @@ class TaskFragment : Fragment(), Injectable {
             recyclerView.setHasFixedSize(true)
             recyclerView.adapter = adapter
         }
-        apiClient.fetchAllTasksOfDay("2018-02-07")
+        /*apiClient.fetchAllTasksOfDay("2018-02-07")
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                         {
@@ -52,7 +49,7 @@ class TaskFragment : Fragment(), Injectable {
                             adapter.addAll(it.toTaskEntities().toTaskModels().map { TaskItem(it) })
                         },
                         { Timber.e(it) }
-                )
+                )*/
 
     }
 }
