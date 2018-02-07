@@ -20,7 +20,7 @@ interface GenConApiClient {
 
     //announcements
     @GET("announcements.json")
-    fun fetchAllAnnouncements(): Single<List<AnnouncementResponse>>
+    fun fetchAllAnnouncements(): Flowable<List<AnnouncementResponse>>
 
     @PUT("announcements/{id}/")
     fun editAnnouncement(params: AnnouncementParams.EditParams): Single<AnnouncementResponse>

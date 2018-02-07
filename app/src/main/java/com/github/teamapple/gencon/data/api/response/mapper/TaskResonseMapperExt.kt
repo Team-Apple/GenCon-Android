@@ -1,10 +1,10 @@
-package com.github.teamapple.gencon.domain.mapper
+package com.github.teamapple.gencon.data.api.response.mapper
 
-import com.github.teamapple.gencon.data.db.entity.TaskEntity
+import com.github.teamapple.gencon.data.api.response.TaskResponse
 import com.github.teamapple.gencon.domain.model.PriorityModel
 import com.github.teamapple.gencon.domain.model.TaskModel
 
-private fun TaskEntity.toTaskModel(): TaskModel =
+private fun TaskResponse.toTaskModel(): TaskModel =
         TaskModel(id, title, memo ?: "", startAt, deadline, priority.toPriorityModel())
 
 private fun String.toPriorityModel(): PriorityModel = when (this) {
@@ -13,5 +13,5 @@ private fun String.toPriorityModel(): PriorityModel = when (this) {
     else -> PriorityModel.Normal
 }
 
-fun List<TaskEntity>.toTaskModels(): List<TaskModel>
+fun List<TaskResponse>.toTaskModels(): List<TaskModel>
         = map { it.toTaskModel() }

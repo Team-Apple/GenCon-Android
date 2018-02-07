@@ -11,7 +11,6 @@ import com.github.teamapple.gencon.data.api.GenConApiClient
 import com.github.teamapple.gencon.data.db.entity.mapper.toTaskEntities
 import com.github.teamapple.gencon.databinding.FragmentTasksBinding
 import com.github.teamapple.gencon.di.Injectable
-import com.github.teamapple.gencon.domain.mapper.toTaskModels
 import com.github.teamapple.gencon.util.view.SpaceItemDecoration
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
