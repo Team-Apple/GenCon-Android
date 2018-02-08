@@ -93,7 +93,7 @@
                 app:layout_constraintTop_toBottomOf="@id/start_date" />
 
             <android.support.v7.widget.AppCompatEditText
-                android:id="@+id/end_date"
+                android:id="@+id/deadline_date"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/ic_arrow_drop_down_black_24dp"
@@ -103,11 +103,11 @@
                 android:textColor="@color/black"
                 app:layout_constraintHorizontal_weight="0.6"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@id/end_time"
+                app:layout_constraintRight_toLeftOf="@id/deadline_time"
                 app:layout_constraintTop_toBottomOf="@id/caption_end_at" />
 
             <android.support.v7.widget.AppCompatEditText
-                android:id="@+id/end_time"
+                android:id="@+id/deadline_time"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:drawableEnd="@drawable/ic_arrow_drop_down_black_24dp"
@@ -116,7 +116,7 @@
                 android:textAppearance="@style/TextAppearance.Base.Title"
                 android:textColor="@color/black"
                 app:layout_constraintHorizontal_weight="0.4"
-                app:layout_constraintLeft_toRightOf="@id/end_date"
+                app:layout_constraintLeft_toRightOf="@id/deadline_date"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/caption_end_at" />
 
@@ -129,7 +129,17 @@
                 android:text="@string/memo"
                 android:textAppearance="@style/TextAppearance.Base.Caption"
                 android:textColor="@color/grey_500"
-                app:layout_constraintTop_toBottomOf="@id/end_date" />
+                app:layout_constraintTop_toBottomOf="@id/deadline_time" />
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/memo_edit_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.Base.Body"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/caption_memo" />
 
             <android.support.v7.widget.AppCompatEditText
                 android:layout_width="0dp"

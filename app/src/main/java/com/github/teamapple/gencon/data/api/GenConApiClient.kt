@@ -1,6 +1,7 @@
 package com.github.teamapple.gencon.data.api
 
 import com.github.teamapple.gencon.data.api.params.AnnouncementParams
+import com.github.teamapple.gencon.data.api.params.TaskParams
 import com.github.teamapple.gencon.data.api.response.AnnouncementResponse
 import com.github.teamapple.gencon.data.api.response.EventResponse
 import com.github.teamapple.gencon.data.api.response.TaskResponse
@@ -27,5 +28,8 @@ interface GenConApiClient {
 
     @POST("announcements")
     fun createAnnouncement(params: AnnouncementParams.CreateParams): Single<AnnouncementResponse>
+
+    @POST("task")
+    fun createTask(params: TaskParams.CreateParams): Single<TaskResponse>
 
 }

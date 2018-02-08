@@ -1,5 +1,6 @@
 package com.github.teamapple.gencon.persentaion.main
 
+import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -11,6 +12,7 @@ import com.github.teamapple.gencon.databinding.ActivityMainBinding
 import com.github.teamapple.gencon.persentaion.main.announcement.AnnouncementsFragment
 import com.github.teamapple.gencon.persentaion.main.events.EventsFragment
 import com.github.teamapple.gencon.persentaion.main.task.TasksFragment
+import com.github.teamapple.gencon.persentaion.taskDetail.TaskDetailActivity
 import com.github.teamapple.gencon.util.ext.setupWithViewPager
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
@@ -41,7 +43,9 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
         binding.bottomNavigation.setupWithViewPager(binding.viewPager) { menuItem ->
             binding.toolbar.title = menuItem.title
         }
-        //startActivity(Intent(this,TaskDetailActivity::class.java))
+        binding.eventsFab.setOnClickListener {
+            startActivity(Intent(this,TaskDetailActivity::class.java))
+        }
     }
 
     override fun supportFragmentInjector(): AndroidInjector<Fragment> =
@@ -50,7 +54,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
 
     class BottomNavigationFragmentAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
         companion object {
-            const val ITEM_COUNT = 2
+            const val ITEM_COUNT = 3
         }
 
         override fun getItem(position: Int): Fragment {
