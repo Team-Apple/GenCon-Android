@@ -46,7 +46,7 @@ class EventsFragment : Fragment() {
             recyclerView.adapter = adapter
         }
 
-        viewModel.allEventsOfDay.observe(this, {
+        viewModel.events.observe(this, {
             it?.map { EventItem(it) }?.run {
                 adapter.clear()
                 if (isEmpty()){

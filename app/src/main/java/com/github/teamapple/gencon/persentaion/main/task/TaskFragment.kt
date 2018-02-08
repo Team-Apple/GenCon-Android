@@ -47,7 +47,7 @@ class TaskFragment : Fragment(), Injectable {
             recyclerView.setHasFixedSize(true)
             recyclerView.adapter = adapter
         }
-        viewModel.allTasksOfDay.observe(this, {
+        viewModel.tasks.observe(this, {
                     it?.map { TaskItem(it) }?.run {
                         adapter.clear()
                         if (isEmpty()){

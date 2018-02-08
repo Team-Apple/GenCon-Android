@@ -28,4 +28,16 @@
     <string name="hint_event_title">event name</string>
     <string name="hint_task_title">task name</string>
     <string name="memo">memo</string>
+
+
+    <string name="announce_timing_leave_home">Announcement at Leave Home</string>
+    <string name="announce_timing_come_home">Announcement at Came Home</string>
+
+    <string name="announce_mode_trash">Take out the trash</string>
+    <string name="announce_mode_exchange">Exchange</string>
+    <string name="announce_mode_weather">Weather</string>
+
+
+
+
 </resources>

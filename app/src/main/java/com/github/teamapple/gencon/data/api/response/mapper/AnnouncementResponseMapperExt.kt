@@ -11,9 +11,9 @@ private fun AnnouncementResponse.toAnnouncementModel(): AnnouncementModel =
 
 private fun Boolean.toAnnouncementTiming(): AnnouncementModel.TimingModel =
         if (this) {
-            AnnouncementModel.TimingModel.MORNING
+            AnnouncementModel.TimingModel.LEAVE_HOME
         } else {
-            AnnouncementModel.TimingModel.NIGHT
+            AnnouncementModel.TimingModel.COME_HOME
         }
 
 private fun Int.toAnnouncementMode(): AnnouncementModel.ModeModel =

@@ -11,7 +11,7 @@ import javax.inject.Inject
 
 class EventsViewModel @Inject constructor(private val repository: EventRepository) : ViewModel() {
 
-    val allEventsOfDay: LiveData<List<EventModel>>
+    val events: LiveData<List<EventModel>>
         get() = repository.getEvents(DateFormatter.format(LocalDate.now())).toLiveData()
 
 }

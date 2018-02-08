@@ -11,7 +11,7 @@ import javax.inject.Inject
 
 class TaskViewModel @Inject constructor(repository: TaskRepository) : ViewModel() {
 
-    val allTasksOfDay: LiveData<List<TaskModel>> =
+    val tasks: LiveData<List<TaskModel>> =
             repository.getAllTasksOfDay(DateFormatter.format(LocalDate.now()))
                     .toLiveData()
 

@@ -6,8 +6,8 @@ data class AnnouncementModel(
         val mode: ModeModel
 ){
     enum class TimingModel {
-        MORNING,
-        NIGHT
+        LEAVE_HOME,
+        COME_HOME
     }
 
     enum class ModeModel {
