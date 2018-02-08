@@ -1,11 +1,20 @@
 package com.github.teamapple.gencon.persentaion.main.events
 
+import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.databinding.FragmentEventsBinding
+import com.github.teamapple.gencon.di.ViewModelFactory
+import com.github.teamapple.gencon.util.ext.observe
+import com.github.teamapple.gencon.util.view.SpaceItemDecoration
+import com.xwray.groupie.GroupAdapter
+import com.xwray.groupie.ViewHolder
+import javax.inject.Inject
 
 class EventsFragment : Fragment() {
     companion object {
@@ -14,11 +23,14 @@ class EventsFragment : Fragment() {
 
 
     private lateinit var binding: FragmentEventsBinding
+    private val adapter = GroupAdapter<ViewHolder>()
+    @Inject
+    lateinit var viewModelFactory: ViewModelFactory
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        //EventsComponent.Initializer.init(context!!).inject(this)
+    private val viewModel: EventsViewModel by lazy {
+        ViewModelProviders.of(this, viewModelFactory).get(EventsViewModel::class.java)
     }
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentEventsBinding.inflate(inflater, container, false)
@@ -27,33 +39,23 @@ class EventsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        /*binding.recyclerView.also { recyclerView ->
+        binding.eventsRecycler.also { recyclerView ->
             recyclerView.layoutManager = LinearLayoutManager(context)
-            recyclerView.addItemDecoration(SpaceItemDecoration.createByDpSize(context!!, 4))
+            recyclerView.addItemDecoration(SpaceItemDecoration.createFromResource(context!!, R.dimen.recycler_view_item_margin))
             recyclerView.setHasFixedSize(true)
             recyclerView.adapter = adapter
-        }*/
-    }
-
-    override fun onResume() {
-        super.onResume()
-        /*presenter.onResume(this)
-        if (adapter.isEmpty()) {
-            presenter.loadDaysEvents(binding.dateSelectContainer.getSelectedDate())
-        }
-        binding.swipeRefreshLayout.setOnRefreshListener {
-            presenter.loadDaysEvents(binding.dateSelectContainer.getSelectedDate())
         }
 
-        binding.dateSelectContainer.setListener(object : DateSelectLayout.DateSelectListener{
-            override fun onSelectDate(date: DateModel) {
-                presenter.loadDaysEvents(date)
+        viewModel.allEventsOfDay.observe(this, {
+            it?.map { EventItem(it) }?.run {
+                adapter.clear()
+                if (isEmpty()){
+                    binding.eventsInactiveGroup.visibility = View.VISIBLE
+                }else{
+                    binding.eventsInactiveGroup.visibility = View.GONE
+                    adapter.addAll(this)
+                }
             }
-        })*/
-    }
-
-    override fun onPause() {
-        super.onPause()
-        //presenter.onPause()
+        })
     }
 }

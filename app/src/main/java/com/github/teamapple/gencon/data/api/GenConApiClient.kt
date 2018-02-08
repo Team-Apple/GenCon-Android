@@ -13,7 +13,7 @@ import retrofit2.http.Query
 
 interface GenConApiClient {
     @GET("events.json")
-    fun fetchAllEventsOfDay(@Query("start_from_dae") startDate: String): Single<List<EventResponse>>
+    fun fetchAllEventsOfDay(@Query("start_from_dae") startDate: String): Flowable<List<EventResponse>>
 
     @GET("tasks.json")
     fun fetchAllTasksOfDay(@Query("start_from_date") startDate: String):Flowable<List<TaskResponse>>

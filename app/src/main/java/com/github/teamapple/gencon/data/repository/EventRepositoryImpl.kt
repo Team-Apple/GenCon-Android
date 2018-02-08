@@ -1,10 +1,16 @@
 package com.github.teamapple.gencon.data.repository
 
-import com.github.teamapple.gencon.data.api.response.EventResponse
-import io.reactivex.Single
+import com.github.teamapple.gencon.data.api.GenConApiClient
+import com.github.teamapple.gencon.data.api.response.mapper.toEventModels
+import com.github.teamapple.gencon.model.EventModel
+import io.reactivex.Flowable
+import javax.inject.Inject
 
-class EventRepositoryImpl: EventRepository {
-    override fun getEvents(year: Int, month: Int, day: Int): Single<List<EventResponse>> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+class EventRepositoryImpl@Inject constructor(private val apiClient: GenConApiClient): EventRepository {
+
+    override fun getEvents(date: String): Flowable<List<EventModel>> {
+        return apiClient.fetchAllEventsOfDay(date)
+                .map { it.toEventModels() }
     }
+
 }

@@ -28,10 +28,10 @@ class TaskFragment : Fragment(), Injectable {
     private lateinit var binding: FragmentTasksBinding
     private val adapter = GroupAdapter<ViewHolder>()
     @Inject
-    lateinit var viewmodelFactory: ViewModelFactory
+    lateinit var viewModelFactory: ViewModelFactory
 
     private val viewModel: TaskViewModel by lazy {
-        ViewModelProviders.of(this,viewmodelFactory).get(TaskViewModel::class.java)
+        ViewModelProviders.of(this, viewModelFactory).get(TaskViewModel::class.java)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -47,10 +47,16 @@ class TaskFragment : Fragment(), Injectable {
             recyclerView.setHasFixedSize(true)
             recyclerView.adapter = adapter
         }
-        viewModel.getAllTasksOfDay()
-                .observe(this, {
-                    adapter.clear()
-                    it?.map { TaskItem(it) }?.run { adapter.addAll(this) }
+        viewModel.allTasksOfDay.observe(this, {
+                    it?.map { TaskItem(it) }?.run {
+                        adapter.clear()
+                        if (isEmpty()){
+                            binding.tasksInactiveGroup.visibility = View.VISIBLE
+                        }else {
+                            binding.tasksInactiveGroup.visibility = View.GONE
+                            adapter.addAll(this)
+                        }
+                    }
                 })
 
     }

@@ -1,8 +1,8 @@
 package com.github.teamapple.gencon.data.repository
 
-import com.github.teamapple.gencon.data.api.response.EventResponse
-import io.reactivex.Single
+import com.github.teamapple.gencon.model.EventModel
+import io.reactivex.Flowable
 
 interface EventRepository {
-    fun getEvents(year: Int, month: Int, day: Int): Single<List<EventResponse>>
+    fun getEvents(date: String): Flowable<List<EventModel>>
 }

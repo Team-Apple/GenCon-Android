@@ -10,4 +10,6 @@ object DateFormatter {
     fun format(year:Int, month: Int, day: Int): String{
        return LocalDate.of(year,month,day).format(formatter)
     }
+
+    fun format(localDate: LocalDate): String =  localDate.format(formatter)
 }

@@ -10,4 +10,6 @@ object TimeFormatter {
     fun format(hour:Int,minute: Int): String{
        return LocalTime.of(hour,minute).format(formatter)
     }
+
+    fun format(localTime: LocalTime) : String = localTime.format(formatter)
 }
