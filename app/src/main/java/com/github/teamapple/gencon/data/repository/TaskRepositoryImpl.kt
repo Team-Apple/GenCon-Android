@@ -2,8 +2,7 @@ package com.github.teamapple.gencon.data.repository
 
 import com.github.teamapple.gencon.data.api.GenConApiClient
 import com.github.teamapple.gencon.data.api.response.mapper.toTaskModels
-import com.github.teamapple.gencon.domain.model.TaskModel
-import com.github.teamapple.gencon.domain.repository.TaskRepository
+import com.github.teamapple.gencon.model.TaskModel
 import io.reactivex.Flowable
 import javax.inject.Inject
 import javax.inject.Singleton

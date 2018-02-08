@@ -1,6 +1,6 @@
-package com.github.teamapple.gencon.domain.repository
+package com.github.teamapple.gencon.data.repository
 
-import com.github.teamapple.gencon.domain.model.TaskModel
+import com.github.teamapple.gencon.model.TaskModel
 import io.reactivex.Flowable
 
 interface TaskRepository {

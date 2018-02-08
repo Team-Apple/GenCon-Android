@@ -1,8 +1,8 @@
 package com.github.teamapple.gencon.data.api.response.mapper
 
 import com.github.teamapple.gencon.data.api.response.TaskResponse
-import com.github.teamapple.gencon.domain.model.PriorityModel
-import com.github.teamapple.gencon.domain.model.TaskModel
+import com.github.teamapple.gencon.model.PriorityModel
+import com.github.teamapple.gencon.model.TaskModel
 
 private fun TaskResponse.toTaskModel(): TaskModel =
         TaskModel(id, title, memo ?: "", startAt, deadline, priority.toPriorityModel())

@@ -1,16 +1,7 @@
 package com.github.teamapple.gencon.persentaion.eventdetail
 
-import android.content.Context
-import android.content.Intent
-import android.databinding.DataBindingUtil
-import android.os.Bundle
-import android.support.v4.content.ContextCompat
-import android.support.v4.graphics.drawable.DrawableCompat
-import android.support.v7.app.AppCompatActivity
-import com.github.teamapple.gencon.R
 //import com.github.teamapple.gencon.databinding.ActivityEventDetailBinding
-import com.github.teamapple.gencon.domain.model.EventModel
-import com.github.teamapple.gencon.domain.model.PriorityModel
+
 /*
 class EventEditActivity : AppCompatActivity() {
     companion object {

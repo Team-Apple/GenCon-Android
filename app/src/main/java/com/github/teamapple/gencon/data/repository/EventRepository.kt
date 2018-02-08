@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.domain.repository
+package com.github.teamapple.gencon.data.repository
 
 import com.github.teamapple.gencon.data.api.response.EventResponse
 import io.reactivex.Single

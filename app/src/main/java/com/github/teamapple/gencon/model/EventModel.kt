@@ -1,4 +1,4 @@
-package com.github.teamapple.gencon.domain.model
+package com.github.teamapple.gencon.model
 
 import android.annotation.SuppressLint
 import android.os.Parcelable

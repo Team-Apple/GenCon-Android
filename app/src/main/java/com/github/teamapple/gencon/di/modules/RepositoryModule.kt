@@ -1,6 +1,6 @@
 package com.github.teamapple.gencon.di.modules
 
-import com.github.teamapple.gencon.domain.repository.TaskRepository
+import com.github.teamapple.gencon.data.repository.TaskRepository
 import com.github.teamapple.gencon.data.repository.TaskRepositoryImpl
 import dagger.Binds
 import dagger.Module

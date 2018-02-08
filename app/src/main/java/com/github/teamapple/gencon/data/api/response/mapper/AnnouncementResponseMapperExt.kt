@@ -1,7 +1,7 @@
 package com.github.teamapple.gencon.data.api.response.mapper
 
 import com.github.teamapple.gencon.data.api.response.AnnouncementResponse
-import com.github.teamapple.gencon.domain.model.AnnouncementModel
+import com.github.teamapple.gencon.model.AnnouncementModel
 
 fun List<AnnouncementResponse>.toAnnouncementModels(): List<AnnouncementModel>
         = map { it.toAnnouncementModel() }

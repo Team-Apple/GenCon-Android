@@ -1,8 +1,8 @@
 package com.github.teamapple.gencon.data.api.response.mapper
 
 import com.github.teamapple.gencon.data.api.response.EventResponse
-import com.github.teamapple.gencon.domain.model.EventModel
-import com.github.teamapple.gencon.domain.model.PriorityModel
+import com.github.teamapple.gencon.model.EventModel
+import com.github.teamapple.gencon.model.PriorityModel
 
 private fun EventResponse.toEventModel(): EventModel =
         EventModel(id, title, memo ?: "", startAt.toString(), endAt.toString(), priority.toPriorityModel())
