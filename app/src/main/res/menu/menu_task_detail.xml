@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/menu_item_event_submit"
+        android:id="@+id/menu_item_task_submit"
         android:icon="@drawable/ic_send_black_24dp"
         android:title="@string/common_submit"
         app:showAsAction="always"/>

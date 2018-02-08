@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".persentaion.eventdetail.EventEditActivity"
+            android:name=".persentaion.taskDetail.TaskDetailActivity"
             android:screenOrientation="portrait" />
 
     </application>

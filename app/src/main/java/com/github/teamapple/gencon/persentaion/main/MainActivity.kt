@@ -1,5 +1,6 @@
 package com.github.teamapple.gencon.persentaion.main
 
+import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -11,8 +12,8 @@ import com.github.teamapple.gencon.databinding.ActivityMainBinding
 import com.github.teamapple.gencon.persentaion.main.announcement.AnnouncementFragment
 import com.github.teamapple.gencon.persentaion.main.events.EventsFragment
 import com.github.teamapple.gencon.persentaion.main.task.TaskFragment
+import com.github.teamapple.gencon.persentaion.taskDetail.TaskDetailActivity
 import com.github.teamapple.gencon.util.ext.setupWithViewPager
-import dagger.android.AndroidInjection
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
@@ -29,9 +30,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
             setDisplayShowTitleEnabled(false)
@@ -44,6 +43,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
         binding.bottomNavigation.setupWithViewPager(binding.viewPager) { menuItem ->
             binding.toolbar.title = menuItem.title
         }
+        startActivity(Intent(this,TaskDetailActivity::class.java))
     }
 
     override fun supportFragmentInjector(): AndroidInjector<Fragment> =

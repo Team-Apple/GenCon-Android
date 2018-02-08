@@ -1,13 +1,13 @@
 package com.github.teamapple.gencon.util
 
-import org.threeten.bp.LocalDateTime
+import org.threeten.bp.LocalDate
 import org.threeten.bp.format.DateTimeFormatter
 
+
 object DateFormatter {
-    private val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
-    private val outputFormatter = DateTimeFormatter.ofPattern("MM/dd")
-    fun format(dateTime: String): String{
-        val from = LocalDateTime.parse(dateTime, formatter)
-        return outputFormatter.format(from)
+    private val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+
+    fun format(year:Int, month: Int, day: Int): String{
+       return LocalDate.of(year,month,day).format(formatter)
     }
 }
