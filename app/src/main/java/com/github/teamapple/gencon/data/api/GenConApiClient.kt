@@ -17,7 +17,7 @@ interface GenConApiClient {
     fun fetchAllEventsOfDay(@Query("start_from_dae") startDate: String): Flowable<List<EventResponse>>
 
     @GET("tasks.json")
-    fun fetchAllTasksOfDay(@Query("start_from_date") startDate: String):Flowable<List<TaskResponse>>
+    fun fetchAllTasksOfDay(@Query("start_from_date") startDate: String):Single<List<TaskResponse>>
 
     //announcements
     @GET("announcements.json")

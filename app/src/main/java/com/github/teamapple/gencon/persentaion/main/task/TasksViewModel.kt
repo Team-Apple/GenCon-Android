@@ -9,10 +9,20 @@ import com.github.teamapple.gencon.util.ext.toLiveData
 import org.threeten.bp.LocalDate
 import javax.inject.Inject
 
-class TasksViewModel @Inject constructor(repository: TaskRepository) : ViewModel() {
+class TasksViewModel @Inject constructor(private val repository: TaskRepository) : ViewModel() {
 
     val tasks: LiveData<List<TaskModel>> =
             repository.getAllTasksOfDay(DateFormatter.format(LocalDate.now()))
                     .toLiveData()
+
+    fun refrashTasks() {
+        repository.refreshTasks(DateFormatter.format(LocalDate.now()))
+                .subscribe({
+
+                },
+                        {
+
+                        })
+    }
 
 }

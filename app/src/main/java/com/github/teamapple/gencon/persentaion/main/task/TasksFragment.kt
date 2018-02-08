@@ -47,17 +47,26 @@ class TasksFragment : Fragment(), Injectable {
             recyclerView.setHasFixedSize(true)
             recyclerView.adapter = adapter
         }
+        binding.tasksSwipeRefresh.isRefreshing = true
         viewModel.tasks.observe(this, {
-                    it?.map { TaskItem(it) }?.run {
-                        adapter.clear()
-                        if (isEmpty()){
-                            binding.tasksInactiveGroup.visibility = View.VISIBLE
-                        }else {
-                            binding.tasksInactiveGroup.visibility = View.GONE
-                            adapter.addAll(this)
-                        }
-                    }
-                })
-
+            it?.map { TaskItem(it) }?.run {
+                adapter.clear()
+                if (isEmpty()) {
+                    binding.tasksInactiveGroup.visibility = View.VISIBLE
+                } else {
+                    binding.tasksInactiveGroup.visibility = View.GONE
+                    adapter.addAll(this)
+                }
+            }
+            binding.tasksSwipeRefresh.isRefreshing = false
+        })
     }
+
+    override fun onResume() {
+        super.onResume()
+        binding.tasksSwipeRefresh.setOnRefreshListener {
+            viewModel.refrashTasks()
+        }
+    }
+
 }
