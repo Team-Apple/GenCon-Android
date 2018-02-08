@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.databinding.FragmentEventsBinding
+import com.github.teamapple.gencon.di.Injectable
 import com.github.teamapple.gencon.di.ViewModelFactory
 import com.github.teamapple.gencon.util.ext.observe
 import com.github.teamapple.gencon.util.view.SpaceItemDecoration
@@ -16,7 +17,7 @@ import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
 import javax.inject.Inject
 
-class EventsFragment : Fragment() {
+class EventsFragment : Fragment() ,Injectable{
     companion object {
         fun newInstance() = EventsFragment()
     }

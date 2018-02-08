@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.databinding.FragmentAnnouncementBinding
+import com.github.teamapple.gencon.di.Injectable
 import com.github.teamapple.gencon.di.ViewModelFactory
 import com.github.teamapple.gencon.util.ext.observe
 import com.github.teamapple.gencon.util.view.SpaceItemDecoration
@@ -16,14 +17,14 @@ import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
 import javax.inject.Inject
 
-class AnnouncementFragment : Fragment() {
+class AnnouncementsFragment : Fragment(), Injectable {
     private lateinit var binding: FragmentAnnouncementBinding
     private val adapter = GroupAdapter<ViewHolder>()
 
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
-    private val viewModel: AnnouncementViewModel by lazy {
-        ViewModelProviders.of(this, viewModelFactory).get(AnnouncementViewModel::class.java)
+    private val viewModel: AnnouncementsViewModel by lazy {
+        ViewModelProviders.of(this, viewModelFactory).get(AnnouncementsViewModel::class.java)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

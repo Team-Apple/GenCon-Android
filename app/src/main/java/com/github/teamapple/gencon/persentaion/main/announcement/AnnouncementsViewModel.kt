@@ -7,7 +7,7 @@ import com.github.teamapple.gencon.model.AnnouncementModel
 import com.github.teamapple.gencon.util.ext.toLiveData
 import javax.inject.Inject
 
-class AnnouncementViewModel @Inject constructor(
+class AnnouncementsViewModel @Inject constructor(
         repository: AnnouncementRepository
 ) : ViewModel() {
 

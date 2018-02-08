@@ -1,7 +1,5 @@
 package com.github.teamapple.gencon.persentaion.taskDetail
 
-import android.app.DatePickerDialog
-import android.app.TimePickerDialog
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -9,10 +7,6 @@ import android.view.Menu
 import android.view.MenuItem
 import com.github.teamapple.gencon.R
 import com.github.teamapple.gencon.databinding.ActivityTaskDetailBinding
-import com.github.teamapple.gencon.util.DateFormatter
-import com.github.teamapple.gencon.util.TimeFormatter
-import org.threeten.bp.LocalDateTime
-import org.threeten.bp.LocalTime
 
 
 class TaskDetailActivity : AppCompatActivity() {
@@ -28,6 +22,7 @@ class TaskDetailActivity : AppCompatActivity() {
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowTitleEnabled(false)
         }
+        /*
         binding.startDateEditText.setOnClickListener {
             val now = LocalDateTime.now()
             DatePickerDialog(this, DatePickerDialog.OnDateSetListener { _, year, month, day ->
@@ -51,7 +46,7 @@ class TaskDetailActivity : AppCompatActivity() {
             TimePickerDialog(this, TimePickerDialog.OnTimeSetListener { _, hour, minute ->
                 binding.endTimeEditText.setText(TimeFormatter.format(hour, minute))
             }, now.hour, now.hour, true).show()
-        }
+        }*/
     }
 
 

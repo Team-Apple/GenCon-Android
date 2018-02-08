@@ -19,9 +19,9 @@ import com.xwray.groupie.ViewHolder
 import javax.inject.Inject
 
 
-class TaskFragment : Fragment(), Injectable {
+class TasksFragment : Fragment(), Injectable {
     companion object {
-        fun newInstance() = TaskFragment()
+        fun newInstance() = TasksFragment()
     }
 
 
@@ -30,8 +30,8 @@ class TaskFragment : Fragment(), Injectable {
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
 
-    private val viewModel: TaskViewModel by lazy {
-        ViewModelProviders.of(this, viewModelFactory).get(TaskViewModel::class.java)
+    private val viewModel: TasksViewModel by lazy {
+        ViewModelProviders.of(this, viewModelFactory).get(TasksViewModel::class.java)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {

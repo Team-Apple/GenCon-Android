@@ -29,6 +29,8 @@
     <string name="hint_task_title">task name</string>
     <string name="memo">memo</string>
 
+    <string name="announcement_timing">Announcement Timing</string>
+    <string name="announcement_mode">Announcement Content</string>
 
     <string name="announce_timing_leave_home">Announcement at Leave Home</string>
     <string name="announce_timing_come_home">Announcement at Came Home</string>
